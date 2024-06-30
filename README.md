@@ -58,9 +58,9 @@
    </details>
 </details>
 
-### 2) Install Application
+### 2) Make Apk
 ```
-flutter run
+flutter run build apk --release
 ```
 
 ## Download 🔥
