@@ -4,7 +4,7 @@
 
 </div>
 
-<h1 align="center">Food Mania</h1>
+<h1 align="center">PrashantSkillscape</h1>
 
 
 <p align="center">
