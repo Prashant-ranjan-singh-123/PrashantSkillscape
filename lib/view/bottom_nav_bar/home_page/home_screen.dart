@@ -280,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               heading(heading: 'Skills', paddingTop: 0, paddingBottom: 20),
-              Row(
+              const Row(
                 children: [
                   FlutterLogo(size: 40,),
                   Expanded(
