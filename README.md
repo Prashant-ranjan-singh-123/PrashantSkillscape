@@ -29,7 +29,7 @@
 <br>
 
 
-<img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/Food-Mania/main/readme_images/feature_graphic.png"/>
+<img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/feature_graphic.png"/>
 
 <p style="text-align: left; font-weight: normal;">Get ready to tantalize your taste buds and unleash your inner chef with Food Mania, a recipe app built with love using Flutter! Immerse yourself in a world of culinary delights as you browse through our ever-growing collection of delicious dishes. Our user-friendly interface is meticulously designed to deliver an unparalleled cooking experience.  Intuitive navigation and mouthwatering visuals will guide you through every step, making recipe exploration a breeze. But Food Mania isn't just about following recipes, it's about creating a vibrant community of food lovers! We believe the kitchen is a place for connection and creativity, which is why our app is open for contributions. Whether you're a seasoned home cook or a curious culinary explorer, you can share your favorite recipes and inspire others with your unique creations. Let's build a recipe haven together!  Join Food Mania and be part of something extraordinary.</p>
 
