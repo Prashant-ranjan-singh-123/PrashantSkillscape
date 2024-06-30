@@ -49,7 +49,7 @@
       </details>
   - lib/view/bottom_nav_bar/works/work_screen_data.dart
      <details>
-        <img src="hhttps://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/work_data.png"/>
+        <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/work_data.png"/>
      </details>
 
 ## Download 🔥
