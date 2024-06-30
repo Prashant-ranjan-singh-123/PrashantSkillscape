@@ -1,12 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:prashant_potfolio/shared/app_assets/AppIcons.dart';
-import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_logic.dart';
-import 'package:prashant_potfolio/view/bottom_nav_bar/works/work_screen.dart';
-
-import 'work_screen_logic.dart';
 
 class WorkScreenData {
   static List<Widget> cursol_slider_item = [

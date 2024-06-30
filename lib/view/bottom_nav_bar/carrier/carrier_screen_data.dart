@@ -1,5 +1,3 @@
-import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_logic.dart';
-
 import 'carrier_screen_logic.dart';
 
 class CarrierScreenData {
