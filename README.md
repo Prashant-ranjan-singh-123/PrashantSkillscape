@@ -40,18 +40,22 @@
 
 ### 1) Change Details in following locations.
 <details>
-  <summary>1) lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart</summary>
-  <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/carrier_data.png"/>
-</details>
+  <summary>Files</summary>
 
-<details>
-  <summary>2) lib/view/bottom_nav_bar/home_page/home_screen_data.dart</summary>
-  <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/home_data.png"/>
-</details>
+1. lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart
+   <details>
+     <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/carrier_data.png"/>
+   </details>
 
-<details>
-  <summary>3) lib/view/bottom_nav_bar/works/work_screen_data.dart</summary>
-  <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/work_data.png"/>
+2. lib/view/bottom_nav_bar/home_page/home_screen_data.dart
+   <details>
+     <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/home_data.png"/>
+   </details>
+
+3. lib/view/bottom_nav_bar/works/work_screen_data.dart
+   <details>
+     <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/work_data.png"/>
+   </details>
 </details>
 
 ## Download 🔥
