@@ -40,15 +40,15 @@
 
 ### 1) Change Details in following locations.
 <details>
-  - lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart
+  ```1) lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart```
       <details>
         <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/carrier_data.png"/>
       </details>
-  - lib/view/bottom_nav_bar/home_page/home_screen_data.dart
+  ```2) lib/view/bottom_nav_bar/home_page/home_screen_data.dart```
       <details>
         <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/home_data.png"/>
       </details>
-  - lib/view/bottom_nav_bar/works/work_screen_data.dart
+  ```3) lib/view/bottom_nav_bar/works/work_screen_data.dart```
      <details>
         <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/work_data.png"/>
      </details>
