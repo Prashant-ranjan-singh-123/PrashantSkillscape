@@ -12,10 +12,10 @@ class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   void showOnboard(){
-    Future.delayed(const Duration(seconds: 3, milliseconds: 500),(){
-      Get.to(const GlobalNavBar(), transition: Transition.rightToLeft, duration: 300.ms
-      );
-    });
+    // Future.delayed(const Duration(seconds: 3, milliseconds: 500),(){
+    //   Get.to(const GlobalNavBar(), transition: Transition.rightToLeft, duration: 300.ms
+    //   );
+    // });
   }
 
   @override
@@ -40,7 +40,7 @@ class SplashScreen extends StatelessWidget {
               ),
               const AutoSizeText(
                 maxLines: 1,
-                'Prashant Portfolio',
+                'PrashantSkillscape',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900, fontFamily: 'Poppins', color: Colors.white),
               ).animate().fadeIn(duration: 1000.ms, delay: 500.ms),
               const AutoSizeText(maxLines: 1, '---Flutter Developer---', style: TextStyle(fontFamily: 'OpenSans', color: Colors.white),)
