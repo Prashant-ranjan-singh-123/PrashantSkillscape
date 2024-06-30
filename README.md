@@ -8,22 +8,22 @@
 
 
 <p align="center">
-  <img alt="PrashantSkillscape" src="https://img.shields.io/badge/Food%20Mania-00d1a7?style=for-the-badge&logo=flutter&logoColor=white"/>
+  <img alt="PrashantSkillscape" src="https://img.shields.io/badge/PrashantSkillscape-00d1a7?style=for-the-badge&logo=flutter&logoColor=white"/>
   <img alt="API" src="https://img.shields.io/badge/Api%2024+-50f270?style=for-the-badge&logo=android&logoColor=black"/>
   <img alt="Material You" src="https://custom-icon-badges.demolab.com/badge/material%20you-lightblue?style=for-the-badge&logo=material-you&logoColor=333"/>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Prashant-ranjan-singh-123/Food-Mania/releases"><img src="https://img.shields.io/github/v/release/Prashant-ranjan-singh-123/Food-Mania?color=purple&include_prereleases&logo=github&style=for-the-badge"/></a>
-  <a href="https://github.com/Prashant-ranjan-singh-123/Food-Mania/stargazers"><img src="https://img.shields.io/github/stars/Prashant-ranjan-singh-123/Food-Mania?color=ffff00&style=for-the-badge"/></a>
-  <a href="https://github.com/Prashant-ranjan-singh-123/Food-Mania/network/members"><img src="https://img.shields.io/github/forks/Prashant-ranjan-singh-123/Food-Mania?style=for-the-badge"/></a>
-  <a href="https://hits.sh/github.com/Prashant-ranjan-singh-123/Food-Mania/"><img alt="Hits" src="https://hits.sh/github.com/Prashant-ranjan-singh-123/Food-Mania.svg?style=for-the-badge&label=Views&extraCount=10&color=54856b"/></a>
+  <a href="https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape/releases"><img src="https://img.shields.io/github/v/release/Prashant-ranjan-singh-123/PrashantSkillscape?color=purple&include_prereleases&logo=github&style=for-the-badge"/></a>
+  <a href="https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape/stargazers"><img src="https://img.shields.io/github/stars/Prashant-ranjan-singh-123/PrashantSkillscape?color=ffff00&style=for-the-badge"/></a>
+  <a href="https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape/network/members"><img src="https://img.shields.io/github/forks/Prashant-ranjan-singh-123/PrashantSkillscape?style=for-the-badge"/></a>
+  <a href="https://hits.sh/github.com/Prashant-ranjan-singh-123/PrashantSkillscape/"><img alt="Hits" src="https://hits.sh/github.com/Prashant-ranjan-singh-123/PrashantSkillscape.svg?style=for-the-badge&label=Views&extraCount=10&color=54856b"/></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Prashant-ranjan-singh-123/Food-Mania/releases"><img src="https://img.shields.io/github/downloads/Prashant-ranjan-singh-123/Food-Mania/total?color=orange&style=for-the-badge"/></a>
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Prashant-ranjan-singh-123/Food-Mania?style=for-the-badge&color=ggff20">
-  <a href="https://github.com/Prashant-ranjan-singh-123/Food-Mania/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/Prashant-ranjan-singh-123/Food-Mania?style=for-the-badge&color=ccdd56"/></a>
+  <a href="https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape/releases"><img src="https://img.shields.io/github/downloads/Prashant-ranjan-singh-123/PrashantSkillscape/total?color=orange&style=for-the-badge"/></a>
+  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Prashant-ranjan-singh-123/PrashantSkillscape?style=for-the-badge&color=ggff20">
+  <a href="https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/Prashant-ranjan-singh-123/PrashantSkillscape?style=for-the-badge&color=ccdd56"/></a>
 </p>
 
 <br>
