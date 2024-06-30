@@ -39,9 +39,9 @@
 ## How to make your Portfolio
 
 - Change Details in following locations.
-- - lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart
-- - lib/view/bottom_nav_bar/home_page/home_screen_data.dart
-- - lib/view/bottom_nav_bar/works/work_screen_data.dart
+  - lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart
+  - lib/view/bottom_nav_bar/home_page/home_screen_data.dart
+  - lib/view/bottom_nav_bar/works/work_screen_data.dart
 
 ## Download 🔥
 [<img src="https://raw.githubusercontent.com/flocke/andOTP/master/assets/badges/get-it-on-github.png" alt="Get it on Releases" height="80">](https://github.com/Prashant-ranjan-singh-123/Food-Mania/releases/download/apk-01/Food.Mania.apk)
