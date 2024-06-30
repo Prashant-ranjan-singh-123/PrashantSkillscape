@@ -58,7 +58,7 @@
    </details>
 </details>
 
-### Flutter Run
+### 2) Install Application
 ```
 flutter run
 ```
