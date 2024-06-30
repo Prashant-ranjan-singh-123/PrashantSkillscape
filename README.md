@@ -39,10 +39,10 @@
 ## How to make your Portfolio
 
 - Change Details in following locations.
-  - lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart
-    <detail>
+- lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart
+    <details>
     <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/feature_graphic.png"/>
-    </detail>
+    </details>
   - lib/view/bottom_nav_bar/home_page/home_screen_data.dart
   - lib/view/bottom_nav_bar/works/work_screen_data.dart
 
