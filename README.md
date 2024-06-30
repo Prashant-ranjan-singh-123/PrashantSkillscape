@@ -41,10 +41,16 @@
 ### 1) Change Details in following locations.
   - lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart
       <details>
-      <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/carrier_data.png"/>
+        <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/carrier_data.png"/>
       </details>
   - lib/view/bottom_nav_bar/home_page/home_screen_data.dart
+      <details>
+        <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/home_data.png"/>
+      </details>
   - lib/view/bottom_nav_bar/works/work_screen_data.dart
+     <details>
+        <img src="hhttps://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/work_data.png"/>
+     </details>
 
 ## Download 🔥
 [<img src="https://raw.githubusercontent.com/flocke/andOTP/master/assets/badges/get-it-on-github.png" alt="Get it on Releases" height="80">](https://github.com/Prashant-ranjan-singh-123/Food-Mania/releases/download/apk-01/Food.Mania.apk)
