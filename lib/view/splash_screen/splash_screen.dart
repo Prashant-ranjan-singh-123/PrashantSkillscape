@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen.dart';
 import '../../shared/global.dart';
 import '../bottom_nav_bar/Global_bottom_nav.dart';
-import '../on_boarding/check_first_run.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
