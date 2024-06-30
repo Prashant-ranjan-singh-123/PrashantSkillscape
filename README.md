@@ -58,7 +58,7 @@
    </details>
 </details>
 
-### 2) Make Apk
+### 2) Build Your Own Apk
 ```
 flutter run build apk --release
 ```
