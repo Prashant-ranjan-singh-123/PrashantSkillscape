@@ -40,7 +40,7 @@
 
 ### 1) Change Details in following locations.
 <details>
-  <summary>Files</summary>
+  <summary>More Detail</summary>
 
 1. lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart
    <details>
