@@ -58,7 +58,22 @@
    </details>
 </details>
 
-### 2) Build Your Own Apk
+### 2) Change Package Name
+```
+https://pub.dev/packages/change_app_package_name
+```
+
+### 3) Change Application Icon
+```
+https://pub.dev/packages/flutter_launcher_icons
+```
+
+### 4) Change App Name
+```
+https://pub.dev/packages/rename_app
+```
+
+### 5) Build Your Customise Apk File
 ```
 flutter run build apk --release
 ```
