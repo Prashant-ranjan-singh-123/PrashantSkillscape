@@ -12,10 +12,10 @@ class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   void showOnboard(){
-    // Future.delayed(const Duration(seconds: 3, milliseconds: 500),(){
-    //   Get.to(const GlobalNavBar(), transition: Transition.rightToLeft, duration: 300.ms
-    //   );
-    // });
+    Future.delayed(const Duration(seconds: 3, milliseconds: 500),(){
+      Get.to(const GlobalNavBar(), transition: Transition.rightToLeft, duration: 300.ms
+      );
+    });
   }
 
   @override
