@@ -83,13 +83,11 @@ flutter run build apk --release
 <a href="https://apt.izzysoft.de/fdroid/index/apk/ru.aleshin.timeplanner" target="_blank">
 
 ## What you get by this app
-- Onboarding Screen UI
-- Amazing Animation Ideas
-- Food Store Application Listing UI
-- Profile UI
-- Detailed Item UI
-- Added to Cart Screen UI
-- Highly Customisable
+- Structure For Portfolio App
+- Showcase Yourself and standout.
+- Your Experiences and Certifications
+- Social Media Handel Deep Links
+- Stand Out In Interview
 
 ## Technologies stack 🚀
 - Clean Architecture 🏛️
