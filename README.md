@@ -36,7 +36,7 @@
 <div>
 <br>
 
-## How to make your Portfolio
+## Create Your Own PortFolio App
 
 ### 1) Change Details in following locations.
 <details>
