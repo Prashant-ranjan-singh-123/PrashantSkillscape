@@ -25,36 +25,38 @@ class CarrierScreenData {
       CarrierScreenLogic.openBachler
     ]
   };
+
+
   static Map<int, dynamic> experience = {
     1: [
       'Oasis Infobyte (Java Intern)',
       'May 2022 - Jun 2022\n\n'
           'During this internship, I gained invaluable experience in applying Java programming concepts to real-world scenarios, significantly enhancing my understanding of software development practices.',
-      CarrierScreenLogic.openBachler
+      CarrierScreenLogic.openOasis
     ],
     2: [
       'SYNC INTERN\'S (App-Dev Intern)',
       'Mar 2023 - Apr 2023 \n\n'
           'During this internship, I gained comprehensive hands-on experience in Android application development, significantly enhancing my understanding of mobile software engineering.',
-      CarrierScreenLogic.openBachler
+      CarrierScreenLogic.openSync
     ],
     3: [
       'CodeClause (App-Dev Intern)',
       'Apr 2023 - May 2023\n\n'
           'This internship has been more than just a learning experience; it has been a stepping stone towards my career in App development. The skills, knowledge, and connections I\'ve gained have laid a strong foundation for my future ',
-      CarrierScreenLogic.openBachler
+      CarrierScreenLogic.openCodeClause
     ],
     4: [
       'CodeClause (App-Dev Intern)',
       'Apr 2023 - May 2023\n\n'
           'This internship has been more than just a learning experience; it has been a stepping stone towards my career in App development. The skills, knowledge, and connections I\'ve gained have laid a strong foundation for my future ',
-      CarrierScreenLogic.openBachler
+      CarrierScreenLogic.openCodeClause
     ],
     5: [
       'CodSoft (App-Dev Intern)',
       'Jul 2023 - Aug 2023\n\n'
           'During this internship, I gained comprehensive hands-on experience in Android app development, mastering key concepts such as UI design, API integration, and animations, while working on real-world projects that honed my problem-solving skills and prepared me for a career in mobile application development.',
-      CarrierScreenLogic.openBachler
+      CarrierScreenLogic.openCodSoft
     ],
     6: [
       'Appzeto (Junior Flutter Dev.)',
@@ -74,4 +76,10 @@ class CarrierScreenData {
   static String tenth_website_link = 'https://gisindore.in/';
   static String twelth_website_link = 'https://sitadevischool.in/';
   static String bachler_website_link = 'https://www.medicaps.ac.in/';
+
+  // -- Experience List Link
+  static String oasis_link = 'https://github.com/Prashant-ranjan-singh-123/OasisInfobyte_Java_Project';
+  static String sync_link = 'https://github.com/Prashant-ranjan-singh-123/Sync-Internship';
+  static String codeClause_link = 'https://github.com/Prashant-ranjan-singh-123/codeclause-internship';
+  static String codSoft_link = 'https://github.com/Prashant-ranjan-singh-123/CodSoft';
 }

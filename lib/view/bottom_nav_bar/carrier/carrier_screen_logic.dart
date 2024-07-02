@@ -37,4 +37,52 @@ class CarrierScreenLogic {
       throw 'Could not launch $url';
     }
   }
+
+  // -- To Open oasis_link Logic --
+  static void openOasis() async {
+    print('object');
+    String dt = CarrierScreenData.oasis_link;
+    Uri url = Uri.parse(dt);
+    try {
+      await launchUrl(url);
+    }catch (e){
+      throw 'Could not launch $url';
+    }
+  }
+
+  // -- To Open sync_link Logic --
+  static void openSync() async {
+    print('object');
+    String dt = CarrierScreenData.sync_link;
+    Uri url = Uri.parse(dt);
+    try {
+      await launchUrl(url);
+    }catch (e){
+      throw 'Could not launch $url';
+    }
+  }
+
+  // -- To Open codeClause_link Logic --
+  static void openCodeClause() async {
+    print('object');
+    String dt = CarrierScreenData.codeClause_link;
+    Uri url = Uri.parse(dt);
+    try {
+      await launchUrl(url);
+    }catch (e){
+      throw 'Could not launch $url';
+    }
+  }
+
+  // -- To Open codSoft_link Logic --
+  static void openCodSoft() async {
+    print('object');
+    String dt = CarrierScreenData.codSoft_link;
+    Uri url = Uri.parse(dt);
+    try {
+      await launchUrl(url);
+    }catch (e){
+      throw 'Could not launch $url';
+    }
+  }
 }

@@ -19,6 +19,13 @@ class CarrierScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                experience().animate()
+                    .scale(
+                    delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
+                    .fadeIn(
+                    delay: 400.ms,
+                    duration: 1000.ms,
+                    curve: Curves.decelerate),
                 education().animate()
                     .scale(
                     delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
@@ -26,13 +33,6 @@ class CarrierScreen extends StatelessWidget {
                     delay: 400.ms,
                     duration: 1000.ms,
                     curve: Curves.decelerate),
-                experience().animate()
-                    .scale(
-                    delay: 1500.ms, duration: 500.ms, curve: Curves.decelerate)
-                    .fadeIn(
-                    delay: 1500.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate)
               ],
             ),
           ),
@@ -87,6 +87,8 @@ class CarrierScreen extends StatelessWidget {
     required Function fun,
   }) {
     return TimelineTile(
+      alignment: TimelineAlign.manual,
+      lineXY: 1, // Adjust this value to move the timeline line closer to the left
       isLast: isLast,
       beforeLineStyle: const LineStyle(
         color: Colors.white,
@@ -97,7 +99,7 @@ class CarrierScreen extends StatelessWidget {
         height: 50,
         color: Colors.white,
       ),
-      endChild: Padding(
+      startChild: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: GestureDetector(
           onTap: () async {
@@ -184,6 +186,10 @@ class CarrierScreen extends StatelessWidget {
 
     return Column(
       children: [
+        SizedBox(height: 40,),
+        const Divider(
+          thickness: 0.5,
+        ),
         heading(heading: 'Education'),
         ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
@@ -198,9 +204,6 @@ class CarrierScreen extends StatelessWidget {
               );
             }),
         SizedBox(height: 40,),
-        const Divider(
-          thickness: 0.5,
-        ),
       ],
     );
   }
