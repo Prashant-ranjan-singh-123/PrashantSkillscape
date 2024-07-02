@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:email_sender/email_sender.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -6,10 +7,10 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:prashant_potfolio/shared/app_assets/AppIcons.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_data.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_logic.dart';
-import 'package:simple_progress_indicators/simple_progress_indicators.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 import '../../../shared/global.dart';
@@ -33,46 +34,86 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                topImageWidget().animate()
+                topImageWidget()
+                    .animate()
                     .scale(
-                    delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
+                        delay: 400.ms,
+                        duration: 500.ms,
+                        curve: Curves.decelerate)
                     .fadeIn(
-                    delay: 400.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate),
-                nameOdDev().animate()
+                        delay: 400.ms,
+                        duration: 1000.ms,
+                        curve: Curves.decelerate),
+                nameOdDev()
+                    .animate()
                     .scale(
-                    delay: 600.ms, duration: 500.ms, curve: Curves.decelerate)
+                        delay: 600.ms,
+                        duration: 500.ms,
+                        curve: Curves.decelerate)
                     .fadeIn(
-                    delay: 600.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate),
-                professionOfDeveloper().animate()
+                        delay: 600.ms,
+                        duration: 1000.ms,
+                        curve: Curves.decelerate),
+                professionOfDeveloper()
+                    .animate()
                     .scale(
-                    delay: 800.ms, duration: 500.ms, curve: Curves.decelerate)
+                        delay: 800.ms,
+                        duration: 500.ms,
+                        curve: Curves.decelerate)
                     .fadeIn(
-                    delay: 800.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate),
-                socialMedia().animate()
+                        delay: 800.ms,
+                        duration: 1000.ms,
+                        curve: Curves.decelerate),
+                socialMedia()
+                    .animate()
                     .scale(
-                    delay: 1000.ms,
-                    duration: 500.ms,
-                    curve: Curves.decelerate)
+                        delay: 1000.ms,
+                        duration: 500.ms,
+                        curve: Curves.decelerate)
                     .fadeIn(
-                    delay: 1000.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate),
-                aboutText().animate()
+                        delay: 1000.ms,
+                        duration: 1000.ms,
+                        curve: Curves.decelerate),
+                aboutText()
+                    .animate()
                     .scale(
-                    delay: 1200.ms,
-                    duration: 500.ms,
-                    curve: Curves.decelerate)
+                        delay: 1200.ms,
+                        duration: 500.ms,
+                        curve: Curves.decelerate)
                     .fadeIn(
-                    delay: 1200.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate),
+                        delay: 1200.ms,
+                        duration: 1000.ms,
+                        curve: Curves.decelerate),
                 skillText()
+                    .animate()
+                    .scale(
+                        delay: 1400.ms,
+                        duration: 500.ms,
+                        curve: Curves.decelerate)
+                    .fadeIn(
+                        delay: 1400.ms,
+                        duration: 1000.ms,
+                        curve: Curves.decelerate),
+                contactMe()
+                    .animate()
+                    .scale(
+                    delay: 1600.ms,
+                    duration: 500.ms,
+                    curve: Curves.decelerate)
+                    .fadeIn(
+                    delay: 1600.ms,
+                    duration: 1000.ms,
+                    curve: Curves.decelerate),
+                socialProfileSelf()
+                    .animate()
+                    .scale(
+                    delay: 1800.ms,
+                    duration: 500.ms,
+                    curve: Curves.decelerate)
+                    .fadeIn(
+                    delay: 1800.ms,
+                    duration: 1000.ms,
+                    curve: Curves.decelerate)
                 // experience()
               ],
             ),
@@ -93,16 +134,18 @@ class _HomeScreenState extends State<HomeScreen> {
     required String heading,
     double paddingTop = 20.0,
     double paddingBottom = 20.0,
+    double fontSize = 40,
     bool isCenter = true,
   }) {
     return Padding(
       padding: EdgeInsets.only(top: paddingTop, bottom: paddingBottom),
       child: isCenter
           ? Center(
-              child: Text(
+              child: AutoSizeText(
                 heading,
-                style: const TextStyle(
-                  fontSize: 40,
+                maxLines: 1,
+                style: TextStyle(
+                  fontSize: fontSize,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w800,
                   color: Colors.white,
@@ -111,8 +154,8 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           : Text(
               heading,
-              style: const TextStyle(
-                fontSize: 40,
+              style: TextStyle(
+                fontSize: fontSize,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w800,
                 color: Colors.white,
@@ -209,7 +252,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget socialMedia() {
     // --Buttons Logic--
-    Widget AppButton({required String Assetname, required Function fun}) {
+    Widget AppButton(
+        {required String Assetname,
+        required Function fun,
+        String iconData = ''}) {
       return Center(
         child: Row(
           children: [
@@ -225,6 +271,38 @@ class _HomeScreenState extends State<HomeScreen> {
                     fun();
                   },
                   icon: Image.asset(Assetname),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: Get.width * 0.03,
+            )
+          ],
+        ),
+      );
+    }
+
+    Widget AppButtonIcon({required IconData Iconname, required Function fun}) {
+      return Center(
+        child: Row(
+          children: [
+            Card(
+              color: Colors.black,
+              elevation: 5,
+              shadowColor: Colors.white,
+              child: SizedBox(
+                width: Get.width * 0.13,
+                height: Get.width * 0.13,
+                child: IconButton(
+                  onPressed: () {
+                    fun();
+                  },
+                  icon: Transform.scale(
+                      scale: 1.7,
+                      child: Icon(
+                        Iconname,
+                        color: Colors.white,
+                      )),
                 ),
               ),
             ),
@@ -258,9 +336,9 @@ class _HomeScreenState extends State<HomeScreen> {
               Assetname: AppAssets.iconTelegram,
               fun: HomeScreenLogic.openTelegram,
             ),
-            AppButton(
-              Assetname: AppAssets.iconInsta,
-              fun: HomeScreenLogic.openInstagram,
+            AppButtonIcon(
+              Iconname: MdiIcons.gmail,
+              fun: HomeScreenLogic.openGmail,
             ),
           ],
         ),
@@ -271,34 +349,115 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget skillText() {
     return Padding(
       padding: const EdgeInsets.only(top: 40),
-      child: Card(
-        color: Colors.black,
-        elevation: 10,
-        shadowColor: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [
-              heading(heading: 'Skills', paddingTop: 0, paddingBottom: 20),
-              const Row(
-                children: [
-                  FlutterLogo(size: 40,),
-                  Expanded(
-                    child: ProgressBar(
-                      value: 0.5,
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [Colors.yellowAccent, Colors.deepOrange],
-                      ),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            heading(heading: 'Skills', paddingTop: 0, paddingBottom: 20),
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3, // number of items in each row
+                mainAxisSpacing: 0.0,
+                crossAxisSpacing: 0.0, // spacing between columns
+              ),
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    CircularPercentIndicator(
+                      animation: true,
+                      animationDuration: 10000,
+                      radius: Get.width / 7.2,
+                      lineWidth: 5,
+                      percent: HomeScreenData.skills[index]![1],
+                      progressColor: Colors.white,
+                      backgroundColor: Colors.white10,
+                      circularStrokeCap: CircularStrokeCap.square,
                     ),
-                  ),
-                ],
-              )
-            ],
-          ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    AutoSizeText(HomeScreenData.skills[index]![0],
+                        maxLines: 2,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                          fontFamily: 'OpenSans',
+                          color: Color.fromRGBO(108, 106, 106, 1),
+                        ))
+                  ],
+                );
+              },
+              itemCount: HomeScreenData.skills.length,
+            )
+          ],
         ),
       ),
+    );
+  }
+
+  Widget contactMe() {
+    return Column(
+      children: [
+        heading(heading: 'Contact', fontSize: 40),
+        const Text(
+          HomeScreenData.contactDescription,
+          style: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 20,
+            fontFamily: 'OpenSans',
+            color: Colors.white70,
+          ),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+      ],
+    );
+  }
+
+  Widget socialProfileSelf(){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        heading(heading: 'Social Profile', fontSize: 30),
+        Container(
+            height: Get.height * 0.35,
+            padding: const EdgeInsets.all(38),
+            child: AnimatedStackWidget(
+              itemCount: HomeScreenData.socialLink.length,
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  switch (index) {
+                    case 0:
+                      HomeScreenLogic.openWebsite();
+                      break;
+                    case 1:
+                      HomeScreenLogic.openGithub();
+                      break;
+                    case 2:
+                      HomeScreenLogic.openLinkedin();
+                      break;
+                    case 3:
+                      HomeScreenLogic.openTelegram();
+                      break;
+                    case 4:
+                      HomeScreenLogic.openGmail();
+                      break;
+                  }
+                },
+                child: MagazineCoverImage(
+                  image: HomeScreenData.socialLink[index]![0],
+                ),
+              ),
+            )
+                .animate()
+                .scale(
+                delay: 700.ms, duration: 500.ms, curve: Curves.decelerate)
+                .fadeIn(
+                delay: 700.ms, duration: 1000.ms, curve: Curves.decelerate))
+      ],
     );
   }
 }

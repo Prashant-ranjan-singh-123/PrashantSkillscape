@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:prashant_potfolio/shared/app_assets/AppIcons.dart';
 
 class WorkScreenData {
@@ -18,7 +19,7 @@ class WorkScreenData {
     0: [
       'Doctor On Home',
       'This app, built with care, connects you to top-notch doctors at your fingertips. Skip the waiting rooms and experience healthcare on-demand. Let Heal on Call be your pocket-sized clinic, available whenever you need it.',
-      'https://raw.githubusercontent.com/Prashant-ranjan-singh-123/doctor-on-home/master/readme_image/preview.png',
+      AppAssets.featureGraphicDoctorOnHome,
       AppAssets.appScreenDoctorOnHome,
       'PlayStore',
       {
@@ -31,7 +32,7 @@ class WorkScreenData {
     1: [
       'Mathmaica Mind',
       'Mathmaica Mind learning arithmetic fun and challenging! Choose your difficulty and test your skills in a gamified experience, and start the game.',
-      'https://raw.githubusercontent.com/Prashant-ranjan-singh-123/Mathmatica-Mind/main/readme_image/preview.png',
+      AppAssets.featureGraphicMathmaticaMind,
       AppAssets.appScreenMathmaticaMind,
       'Playstore | Github',
       {
@@ -44,7 +45,7 @@ class WorkScreenData {
     2: [
       'Food Mania',
       'Get ready to tantalize your taste buds and unleash your inner chef with Food Mania, a recipe app built with love using Flutter! Immerse yourself in a world of culinary delights as you browse through our ever-growing collection of delicious dishes.',
-      'https://raw.githubusercontent.com/Prashant-ranjan-singh-123/Food-Mania/main/readme_images/feature_graphic.png',
+      AppAssets.featureGraphicFoodMania,
       AppAssets.appScreenFoodMania,
       'Playstore | Github',
       {
@@ -56,7 +57,7 @@ class WorkScreenData {
     3: [
       'ShoeHaven',
       'Welcome to our sleek and stylish shoe-buying app, built entirely with Flutter. Immerse yourself in a world of modern design and seamless animations as you browse through our collection of footwear.',
-      'https://raw.githubusercontent.com/Prashant-ranjan-singh-123/shoe_haven/main/readme_stuff/feature_graphic.png',
+      AppAssets.featureGraphicShoeHaven,
       AppAssets.appScreenShoeHaven,
       'Playstore | Github',
       {
@@ -66,7 +67,7 @@ class WorkScreenData {
     4: [
       'Priority list',
       'This comprehensive app empowers you to manage to-do\'s, manage time and notify about your daily rutine tasks. From streamlined installation to free UI, Priority List equips you for success.',
-      'https://raw.githubusercontent.com/Prashant-ranjan-singh-123/Priority-list-task/main/readme/preview.png',
+      AppAssets.featureGraphicPriorityList,
       AppAssets.appScreenPriorityList,
       'Github',
       {
@@ -78,7 +79,7 @@ class WorkScreenData {
     5: [
       'Flutter Unwrapped',
       'Flutter Unwrapped unlocks the world of Flutter development on your mobile device. This comprehensive app empowers you to learn the fundamentals, build practical skills, and prepare for your Flutter developer journey. From streamlined installation to free UI kits, Flutter Unwrapped equips you for success.',
-      'https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter-Unwrapped/master/readme_image/preview.png',
+      AppAssets.featureGraphicFlutterUnwrapped,
       AppAssets.appScreenFlutterUnwrapped,
       'Github',
       {
@@ -90,7 +91,7 @@ class WorkScreenData {
     6: [
       'Skilled Worker',
       'It\'s a notification app that allows users to sign up with specific categories like Doctor, Photographer, Programmer etc. Upon signup, the chosen category is attached to the profile. With a premium plan, users can send notifications to specific groups or all members of the app. Notifications include a title, message, and an image that others can download.',
-      'https://raw.githubusercontent.com/Prashant-ranjan-singh-123/skilled-worker/main/readme_image/preview.png',
+      AppAssets.featureGraphicSkilledWorker,
       AppAssets.appScreenSkilledWorker,
       'Linkedin Only',
       {
@@ -100,6 +101,7 @@ class WorkScreenData {
       }
     ],
   };
+
 
   static Widget customCard({required List<dynamic> experience}) {
     return Padding(
@@ -115,78 +117,75 @@ class WorkScreenData {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-          child: Row(
-            children: [
-              Expanded(
-                flex: 3,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AutoSizeText(experience[0],
-                        maxLines: 1,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w900,
-                          fontSize: 23,
-                          color: Colors.black,
-                          fontFamily: 'Merriweather',
-                        )),
-                    Expanded(
-                      child: SizedBox(
-                        child: SingleChildScrollView(
-                            child: Text(
-                          experience[1],
+          child: SizedBox(
+            height: Get.height*0.2,
+            width: Get.width,
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AutoSizeText(experience[0],
+                          maxLines: 1,
                           style: const TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: Color.fromRGBO(108, 106, 106, 1),
+                            fontWeight: FontWeight.w900,
+                            fontSize: 23,
+                            color: Colors.black,
                             fontFamily: 'Merriweather',
-                          ),
-                        )),
+                          )),
+                      Expanded(
+                        child: SizedBox(
+                          child: SingleChildScrollView(
+                              child: Text(
+                                experience[1],
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  color: Color.fromRGBO(108, 106, 106, 1),
+                                  fontFamily: 'Merriweather',
+                                ),
+                              )),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    // const Spacer(),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
-                            elevation: 10,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)))),
-                        onPressed: () {
-                          // Get.to(ExpandItemPage(
-                          //   name: _custom_cursol[index][1],
-                          //   price: 45.toString(),
-                          //   image: _custom_cursol[index][0],
-                          // ), transition: Transition.fadeIn, duration: 200.ms);
-                        },
-                        child: const Text(
-                          '     Know More    ',
-                          style: TextStyle(color: Colors.white),
-                        ))
-                  ],
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: FittedBox(
-                  fit: BoxFit.contain,
-                  child: Transform.scale(
-                    scale: 1,
-                    child: Image.asset(
-                      experience[3],
-                    ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      // const Spacer(),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.black,
+                              elevation: 10,
+                              shape: const RoundedRectangleBorder(
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(10)))),
+                          onPressed: () {
+                            // Get.to(ExpandItemPage(
+                            //   name: _custom_cursol[index][1],
+                            //   price: 45.toString(),
+                            //   image: _custom_cursol[index][0],
+                            // ), transition: Transition.fadeIn, duration: 200.ms);
+                          },
+                          child: const Text(
+                            '     Know More    ',
+                            style: TextStyle(color: Colors.white),
+                          ))
+                    ],
                   ),
                 ),
-              )
-            ],
+                Expanded(
+                  flex: 1,
+                  child: Image.asset(
+                    experience[3],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
     );
-    ;
   }
 }

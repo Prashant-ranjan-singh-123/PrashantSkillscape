@@ -138,8 +138,6 @@ flutter run
 ## TODO
 
 - [ ] Add Documentation.
-- [ ] Add Supabase Backend.
-- [ ] Add Google SignIn & Gmail SignIn.
 - [ ] Make Profile Screen UI.
 - [ ] Add Native Splash Screen.
 - [ ] Getx State Management.

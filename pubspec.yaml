@@ -49,10 +49,10 @@ dependencies:
   tutorial_coach_mark: ^1.2.11
   android_intent_plus: ^5.0.2
   url_launcher: ^6.3.0
-  lottie: ^3.1.2
   iconsax: ^0.0.8
   timeline_tile: ^2.0.0
-  simple_progress_indicators: ^0.2.0
+  percent_indicator: ^3.4.0
+  email_sender: ^1.4.0
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +81,7 @@ flutter:
     - asset/image/
     - asset/image/project_image/screen/
     - asset/image/project_image/feature_graphic/
+    - asset/image/social3by4AspecRatioImage/
     - asset/font/
     - asset/lottie/
 

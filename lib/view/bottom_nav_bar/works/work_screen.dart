@@ -123,45 +123,49 @@ class _HomeScreenState extends State<WorkScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              heading_and_subtitle_top()
-                  .animate()
-                  .scale(
-                      delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
-                  .desaturate(
-                      delay: 400.ms,
-                      duration: 1000.ms,
-                      curve: Curves.decelerate),
-              CustomCoursalSclider()
-                  .animate()
-                  .scale(
-                      delay: 600.ms, duration: 500.ms, curve: Curves.decelerate)
-                  .fadeIn(
-                      delay: 600.ms,
-                      duration: 1000.ms,
-                      curve: Curves.decelerate),
-              types()
-                  .animate()
-                  .scale(
-                      delay: 800.ms, duration: 500.ms, curve: Curves.decelerate)
-                  .fadeIn(
-                      delay: 800.ms,
-                      duration: 1000.ms,
-                      curve: Curves.decelerate),
-              grid_view_items()
-                  .animate()
-                  .scale(
-                      delay: 1000.ms,
-                      duration: 500.ms,
-                      curve: Curves.decelerate)
-                  .fadeIn(
-                      delay: 1000.ms,
-                      duration: 1000.ms,
-                      curve: Curves.decelerate)
-            ],
+        child: SizedBox(
+          width: Get.width,
+          height: Get.height,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                heading_and_subtitle_top()
+                    .animate()
+                    .scale(
+                        delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
+                    .desaturate(
+                        delay: 400.ms,
+                        duration: 1000.ms,
+                        curve: Curves.decelerate),
+                CustomCoursalSclider()
+                    .animate()
+                    .scale(
+                        delay: 600.ms, duration: 500.ms, curve: Curves.decelerate)
+                    .fadeIn(
+                        delay: 600.ms,
+                        duration: 1000.ms,
+                        curve: Curves.decelerate),
+                types()
+                    .animate()
+                    .scale(
+                        delay: 800.ms, duration: 500.ms, curve: Curves.decelerate)
+                    .fadeIn(
+                        delay: 800.ms,
+                        duration: 1000.ms,
+                        curve: Curves.decelerate),
+                grid_view_items()
+                    .animate()
+                    .scale(
+                        delay: 1000.ms,
+                        duration: 500.ms,
+                        curve: Curves.decelerate)
+                    .fadeIn(
+                        delay: 1000.ms,
+                        duration: 1000.ms,
+                        curve: Curves.decelerate)
+              ],
+            ),
           ),
         ),
       ),
@@ -219,8 +223,7 @@ class _HomeScreenState extends State<WorkScreen> {
           enlargeCenterPage: true,
           enlargeFactor: 0.3,
           onPageChanged: (page, _) {
-            // con.animateToPage(page,
-            //     duration: Duration(milliseconds: 500), curve: Curves.ease);
+
           },
           scrollDirection: Axis.horizontal,
         ),
@@ -264,10 +267,7 @@ class _HomeScreenState extends State<WorkScreen> {
     Widget first_item(int index) {
       return GestureDetector(
         onTap: () {
-          // Get.to(ExpandItemPage(
-          //     name: '${_showcase[index][2]}',
-          //     price: '${_showcase[index][1]}',
-          //     image: '${_showcase[index][0]}'));
+
         },
         child: Column(
           children: [
@@ -277,7 +277,7 @@ class _HomeScreenState extends State<WorkScreen> {
               shadowColor: Colors.grey.withOpacity(0.8),
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: Image.network(WorkScreenData.experience[index][2], fit: BoxFit.contain,)),
+                  child: Image.asset(WorkScreenData.experience[index][2], fit: BoxFit.contain,)),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10),
@@ -337,7 +337,7 @@ class _HomeScreenState extends State<WorkScreen> {
               shadowColor: Colors.grey.withOpacity(0.8),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.network(
+                child: Image.asset(
                   WorkScreenData.experience[index][2],
                   fit: BoxFit.contain,
                 ),
@@ -399,24 +399,22 @@ class _HomeScreenState extends State<WorkScreen> {
       }
     }
 
-    return SizedBox(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // number of items in each row
-            mainAxisSpacing: 10.0, // spacing between rows
-            childAspectRatio: 1 / 1,
-            crossAxisSpacing: 25.0, // spacing between columns
-          ),
-          itemBuilder: (context, index) {
-            return build_grid_view(index);
-          },
-          itemCount: WorkScreenData.experience.length,
-          // itemCount: 1, // Number of items you want to display
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: GridView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, // number of items in each row
+          mainAxisSpacing: 10.0, // spacing between rows
+          childAspectRatio: 1 / 1,
+          crossAxisSpacing: 25.0, // spacing between columns
         ),
+        itemBuilder: (context, index) {
+          return build_grid_view(index);
+        },
+        itemCount: WorkScreenData.experience.length,
+        // itemCount: 1, // Number of items you want to display
       ),
     );
   }

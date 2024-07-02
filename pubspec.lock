@@ -9,14 +9,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.2"
-  archive:
-    dependency: transitive
-    description:
-      name: archive
-      sha256: cb6a278ef2dbb298455e1a713bda08524a175630ec643a242c399c932a0a1f7d
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.6.1"
   async:
     dependency: transitive
     description:
@@ -89,6 +81,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  email_sender:
+    dependency: "direct main"
+    description:
+      name: email_sender
+      sha256: "96046d42999079b040ad8885d030ad3a5f0194405e56900c7e1dde27eed2be2d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.0"
   fake_async:
     dependency: transitive
     description:
@@ -168,6 +168,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.6"
+  hex:
+    dependency: transitive
+    description:
+      name: hex
+      sha256: "4e7cd54e4b59ba026432a6be2dd9d96e4c5205725194997193bf871703b82c4a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   hexcolor:
     dependency: "direct main"
     description:
@@ -180,10 +188,10 @@ packages:
     dependency: transitive
     description:
       name: http
-      sha256: "761a297c042deedc1ffbb156d6e2af13886bb305c2a343a4d972504cd67dd938"
+      sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.1"
+    version: "0.13.6"
   http_parser:
     dependency: transitive
     description:
@@ -232,14 +240,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
-  lottie:
-    dependency: "direct main"
-    description:
-      name: lottie
-      sha256: "6a24ade5d3d918c306bb1c21a6b9a04aab0489d51a2582522eea820b4093b62b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.2"
   matcher:
     dependency: transitive
     description:
@@ -304,6 +304,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.1"
+  percent_indicator:
+    dependency: "direct main"
+    description:
+      name: percent_indicator
+      sha256: "0c9824a4e10f19bb56bac9b0998765fdd665199a8b1eb5859854a26e8ef71fd7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.4.0"
   platform:
     dependency: transitive
     description:
@@ -320,6 +328,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.8"
+  quiver:
+    dependency: transitive
+    description:
+      name: quiver
+      sha256: b1c1ac5ce6688d77f65f3375a9abb9319b3cb32486bdc7a1e0fdf004d7ba4e47
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.1"
+  requests:
+    dependency: transitive
+    description:
+      name: requests
+      sha256: "18b5511c2d6cca922260d0c38e78ed76d4a359fea966fcb4aebe30d8351638ef"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.7.0"
   scratcher:
     dependency: "direct main"
     description:
@@ -384,14 +408,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
-  simple_progress_indicators:
-    dependency: "direct main"
-    description:
-      name: simple_progress_indicators
-      sha256: f914a6a81633eae593babbdf78bc26a06d6ec09685a05d53aa2bc45bba228f60
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.0"
   sky_engine:
     dependency: transitive
     description: flutter

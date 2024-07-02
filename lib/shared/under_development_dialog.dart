@@ -3,7 +3,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Development{
@@ -46,10 +45,10 @@ class Development{
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(
-              width: 200,
-              child: Lottie.asset('assets/lottie/under_construction.json', reverse: true),
-            ),
+            // SizedBox(
+            //   width: 200,
+            //   child: Lottie.asset('assets/lottie/under_construction.json', reverse: true),
+            // ),
             const SizedBox(height: 32),
             const Text(
               maxLines: 1,
