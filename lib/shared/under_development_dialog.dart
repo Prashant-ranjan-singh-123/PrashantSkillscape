@@ -1,8 +1,7 @@
 import 'package:android_intent_plus/android_intent.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Development{
@@ -35,7 +34,7 @@ class Development{
   static void showDialogBox() {
     Get.dialog(
       AlertDialog(
-        backgroundColor: Color.fromRGBO(236, 236, 236, 1),
+        backgroundColor: const Color.fromRGBO(236, 236, 236, 1),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
@@ -89,8 +88,8 @@ class Development{
                       SizedBox(
                         height: 20,
                           width: 20,
-                          child: Image.asset("assets/image/github.png", color: Colors.white,)),
-                      SizedBox(width: 10,),
+                          child: Icon(MdiIcons.github, color: Colors.white,)),
+                      const SizedBox(width: 10,),
                       const Text(
                         "Contribute",
                         style: TextStyle(

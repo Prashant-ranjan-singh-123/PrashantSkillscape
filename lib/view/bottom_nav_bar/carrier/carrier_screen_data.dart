@@ -8,6 +8,7 @@ class CarrierScreenData {
   static String role = 'Mobile Developer | Flutter Developer';
   static String discription_short =
       'Hello there! My name is Prashant Ranjan Singh, and I am a skilled Software Engineer who specializes in developing Flutter applications. I hold a Bachelor\'s degree in Btech Cse from Medicaps University and have been working in the field for about approximately 1+ years. I am adept at creating mobile apps that are both efficient and user-friendly, and I possess proficiency in various technologies, including Firebase, Supabase, Figma, and Flutter. I am passionate about staying up-to-date with industry trends and technologies to deliver top-notch software solutions.';
+
   static Map<int, dynamic> education = {
     1: [
       'Golden International School (X)',

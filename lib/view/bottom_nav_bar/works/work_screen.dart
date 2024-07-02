@@ -9,6 +9,8 @@ import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/works/work_screen_data.dart';
 
+import '../../../shared/detail_show_screen/show_detail.dart';
+
 class WorkScreen extends StatefulWidget {
   WorkScreen({super.key});
 
@@ -267,7 +269,15 @@ class _HomeScreenState extends State<WorkScreen> {
     Widget first_item(int index) {
       return GestureDetector(
         onTap: () {
-
+          Get.to(
+              ShowDetail(
+                  heading: WorkScreenData.experience[index][0],
+                  imageLocation: WorkScreenData.experience[index][2],
+                  shortDiscription: WorkScreenData.experience[index][1],
+                  playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
+                  githubLink: WorkScreenData.experience[index][5]['Link'][0]),
+              transition: Transition.fadeIn,
+              duration: 500.ms);
         },
         child: Column(
           children: [
@@ -324,10 +334,15 @@ class _HomeScreenState extends State<WorkScreen> {
     Widget rest_item(int index) {
       return GestureDetector(
         onTap: () {
-          // Get.to(ExpandItemPage(
-          //     name: '${_showcase[index][2]}',
-          //     price: '${_showcase[index][1]}',
-          //     image: '${_showcase[index][0]}'));
+          Get.to(
+              ShowDetail(
+                  heading: WorkScreenData.experience[index][0],
+                  imageLocation: WorkScreenData.experience[index][2],
+                  shortDiscription: WorkScreenData.experience[index][1],
+                  playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
+                  githubLink: WorkScreenData.experience[index][5]['Link'][0]),
+              transition: Transition.fadeIn,
+              duration: 500.ms);
         },
         child: Column(
           children: [
@@ -354,7 +369,7 @@ class _HomeScreenState extends State<WorkScreen> {
                       child: AutoSizeText(
                         '${WorkScreenData.experience[index][0]}',
                         maxLines: 1,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.w900,
                           fontFamily: 'Poppins',
                         ),
