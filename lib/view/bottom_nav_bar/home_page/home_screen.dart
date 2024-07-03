@@ -379,7 +379,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 10,
                     ),
                     AutoSizeText(HomeScreenData.skills[index]![0],
-                        maxLines: 2,
+                        maxLines: 1,
                         style: const TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 15,
