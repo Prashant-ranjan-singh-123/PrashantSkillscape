@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import 'carrier/carrier_screen.dart';
@@ -23,7 +21,6 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
   int _selectedIndex=0;
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: Colors.black,
       body: _current_screen(),
@@ -33,6 +30,7 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
           delay: 1000.ms,
           duration: 1000.ms,
           curve: Curves.decelerate)
+
       ,
     );
   }

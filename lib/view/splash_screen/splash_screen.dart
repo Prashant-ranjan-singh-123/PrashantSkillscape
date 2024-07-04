@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:prashant_potfolio/shared/detail_show_screen/show_detail.dart';
-import 'package:prashant_potfolio/view/bottom_nav_bar/works/work_screen_data.dart';
 import '../../shared/global.dart';
 import '../bottom_nav_bar/Global_bottom_nav.dart';
 
