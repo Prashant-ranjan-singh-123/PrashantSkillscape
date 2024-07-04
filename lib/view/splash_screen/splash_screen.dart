@@ -8,65 +8,84 @@ import 'package:prashant_potfolio/view/bottom_nav_bar/works/work_screen_data.dar
 import '../../shared/global.dart';
 import '../bottom_nav_bar/Global_bottom_nav.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
-  void showOnboard() {
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  Future<void> showOnboard() async {
     Future.delayed(const Duration(seconds: 3, milliseconds: 500), () {
-      // Get.to(
-      //     ShowDetail(
-      //         heading: WorkScreenData.experience[0][0],
-      //         imageLocation: WorkScreenData.experience[0][2],
-      //         shortDiscription: WorkScreenData.experience[0][1],
-      //         playstoreLink: WorkScreenData.experience[0][5]['Link'][0],
-      //         githubLink: WorkScreenData.experience[0][5]['Link'][0]),
-      //     transition: Transition.rightToLeft,
-      //     duration: 300.ms);
-      Get.to(const GlobalNavBar(), transition: Transition.rightToLeft, duration: 300.ms);
+      Get.to(const GlobalNavBar(),
+          transition: Transition.rightToLeft, duration: 300.ms);
     });
   }
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
     showOnboard();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
-        child: SizedBox(
-          width: returnSizeOfScreenWhichIsSmaller() * 0.8,
-          height: returnSizeOfScreenWhichIsSmaller() * 0.8,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: returnSizeOfScreenWhichIsSmaller() * 0.5,
-                height: returnSizeOfScreenWhichIsSmaller() * 0.5,
-                child: Image.asset('asset/image/prashant.png')
-                    .animate()
-                    .fadeIn(duration: 2000.ms)
-                    .slideY(duration: 1000.ms, curve: Curves.decelerate),
-              ),
-              const AutoSizeText(
-                maxLines: 1,
-                'PrashantSkillscape',
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w900,
-                    fontFamily: 'Poppins',
-                    color: Colors.white),
-              ).animate().fadeIn(duration: 1000.ms, delay: 500.ms),
-              const AutoSizeText(
-                maxLines: 1,
-                '---Flutter Developer---',
-                style: TextStyle(fontFamily: 'OpenSans', color: Colors.white),
-              )
-                  .animate()
-                  .fadeIn(duration: 1500.ms, delay: 500.ms)
-                  .scaleY(duration: 1000.ms, curve: Curves.decelerate)
-            ],
-          ),
+      body: myCustomColumn(children: [
+        logo()
+            .animate()
+            .fadeIn(duration: 2000.ms)
+            .slideY(duration: 1000.ms, curve: Curves.decelerate),
+        nameOfApp()
+            .animate()
+            .fadeIn(duration: 1000.ms, delay: 500.ms),
+        shortDiscription()
+            .animate()
+            .fadeIn(duration: 1500.ms, delay: 500.ms)
+            .scaleY(duration: 1000.ms, curve: Curves.decelerate)
+      ]),
+    );
+  }
+
+  Widget myCustomColumn({required List<Widget> children}) {
+    return Center(
+      child: SizedBox(
+        width: returnSizeOfScreenWhichIsSmaller() * 0.8,
+        height: returnSizeOfScreenWhichIsSmaller() * 0.8,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: children,
         ),
       ),
+    );
+  }
+
+  Widget logo() {
+    return SizedBox(
+        width: returnSizeOfScreenWhichIsSmaller() * 0.5,
+        height: returnSizeOfScreenWhichIsSmaller() * 0.5,
+        child: Image.asset('asset/image/prashant.png'));
+  }
+
+  Widget nameOfApp() {
+    return const AutoSizeText(
+      maxLines: 1,
+      'PrashantSkillscape',
+      style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w900,
+          fontFamily: 'Poppins',
+          color: Colors.white),
+    );
+  }
+
+  Widget shortDiscription() {
+    return const AutoSizeText(
+      maxLines: 1,
+      '---Flutter Developer---',
+      style: TextStyle(fontFamily: 'OpenSans', color: Colors.white),
     );
   }
 }

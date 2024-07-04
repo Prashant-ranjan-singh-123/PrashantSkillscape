@@ -8,6 +8,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import 'carrier/carrier_screen.dart';
+import 'certificate/certificate_screen.dart';
 import 'home_page/home_screen.dart';
 import 'works/work_screen.dart';
 
@@ -44,7 +45,7 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
     }else if(_selectedIndex ==2){
       return WorkScreen();
     }else {
-      return HomeScreen();
+      return const CertificateScreen();
     }
   }
 
@@ -64,7 +65,7 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
           title: const Text('Myself', style: TextStyle(color: Colors.white, fontSize: 15),),
         ),
         FlashyTabBarItem(
-          icon: const Icon(Icons.school, color: Colors.white,),
+          icon: const Icon(Icons.school_outlined, color: Colors.white,),
           title: const Text('Carrier', style: TextStyle(color: Colors.white, fontSize: 15)),
         ),
         FlashyTabBarItem(
@@ -72,8 +73,8 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
           title: const Text('Works', style: TextStyle(color: Colors.white, fontSize: 15)),
         ),
         FlashyTabBarItem(
-          icon: Icon(MdiIcons.certificate, color: Colors.white,),
-          title: Text('Certificate', style: TextStyle(color: Colors.white, fontSize: 15)),
+          icon: Icon(MdiIcons.certificateOutline, color: Colors.white,),
+          title: const Text('Certificate', style: TextStyle(color: Colors.white, fontSize: 15)),
         ),
       ],
     );
