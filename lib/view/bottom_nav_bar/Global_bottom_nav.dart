@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
 import 'carrier/carrier_screen.dart';
-import 'certificate/certificate_screen.dart';
 import 'home_page/home_screen.dart';
 import 'works/work_screen.dart';
 
@@ -40,11 +38,12 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
       return HomeScreen();
     }else if(_selectedIndex ==1){
       return CarrierScreen();
-    }else if(_selectedIndex ==2){
-      return WorkScreen();
     }else {
-      return const CertificateScreen();
+      return WorkScreen();
     }
+      // else {
+    //   return const CertificateScreen();
+    // }
   }
 
   Widget bottom_nav_bar(){
@@ -70,10 +69,10 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
           icon: Icon(MdiIcons.googlePlay, color: Colors.white,),
           title: const Text('Works', style: TextStyle(color: Colors.white, fontSize: 15)),
         ),
-        FlashyTabBarItem(
-          icon: Icon(MdiIcons.certificateOutline, color: Colors.white,),
-          title: const Text('Certificate', style: TextStyle(color: Colors.white, fontSize: 15)),
-        ),
+        // FlashyTabBarItem(
+        //   icon: Icon(MdiIcons.certificateOutline, color: Colors.white,),
+        //   title: const Text('Certificate', style: TextStyle(color: Colors.white, fontSize: 15)),
+        // ),
       ],
     );
   }
