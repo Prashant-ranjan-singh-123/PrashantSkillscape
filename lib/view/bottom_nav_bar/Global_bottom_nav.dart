@@ -30,7 +30,6 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
           delay: 1000.ms,
           duration: 1000.ms,
           curve: Curves.decelerate)
-
       ,
     );
   }
