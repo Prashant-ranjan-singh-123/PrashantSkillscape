@@ -216,17 +216,24 @@ class BottomSheetLogic{
     Get.back();
   }
 
+
+
   static void send_button_logic(){
     Development.showDialogBox();
   }
+
+
 
   static void open_github_project({required String link}){
     BottomSheetLogic.openGithub(dt: link);
   }
 
+
+
   static void open_playstore_project({required String link}){
     BottomSheetLogic.openPlayStore(dt: link);
   }
+
 
 
   // -- To Open Github with Link Logic --
@@ -253,6 +260,7 @@ class BottomSheetLogic{
       }
     }
   }
+
 
 
   // Function to open Play Store link
