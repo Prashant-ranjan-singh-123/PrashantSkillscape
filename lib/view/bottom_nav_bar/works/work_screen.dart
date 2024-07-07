@@ -6,12 +6,10 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/works/work_screen_data.dart';
+import '../../../shared/global_widgets.dart';
 
-import '../../../shared/detail_show_screen/show_detail.dart';
-
-class WorkScreen extends StatefulWidget {
+class WorkScreen extends StatefulWidget{
   WorkScreen({super.key});
 
   @override
@@ -19,7 +17,6 @@ class WorkScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<WorkScreen> {
-
   @override
   void initState() {}
 
@@ -39,7 +36,9 @@ class _HomeScreenState extends State<WorkScreen> {
                 heading_and_subtitle_top()
                     .animate()
                     .scale(
-                        delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
+                        delay: 400.ms,
+                        duration: 500.ms,
+                        curve: Curves.decelerate)
                     .desaturate(
                         delay: 400.ms,
                         duration: 1000.ms,
@@ -47,7 +46,9 @@ class _HomeScreenState extends State<WorkScreen> {
                 CustomCoursalSclider()
                     .animate()
                     .scale(
-                        delay: 600.ms, duration: 500.ms, curve: Curves.decelerate)
+                        delay: 600.ms,
+                        duration: 500.ms,
+                        curve: Curves.decelerate)
                     .fadeIn(
                         delay: 600.ms,
                         duration: 1000.ms,
@@ -55,7 +56,9 @@ class _HomeScreenState extends State<WorkScreen> {
                 types()
                     .animate()
                     .scale(
-                        delay: 800.ms, duration: 500.ms, curve: Curves.decelerate)
+                        delay: 800.ms,
+                        duration: 500.ms,
+                        curve: Curves.decelerate)
                     .fadeIn(
                         delay: 800.ms,
                         duration: 1000.ms,
@@ -128,9 +131,7 @@ class _HomeScreenState extends State<WorkScreen> {
           autoPlayCurve: Curves.fastOutSlowIn,
           enlargeCenterPage: true,
           enlargeFactor: 0.3,
-          onPageChanged: (page, _) {
-
-          },
+          onPageChanged: (page, _) {},
           scrollDirection: Axis.horizontal,
         ),
       ),
@@ -138,7 +139,6 @@ class _HomeScreenState extends State<WorkScreen> {
   }
 
   Widget types() {
-
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 45),
       child: Center(
@@ -173,15 +173,21 @@ class _HomeScreenState extends State<WorkScreen> {
     Widget first_item(int index) {
       return GestureDetector(
         onTap: () {
-          Get.to(
-              ShowDetail(
+          Get.bottomSheet(
+              BottonSheet().bottomSheet(
                   heading: WorkScreenData.experience[index][0],
                   imageLocation: WorkScreenData.experience[index][2],
                   shortDiscription: WorkScreenData.experience[index][1],
                   playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
-                  githubLink: WorkScreenData.experience[index][5]['Link'][0]),
-              transition: Transition.fadeIn,
-              duration: 500.ms);
+                  githubLink: WorkScreenData.experience[index][5]['Link'][1]),
+              isScrollControlled: false,
+              backgroundColor: Colors.transparent,
+              enterBottomSheetDuration: const Duration(milliseconds: 300),
+              exitBottomSheetDuration: const Duration(milliseconds: 300),
+              barrierColor: Colors.black.withOpacity(0.8),
+              elevation: 5,
+              isDismissible: false
+          );
         },
         child: Column(
           children: [
@@ -191,44 +197,19 @@ class _HomeScreenState extends State<WorkScreen> {
               shadowColor: Colors.grey.withOpacity(0.8),
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(WorkScreenData.experience[index][2], fit: BoxFit.contain,)),
+                  child: Image.asset(
+                    WorkScreenData.experience[index][2],
+                    fit: BoxFit.contain,
+                  )),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  AutoSizeText('${WorkScreenData.experience[index][0]}',
-                      maxLines: 1,
-                      style: TextStyle(
-                          fontWeight: FontWeight.w900,
-                          fontSize: Get.width*0.4,
-                          fontFamily: 'Poppins')),
-
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 45),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Center(
-                            child: AutoSizeText(
-                              WorkScreenData.experience[index][4],
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18,
-                                fontFamily: 'OpenSans',
-                                color: Color.fromRGBO(108, 106, 106, 1),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+              child: AutoSizeText('${WorkScreenData.experience[index][0]}',
+                  maxLines: 1,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: Get.width * 0.4,
+                      fontFamily: 'Poppins')),
             )
           ],
         ),
@@ -238,15 +219,22 @@ class _HomeScreenState extends State<WorkScreen> {
     Widget rest_item(int index) {
       return GestureDetector(
         onTap: () {
-          Get.to(
-              ShowDetail(
-                  heading: WorkScreenData.experience[index][0],
-                  imageLocation: WorkScreenData.experience[index][2],
-                  shortDiscription: WorkScreenData.experience[index][1],
-                  playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
-                  githubLink: WorkScreenData.experience[index][5]['Link'][0]),
-              transition: Transition.fadeIn,
-              duration: 500.ms);
+          Get.bottomSheet(
+              BottonSheet().bottomSheet(
+              heading: WorkScreenData.experience[index][0],
+              imageLocation: WorkScreenData.experience[index][2],
+              shortDiscription: WorkScreenData.experience[index][1],
+              playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
+              githubLink: WorkScreenData.experience[index][5]['Link'][1],
+            ),
+              isScrollControlled: false,
+              backgroundColor: Colors.transparent,
+              enterBottomSheetDuration: const Duration(milliseconds: 300),
+              exitBottomSheetDuration: const Duration(milliseconds: 300),
+              barrierColor: Colors.black.withOpacity(0.8),
+              elevation: 5,
+              isDismissible: false
+          );
         },
         child: Column(
           children: [
@@ -276,28 +264,6 @@ class _HomeScreenState extends State<WorkScreen> {
                         style: const TextStyle(
                           fontWeight: FontWeight.w900,
                           fontFamily: 'Poppins',
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 45),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Center(
-                      child: AutoSizeText(
-                        WorkScreenData.experience[index][4],
-                        maxLines: 1,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                          fontFamily: 'OpenSans',
-                          color: Color.fromRGBO(108, 106, 106, 1),
                         ),
                       ),
                     ),

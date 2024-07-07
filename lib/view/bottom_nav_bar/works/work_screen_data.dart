@@ -1,11 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
-import 'package:prashant_potfolio/shared/app_assets/AppIcons.dart';
-
-import '../../../shared/detail_show_screen/show_detail.dart';
+import 'package:prashant_potfolio/shared/app_asset.dart';
+import '../../../shared/global_widgets.dart';
+import '../../../shared/under_development_dialog.dart';
 
 class WorkScreenData {
   static List<Widget> cursol_slider_item = [
@@ -21,25 +20,14 @@ class WorkScreenData {
   static Map<int, dynamic> experience = {
     0: [
       'Doctor On Home',
-      '''Heal on Call revolutionizes healthcare delivery with its cutting-edge platform built on a robust Laravel backend. This powerful foundation ensures lightning-fast performance and unwavering reliability, seamlessly handling high user loads even during peak times.
-  At the heart of Heal on Call lies a sophisticated authentication system catering to both patients and healthcare providers. The app offers a streamlined sign-up and login process, safeguarding sensitive medical information with state-of-the-art security protocols. Users benefit from convenient features like password reset and account recovery, ensuring uninterrupted access to vital healthcare services.
-  The app's interface is thoughtfully designed to provide tailored experiences for patients and doctors alike. Intuitive navigation and responsive design guarantee a smooth user experience across both mobile devices and desktop computers, putting the power of healthcare at your fingertips.
-  Heal on Call's advanced appointment booking system is a game-changer in healthcare accessibility. Patients can view real-time doctor availability, instantly book appointments, and receive immediate confirmations. The flexible scheduling options allow for easy rescheduling or cancellations, while automated reminders via email and push notifications ensure you never miss an important medical appointment.
-  Finding the right healthcare provider is effortless with Heal on Call's comprehensive doctor discovery feature. Detailed profiles showcase each doctor's specializations, qualifications, and patient reviews. Advanced search filters and geolocation services help patients locate nearby doctors or specialists that meet their specific needs.
-  The app's integrated telemedicine capabilities bring the doctor's office to your living room. High-quality video consultations enable face-to-face interactions with healthcare providers, while secure file sharing facilitates the exchange of medical reports and images. Digital prescription generation and delivery streamline the medication process, saving time and reducing errors.
-  Heal on Call simplifies the financial aspect of healthcare with its versatile payment processing system. Multiple payment options, including credit cards, digital wallets, and insurance, cater to diverse user preferences. Transparent pricing and itemized billing provide clarity, while automated insurance claim submission eases the administrative burden for patients.
-  Personal health management reaches new heights with Heal on Call's integrated health tracking features. The app securely stores personal health records and medical history, offers medication reminders, and seamlessly integrates with popular fitness devices and apps to provide a holistic view of your health.
-  Round-the-clock support ensures users are never left in the lurch. An AI-powered chatbot provides instant responses to common queries, complemented by live chat support during business hours. A comprehensive FAQ and help center offer additional resources for users seeking information or assistance.
-  Heal on Call prioritizes user privacy and data security, implementing HIPAA-compliant data storage and transmission protocols. End-to-end encryption safeguards all communications, while regular security audits and updates maintain the highest standards of data protection.
-  For administrators and healthcare providers, Heal on Call offers powerful analytics and reporting tools. Insightful dashboards present usage statistics, trend analyses, and performance metrics, enabling continuous improvement and informed decision-making.
-  Experience the future of healthcare with Heal on Call – your all-encompassing solution for on-demand medical services. From booking appointments to virtual consultations, from managing your health records to processing payments, Heal on Call reimagines every aspect of healthcare delivery, bringing quality medical care directly to your smartphone or computer.''',
+      'This app, built with care, connects you to top-notch doctors at your fingertips. Skip the waiting rooms and experience healthcare on-demand. Let Heal on Call be your pocket-sized clinic, available whenever you need it.',
       AppAssets.featureGraphicDoctorOnHome,
       AppAssets.appScreenDoctorOnHome,
       'PlayStore',
       {
         'Link': [
           'https://play.google.com/store/apps/details?id=com.doctor.home',
-          'https://github.com/Prashant-ranjan-singh-123/doctor-on-home'
+          ''
         ]
       }
     ],
@@ -64,8 +52,8 @@ class WorkScreenData {
       'Playstore | Github',
       {
         'Link': [
+          '',
           'https://github.com/Prashant-ranjan-singh-123/Food-Mania',
-          ''
         ]
       }
     ],
@@ -76,7 +64,10 @@ class WorkScreenData {
       AppAssets.appScreenShoeHaven,
       'Playstore | Github',
       {
-        'Link': ['https://github.com/Prashant-ranjan-singh-123/shoe_haven','']
+        'Link': [
+          '',
+          'https://github.com/Prashant-ranjan-singh-123/shoe_haven',
+          ]
       }
     ],
     4: [
@@ -87,8 +78,8 @@ class WorkScreenData {
       'Github',
       {
         'Link': [
+          '',
           'https://github.com/Prashant-ranjan-singh-123/Priority-list-task',
-          ''
         ]
       }
     ],
@@ -100,8 +91,8 @@ class WorkScreenData {
       'Github',
       {
         'Link': [
+          '',
           'https://github.com/Prashant-ranjan-singh-123/flutter-Unwrapped',
-          ''
         ]
       }
     ],
@@ -113,7 +104,8 @@ class WorkScreenData {
       'Linkedin Only',
       {
         'Link': [
-          'https://www.linkedin.com/feed/update/urn:li:activity:7211610859310125056/',
+          // 'https://www.linkedin.com/feed/update/urn:li:activity:7211610859310125056/',
+          '',
           ''
         ]
       }
@@ -179,15 +171,21 @@ class WorkScreenData {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10)))),
                           onPressed: () {
-                            Get.to(
-                                ShowDetail(
+                            Get.bottomSheet(
+                                BottonSheet().bottomSheet(
                                     heading: experience[0],
                                     imageLocation: experience[2],
                                     shortDiscription: experience[1],
-                                    playstoreLink: experience[5]['Link'][1],
-                                    githubLink: experience[5]['Link'][0]),
-                                transition: Transition.fadeIn,
-                                duration: 500.ms);
+                                    playstoreLink: experience[5]['Link'][0],
+                                    githubLink: experience[5]['Link'][1]),
+                                isScrollControlled: false,
+                                backgroundColor: Colors.black,
+                                enterBottomSheetDuration: const Duration(milliseconds: 300),
+                                exitBottomSheetDuration: const Duration(milliseconds: 300),
+                                barrierColor: Colors.black.withOpacity(0.8),
+                                elevation: 5,
+                                isDismissible: false
+                            );
                           },
                           child: const Text(
                             '     Know More    ',
@@ -208,5 +206,23 @@ class WorkScreenData {
         ),
       ),
     );
+  }
+}
+
+class BottomSheetLogic{
+  static void back_button_logic(){
+    Get.back();
+  }
+
+  static void send_button_logic(){
+    Development.showDialogBox();
+  }
+
+  static void open_github_project(){
+    Development.showDialogBox();
+  }
+
+  static void open_playstore_project(){
+    Development.showDialogBox();
   }
 }

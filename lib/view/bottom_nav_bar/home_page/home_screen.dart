@@ -8,12 +8,12 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:prashant_potfolio/shared/app_assets/AppIcons.dart';
+import 'package:prashant_potfolio/shared/app_asset.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_data.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_logic.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-import '../../../shared/global.dart';
+import '../../../shared/globalVar&Fun.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});

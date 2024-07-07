@@ -1,9 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import '../../shared/global.dart';
+import '../../shared/globalVar&Fun.dart';
 import '../bottom_nav_bar/Global_bottom_nav.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,8 +15,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> showOnboard() async {
     Future.delayed(const Duration(seconds: 3, milliseconds: 500), () {
-      Get.to(const GlobalNavBar(),
-          transition: Transition.rightToLeft, duration: 300.ms);
+      Get.offAll(const GlobalNavBar(),
+          transition: Transition.fadeIn,
+          duration: const Duration(seconds: 2));
     });
   }
 
@@ -31,19 +31,13 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: myCustomColumn(children: [
-        logo()
-            .animate()
-            .fadeIn(duration: 2000.ms)
-            .slideY(duration: 1000.ms, curve: Curves.decelerate),
-        nameOfApp()
-            .animate()
-            .fadeIn(duration: 1000.ms, delay: 500.ms),
-        shortDiscription()
-            .animate()
-            .fadeIn(duration: 1500.ms, delay: 500.ms)
-            .scaleY(duration: 1000.ms, curve: Curves.decelerate)
-      ]),
+      body: myCustomColumn(
+          children: [
+            logo(),
+            nameOfApp(),
+            shortDiscription()
+          ]
+      ),
     );
   }
 

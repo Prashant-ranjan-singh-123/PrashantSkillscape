@@ -1,4 +1,4 @@
-import 'package:prashant_potfolio/shared/app_assets/AppIcons.dart';
+import 'package:prashant_potfolio/shared/app_asset.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_logic.dart';
 
 class HomeScreenData {
@@ -15,7 +15,7 @@ class HomeScreenData {
     1: [AppAssets.threeisToFourGithubImage, 'https://github.com/Prashant-ranjan-singh-123'],
     2: [AppAssets.threeisToFourLinkedinImage, 'https://www.linkedin.com/in/prashant-ranjan-singh-b9b6b9217/'],
     3: [AppAssets.threeisToFourTelegramImage, 'https://t.me/Prashantsingh255'],
-    4: [AppAssets.threeisToFourGmailImage, 'mailto:prashant.singh.12312345@gmail.com']
+    4: [AppAssets.threeisToFourGmailImage, 'prashant.singh.12312345@gmail.com']
   };
 
   static Map<int, List> skills = {

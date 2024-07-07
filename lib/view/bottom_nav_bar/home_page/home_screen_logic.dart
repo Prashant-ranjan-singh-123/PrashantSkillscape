@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:android_intent_plus/android_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_data.dart';
@@ -86,47 +84,23 @@ class HomeScreenLogic {
     }
   }
 
-  static void openGmail() async {
+  static Future<void> openGmail() async {
+    print(HomeScreenData.socialLink[4]![1]);
+    String? encodeQueryParameters(Map<String, String> params) {
+      return params.entries
+          .map((MapEntry<String, String> e) =>
+      '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+          .join('&');
+    }
+// ···
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
       path: HomeScreenData.socialLink[4]![1],
+      query: encodeQueryParameters(<String, String>{
+        'subject': 'Inquiry About Your Flutter Portfolio',
+      }),
     );
-
-    Future<void> _launchInBrowser(Uri uri) async {
-      if (await canLaunchUrl(uri)) {
-        await launchUrl(uri, mode: LaunchMode.externalApplication);
-      } else {
-        throw 'Could not launch $uri';
-      }
-    }
-
-    String recipientEmail = "${HomeScreenData.socialLink[4]![1]}";
-
-    if (Platform.isAndroid) {
-      // Check if Gmail app is installed
-      bool isGmailInstalled = await canLaunchUrl(Uri.parse('gmail://'));
-
-      if (isGmailInstalled) {
-        // Use Gmail app
-        final gmailUrl = 'gmail:///co?to=$recipientEmail';
-        if (await canLaunchUrl(Uri.parse(gmailUrl))) {
-          await launchUrl(Uri.parse(gmailUrl));
-        } else {
-          // Fallback to browser if unable to launch Gmail app
-          await _launchInBrowser(emailLaunchUri);
-        }
-      } else {
-        // Use browser if Gmail app is not installed
-        await _launchInBrowser(emailLaunchUri);
-      }
-    } else {
-      // For iOS and other platforms, use the default mailto: scheme
-      if (await canLaunchUrl(emailLaunchUri)) {
-        await launchUrl(emailLaunchUri);
-      } else {
-        throw 'Could not launch $emailLaunchUri';
-      }
-    }
+    launchUrl(emailLaunchUri);
   }
 
 

@@ -3,7 +3,7 @@
 // import 'package:flutter_animate/flutter_animate.dart';
 // import 'package:get/get.dart';
 
-// import '../../shared/global.dart';
+// import '../../shared/globalVar&Fun.dart';
 
 // class PageViewShow extends StatelessWidget {
 //   String image_path;
