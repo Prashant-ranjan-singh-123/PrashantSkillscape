@@ -156,7 +156,7 @@ class BottonSheet {
             Expanded(
               child: OutlinedButton(
                   onPressed: () {
-                    BottomSheetLogic.open_github_project();
+                    BottomSheetLogic.open_github_project(link: github);
                   },
                   style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -191,7 +191,7 @@ class BottonSheet {
             Expanded(
                 child: ElevatedButton(
                   onPressed: () {
-                    BottomSheetLogic.open_playstore_project();
+                    BottomSheetLogic.open_playstore_project(link: playstore);
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(10, 102, 194, 1),
@@ -235,7 +235,7 @@ class BottonSheet {
             Expanded(
               child: OutlinedButton(
                   onPressed: () {
-                    BottomSheetLogic.open_github_project();
+                    BottomSheetLogic.open_github_project(link: github);
                   },
                   style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -277,7 +277,7 @@ class BottonSheet {
             Expanded(
                 child: ElevatedButton(
                   onPressed: () {
-                    BottomSheetLogic.open_playstore_project();
+                    BottomSheetLogic.open_playstore_project(link: playstore);
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(10, 102, 194, 1),

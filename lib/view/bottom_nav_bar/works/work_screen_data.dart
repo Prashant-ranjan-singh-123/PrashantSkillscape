@@ -1,8 +1,10 @@
+import 'package:android_intent_plus/android_intent.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prashant_potfolio/shared/app_asset.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../shared/global_widgets.dart';
 import '../../../shared/under_development_dialog.dart';
 
@@ -218,11 +220,68 @@ class BottomSheetLogic{
     Development.showDialogBox();
   }
 
-  static void open_github_project(){
-    Development.showDialogBox();
+  static void open_github_project({required String link}){
+    BottomSheetLogic.openGithub(dt: link);
   }
 
-  static void open_playstore_project(){
-    Development.showDialogBox();
+  static void open_playstore_project({required String link}){
+    BottomSheetLogic.openPlayStore(dt: link);
+  }
+
+
+  // -- To Open Github with Link Logic --
+  static void openGithub({required String dt}) async {
+    Future<bool> isGithubInInstalled() async {
+      Uri url = Uri.parse('github://');
+      if (await canLaunchUrl(url)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    bool isInstalled = await isGithubInInstalled();
+    if (isInstalled != false) {
+      AndroidIntent intent = AndroidIntent(action: 'action_view', data: dt);
+      await intent.launch();
+    } else {
+      Uri url = Uri.parse(dt);
+      if (await canLaunchUrl(url)) {
+        await launchUrl(url);
+      } else {
+        throw 'Could not launch $url';
+      }
+    }
+  }
+
+
+  // Function to open Play Store link
+  static void openPlayStore({required String dt}) async {
+    Future<bool> isPlayStoreInstalled() async {
+      Uri url = Uri.parse('market://details?id=$dt');
+      if (await canLaunch(url.toString())) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    bool isInstalled = await isPlayStoreInstalled();
+    if (isInstalled) {
+      // Play Store is installed, launch the app
+      AndroidIntent intent = AndroidIntent(
+        action: 'action_view',
+        data: dt,
+      );
+      await intent.launch();
+    } else {
+      // Play Store is not installed, open in browser
+      Uri url = Uri.parse(dt);
+      if (await canLaunch(url.toString())) {
+        await launch(url.toString());
+      } else {
+        throw 'Could not launch Play Store link: $url';
+      }
+    }
   }
 }
