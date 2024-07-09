@@ -244,8 +244,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
       child: Card(
-        color: Color.fromRGBO(12, 22, 21, 1.0),
-        shadowColor: Color.fromRGBO(43,255,255,1),
+        color: const Color.fromRGBO(12, 22, 21, 1.0),
+        shadowColor: const Color.fromRGBO(43,255,255,1),
         elevation: 10,
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -274,7 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Card(
               color: Colors.black,
               elevation: 5,
-              shadowColor: Color.fromRGBO(43,255,255,1),
+              shadowColor: const Color.fromRGBO(43,255,255,1),
               child: SizedBox(
                 width: Get.width * 0.13,
                 height: Get.width * 0.13,
@@ -301,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Card(
               color: Colors.black,
               elevation: 5,
-              shadowColor: Color.fromRGBO(43,255,255,1),
+              shadowColor: const Color.fromRGBO(43,255,255,1),
               child: SizedBox(
                 width: Get.width * 0.13,
                 height: Get.width * 0.13,
@@ -468,7 +468,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 .scale(
                 delay: 700.ms, duration: 500.ms, curve: Curves.decelerate)
                 .fadeIn(
-                delay: 700.ms, duration: 1000.ms, curve: Curves.decelerate))
+                delay: 700.ms, duration: 1000.ms, curve: Curves.decelerate)),
+        const SizedBox(height: 40,)
       ],
     );
   }
