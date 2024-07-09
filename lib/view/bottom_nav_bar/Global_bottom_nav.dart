@@ -20,12 +20,12 @@ class GlobalNavBar extends StatefulWidget {
 class _GlobalNavBarState extends State<GlobalNavBar> {
   int _selectedIndex = 0;
 
-
   // Notch Bar
   final _pageController = PageController(initialPage: 0);
 
   /// Controller to handle bottom nav bar and also handles initial page
-  final NotchBottomBarController _controller = NotchBottomBarController(index: 0);
+  final NotchBottomBarController _controller =
+      NotchBottomBarController(index: 0);
 
   int maxCount = 3;
 
@@ -35,16 +35,12 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
     WorkScreen(),
   ];
 
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(22,40,38,1),
-      body: bottom_nav_bar_3_body(),
-      bottomNavigationBar: bottom_nav_bar_3().animate().slideY(
+      backgroundColor: const Color.fromRGBO(22, 40, 38, 1),
+      body: bottom_nav_bar_2_body(),
+      bottomNavigationBar: bottom_nav_bar_2().animate().slideY(
           begin: 12,
           delay: 1000.ms,
           duration: 1000.ms,
@@ -58,11 +54,10 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
     super.dispose();
   }
 
-
   Widget bottom_nav_bar() {
     return FlashyTabBar(
       selectedIndex: _selectedIndex,
-      backgroundColor: Color.fromRGBO(25, 24, 39, 1.0),
+      backgroundColor: const Color.fromRGBO(25, 24, 39, 1.0),
       onItemSelected: (index) => setState(() {
         _selectedIndex = index;
       }),
@@ -98,7 +93,7 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
     );
   }
 
-  Widget bottom_nav_bar_1_body(){
+  Widget bottom_nav_bar_1_body() {
     if (_selectedIndex == 0) {
       return HomeScreen();
     } else if (_selectedIndex == 1) {
@@ -108,48 +103,45 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
     }
   }
 
-
-
-
   Widget bottom_nav_bar_3() {
     return AnimatedNotchBottomBar(
-        color: Color.fromRGBO(6,58,52, 1),
-      notchColor: Color.fromRGBO(5,202,173, 0.35),
-        bottomBarItems: const [
-          BottomBarItem(
-            inActiveItem: Icon(
-              CupertinoIcons.home,
-              color: Colors.blueGrey,
-            ),
-            activeItem: Icon(
-              CupertinoIcons.house_fill,
-              color: Colors.white,
-            ),
-            itemLabel: 'Page 1',
+      color: const Color.fromRGBO(6, 58, 52, 1),
+      notchColor: const Color.fromRGBO(5, 202, 173, 0.35),
+      bottomBarItems: const [
+        BottomBarItem(
+          inActiveItem: Icon(
+            CupertinoIcons.home,
+            color: Colors.blueGrey,
           ),
-          BottomBarItem(
-            inActiveItem: Icon(
-              Icons.school_outlined,
-              color: Colors.blueGrey,
-            ),
-            activeItem: Icon(
-              Icons.school,
-              color: Colors.white,
-            ),
-            itemLabel: 'Page 2',
+          activeItem: Icon(
+            CupertinoIcons.house_fill,
+            color: Colors.white,
           ),
-          BottomBarItem(
-            inActiveItem: Icon(
-              CupertinoIcons.cube,
-              color: Colors.blueGrey,
-            ),
-            activeItem: Icon(
-              CupertinoIcons.cube_fill,
-              color: Colors.white,
-            ),
-            itemLabel: 'Page 3',
-          )
-        ],
+          itemLabel: 'Page 1',
+        ),
+        BottomBarItem(
+          inActiveItem: Icon(
+            Icons.school_outlined,
+            color: Colors.blueGrey,
+          ),
+          activeItem: Icon(
+            Icons.school,
+            color: Colors.white,
+          ),
+          itemLabel: 'Page 2',
+        ),
+        BottomBarItem(
+          inActiveItem: Icon(
+            CupertinoIcons.cube,
+            color: Colors.blueGrey,
+          ),
+          activeItem: Icon(
+            CupertinoIcons.cube_fill,
+            color: Colors.white,
+          ),
+          itemLabel: 'Page 3',
+        )
+      ],
       notchBottomBarController: _controller,
       onTap: (int value) {
         _pageController.jumpToPage(value);
@@ -159,11 +151,12 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
     );
   }
 
-  Widget bottom_nav_bar_3_body(){
+  Widget bottom_nav_bar_3_body() {
     return PageView(
       controller: _pageController,
       physics: const NeverScrollableScrollPhysics(),
-      children: List.generate(bottomBarPages.length, (index) => bottomBarPages[index]),
+      children: List.generate(
+          bottomBarPages.length, (index) => bottomBarPages[index]),
     );
   }
 
@@ -202,4 +195,72 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
   //     ],
   //   );
   // }
+
+  Widget bottom_nav_bar_2() {
+    return BottomNavigationBar(
+      backgroundColor: Colors.black,
+      type: BottomNavigationBarType.fixed,
+      currentIndex: _selectedIndex,
+      unselectedItemColor: Colors.white.withOpacity(0.3),
+      selectedItemColor: Colors.white,
+      selectedLabelStyle: const TextStyle(color: Colors.white),
+      unselectedLabelStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
+      elevation: 0,
+      onTap: (index){
+        setState(() {
+          switch (index){
+            case 0:
+              _selectedIndex=0;
+              break;
+            case 1:
+              _selectedIndex=1;
+              break;
+            case 2:
+              _selectedIndex=2;
+              break;
+            default:
+              _selectedIndex=0;
+              break;
+          }
+        });
+      },
+      items: [
+        _buildNavItem(CupertinoIcons.home, 'Home'),
+        _buildNavItem(CupertinoIcons.search, 'Search'),
+        _buildNavItem(CupertinoIcons.person, 'Profile'),
+      ],
+    );
+  }
+
+  BottomNavigationBarItem _buildNavItem(IconData icon, String label) {
+    return BottomNavigationBarItem(
+      icon: Card(
+        color: Colors.transparent,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+          child: Icon(icon, color: Colors.white.withOpacity(0.3)),
+        ),
+      ),
+      label: label,
+      activeIcon: Card(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+          child: Icon(icon, color: Colors.black),
+        ),
+      ),
+    );
+  }
+
+  Widget bottom_nav_bar_2_body() {
+    if (_selectedIndex == 0) {
+      return HomeScreen();
+    } else if (_selectedIndex == 1) {
+      return CarrierScreen();
+    } else {
+      return WorkScreen();
+    }
+  }
 }
