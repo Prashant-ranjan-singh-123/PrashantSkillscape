@@ -161,59 +161,66 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
   }
 
   Widget bottom_nav_bar_2() {
-    return BottomNavigationBar(
-      backgroundColor: Colors.black,
-      type: BottomNavigationBarType.fixed,
-      currentIndex: _selectedIndex,
-      unselectedItemColor: Colors.white.withOpacity(0.3),
-      selectedItemColor: Colors.white,
-      selectedLabelStyle: const TextStyle(color: Colors.white),
-      unselectedLabelStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      elevation: 0,
-      onTap: (index){
-        setState(() {
-          switch (index){
-            case 0:
-              _selectedIndex=0;
-              break;
-            case 1:
-              _selectedIndex=1;
-              break;
-            case 2:
-              _selectedIndex=2;
-              break;
-            default:
-              _selectedIndex=0;
-              break;
-          }
-        });
-      },
-      items: [
-        _buildNavItem(CupertinoIcons.home, 'Home'),
-        _buildNavItem(CupertinoIcons.search, 'Search'),
-        _buildNavItem(CupertinoIcons.person, 'Profile'),
-      ],
-    );
-  }
-
-  BottomNavigationBarItem _buildNavItem(IconData icon, String label) {
-    return BottomNavigationBarItem(
-      icon: Card(
-        color: Colors.transparent,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-          child: Icon(icon, color: Colors.white.withOpacity(0.3)),
+    BottomNavigationBarItem _buildNavItem(IconData icon, String label) {
+      return BottomNavigationBarItem(
+        icon: Card(
+          color: Colors.transparent,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+            child: Icon(icon, color: Colors.white.withOpacity(0.3)),
+          ),
         ),
+        label: label,
+        activeIcon: Card(
+          color: Colors.white,
+          elevation: 10,
+          shadowColor: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+            child: Icon(icon, color: Colors.black),
+          ),
+        ),
+      );
+    }
+    return Theme(
+      data: ThemeData(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
       ),
-      label: label,
-      activeIcon: Card(
-        color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-          child: Icon(icon, color: Colors.black),
-        ),
+      child: BottomNavigationBar(
+        backgroundColor: Colors.black,
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
+        unselectedItemColor: Colors.white.withOpacity(0.3),
+        selectedItemColor: Colors.white,
+        selectedLabelStyle: const TextStyle(color: Colors.white),
+        unselectedLabelStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        elevation: 0,
+        onTap: (index){
+          setState(() {
+            switch (index){
+              case 0:
+                _selectedIndex=0;
+                break;
+              case 1:
+                _selectedIndex=1;
+                break;
+              case 2:
+                _selectedIndex=2;
+                break;
+              default:
+                _selectedIndex=0;
+                break;
+            }
+          });
+        },
+        items: [
+          _buildNavItem(CupertinoIcons.house_fill, 'About Me'),
+          _buildNavItem(Icons.school, 'Carrier'),
+          _buildNavItem(CupertinoIcons.cube_fill, 'Projects'),
+        ],
       ),
     );
   }
