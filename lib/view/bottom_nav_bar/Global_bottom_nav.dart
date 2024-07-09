@@ -160,42 +160,6 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
     );
   }
 
-  // Widget bottom_nav_bar_2(){
-  //   return CrystalNavigationBar(
-  //     currentIndex: _selectedIndex,
-  //     height: 0,
-  //     // indicatorColor: Colors.blue,
-  //     unselectedItemColor: Colors.white54,
-  //     backgroundColor: Colors.black.withOpacity(1),
-  //     enableFloatingNavBar: true,
-  //     onTap: (index) => setState(() {
-  //       _selectedIndex = index;
-  //     }),
-  //     items: [
-  //       /// Home
-  //       CrystalNavigationBarItem(
-  //         icon: CupertinoIcons.home,
-  //         unselectedIcon: CupertinoIcons.house_fill,
-  //         selectedColor: Colors.white,
-  //       ),
-  //
-  //       /// Favourite
-  //       CrystalNavigationBarItem(
-  //         icon: Icons.school_outlined,
-  //         unselectedIcon: Icons.school,
-  //         selectedColor: Colors.red,
-  //       ),
-  //
-  //       /// Add
-  //       CrystalNavigationBarItem(
-  //         icon: MdiIcons.googlePlay,
-  //         unselectedIcon: MdiIcons.googlePlay,
-  //         selectedColor: Colors.white,
-  //       ),
-  //     ],
-  //   );
-  // }
-
   Widget bottom_nav_bar_2() {
     return BottomNavigationBar(
       backgroundColor: Colors.black,
