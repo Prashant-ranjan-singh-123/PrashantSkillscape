@@ -25,55 +25,57 @@ class _HomeScreenState extends State<WorkScreen> {
     // print('length is: ${_categories.length}');
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SafeArea(
-        child: SizedBox(
-          width: Get.width,
-          height: Get.height,
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                heading_and_subtitle_top()
-                    .animate()
-                    .scale(
-                        delay: 400.ms,
-                        duration: 500.ms,
-                        curve: Curves.decelerate)
-                    .desaturate(
-                        delay: 400.ms,
-                        duration: 1000.ms,
-                        curve: Curves.decelerate),
-                CustomCoursalSclider()
-                    .animate()
-                    .scale(
-                        delay: 600.ms,
-                        duration: 500.ms,
-                        curve: Curves.decelerate)
-                    .fadeIn(
-                        delay: 600.ms,
-                        duration: 1000.ms,
-                        curve: Curves.decelerate),
-                types()
-                    .animate()
-                    .scale(
-                        delay: 800.ms,
-                        duration: 500.ms,
-                        curve: Curves.decelerate)
-                    .fadeIn(
-                        delay: 800.ms,
-                        duration: 1000.ms,
-                        curve: Curves.decelerate),
-                grid_view_items()
-                    .animate()
-                    .scale(
-                        delay: 1000.ms,
-                        duration: 500.ms,
-                        curve: Curves.decelerate)
-                    .fadeIn(
-                        delay: 1000.ms,
-                        duration: 1000.ms,
-                        curve: Curves.decelerate)
-              ],
+      body: CommonUsedWidget.background(
+        child: SafeArea(
+          child: SizedBox(
+            width: Get.width,
+            height: Get.height,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  heading_and_subtitle_top()
+                      .animate()
+                      .scale(
+                          delay: 400.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
+                      .desaturate(
+                          delay: 400.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
+                  CustomCoursalSclider()
+                      .animate()
+                      .scale(
+                          delay: 600.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
+                      .fadeIn(
+                          delay: 600.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
+                  types()
+                      .animate()
+                      .scale(
+                          delay: 800.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
+                      .fadeIn(
+                          delay: 800.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
+                  grid_view_items()
+                      .animate()
+                      .scale(
+                          delay: 1000.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
+                      .fadeIn(
+                          delay: 1000.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate)
+                ],
+              ),
             ),
           ),
         ),

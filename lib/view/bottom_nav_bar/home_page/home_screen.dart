@@ -14,6 +14,7 @@ import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_logi
 import 'package:timeline_tile/timeline_tile.dart';
 
 import '../../../shared/globalVar&Fun.dart';
+import '../../../shared/global_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -27,95 +28,97 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                topImageWidget()
-                    .animate()
-                    .scale(
-                        delay: 400.ms,
-                        duration: 500.ms,
-                        curve: Curves.decelerate)
-                    .fadeIn(
-                        delay: 400.ms,
-                        duration: 1000.ms,
-                        curve: Curves.decelerate),
-                nameOdDev()
-                    .animate()
-                    .scale(
-                        delay: 600.ms,
-                        duration: 500.ms,
-                        curve: Curves.decelerate)
-                    .fadeIn(
-                        delay: 600.ms,
-                        duration: 1000.ms,
-                        curve: Curves.decelerate),
-                professionOfDeveloper()
-                    .animate()
-                    .scale(
-                        delay: 800.ms,
-                        duration: 500.ms,
-                        curve: Curves.decelerate)
-                    .fadeIn(
-                        delay: 800.ms,
-                        duration: 1000.ms,
-                        curve: Curves.decelerate),
-                socialMedia()
-                    .animate()
-                    .scale(
-                        delay: 1000.ms,
-                        duration: 500.ms,
-                        curve: Curves.decelerate)
-                    .fadeIn(
-                        delay: 1000.ms,
-                        duration: 1000.ms,
-                        curve: Curves.decelerate),
-                aboutText()
-                    .animate()
-                    .scale(
-                        delay: 1200.ms,
-                        duration: 500.ms,
-                        curve: Curves.decelerate)
-                    .fadeIn(
-                        delay: 1200.ms,
-                        duration: 1000.ms,
-                        curve: Curves.decelerate),
-                skillText()
-                    .animate()
-                    .scale(
-                        delay: 1400.ms,
-                        duration: 500.ms,
-                        curve: Curves.decelerate)
-                    .fadeIn(
-                        delay: 1400.ms,
-                        duration: 1000.ms,
-                        curve: Curves.decelerate),
-                contactMe()
-                    .animate()
-                    .scale(
-                    delay: 1600.ms,
-                    duration: 500.ms,
-                    curve: Curves.decelerate)
-                    .fadeIn(
-                    delay: 1600.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate),
-                socialProfileSelf()
-                    .animate()
-                    .scale(
-                    delay: 1800.ms,
-                    duration: 500.ms,
-                    curve: Curves.decelerate)
-                    .fadeIn(
-                    delay: 1800.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate)
-                // experience()
-              ],
+      body: CommonUsedWidget.background(
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  topImageWidget()
+                      .animate()
+                      .scale(
+                          delay: 400.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
+                      .fadeIn(
+                          delay: 400.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
+                  nameOdDev()
+                      .animate()
+                      .scale(
+                          delay: 600.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
+                      .fadeIn(
+                          delay: 600.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
+                  professionOfDeveloper()
+                      .animate()
+                      .scale(
+                          delay: 800.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
+                      .fadeIn(
+                          delay: 800.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
+                  socialMedia()
+                      .animate()
+                      .scale(
+                          delay: 1000.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
+                      .fadeIn(
+                          delay: 1000.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
+                  aboutText()
+                      .animate()
+                      .scale(
+                          delay: 1200.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
+                      .fadeIn(
+                          delay: 1200.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
+                  skillText()
+                      .animate()
+                      .scale(
+                          delay: 1400.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
+                      .fadeIn(
+                          delay: 1400.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
+                  contactMe()
+                      .animate()
+                      .scale(
+                      delay: 1600.ms,
+                      duration: 500.ms,
+                      curve: Curves.decelerate)
+                      .fadeIn(
+                      delay: 1600.ms,
+                      duration: 1000.ms,
+                      curve: Curves.decelerate),
+                  socialProfileSelf()
+                      .animate()
+                      .scale(
+                      delay: 1800.ms,
+                      duration: 500.ms,
+                      curve: Curves.decelerate)
+                      .fadeIn(
+                      delay: 1800.ms,
+                      duration: 1000.ms,
+                      curve: Curves.decelerate)
+                  // experience()
+                ],
+              ),
             ),
           ),
         ),

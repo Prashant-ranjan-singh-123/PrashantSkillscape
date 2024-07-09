@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import '../../shared/global_widgets.dart';
 import 'carrier/carrier_screen.dart';
 import 'home_page/home_screen.dart';
 import 'works/work_screen.dart';
@@ -38,13 +39,8 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(22, 40, 38, 1),
-      body: bottom_nav_bar_2_body(),
-      bottomNavigationBar: bottom_nav_bar_2().animate().slideY(
-          begin: 12,
-          delay: 1000.ms,
-          duration: 1000.ms,
-          curve: Curves.decelerate),
+      body: CommonUsedWidget.background(child: bottom_nav_bar_2_body()),
+      bottomNavigationBar: bottom_nav_bar_2(),
     );
   }
 
@@ -182,6 +178,7 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
         ),
       );
     }
+
     return Theme(
       data: ThemeData(
         splashColor: Colors.transparent,
@@ -198,20 +195,20 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         elevation: 0,
-        onTap: (index){
+        onTap: (index) {
           setState(() {
-            switch (index){
+            switch (index) {
               case 0:
-                _selectedIndex=0;
+                _selectedIndex = 0;
                 break;
               case 1:
-                _selectedIndex=1;
+                _selectedIndex = 1;
                 break;
               case 2:
-                _selectedIndex=2;
+                _selectedIndex = 2;
                 break;
               default:
-                _selectedIndex=0;
+                _selectedIndex = 0;
                 break;
             }
           });

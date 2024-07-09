@@ -5,6 +5,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/carrier/carrier_screen_data.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
+import '../../../shared/global_widgets.dart';
+
 class CarrierScreen extends StatelessWidget {
   CarrierScreen({super.key});
 
@@ -12,28 +14,30 @@ class CarrierScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                experience().animate()
-                    .scale(
-                    delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
-                    .fadeIn(
-                    delay: 400.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate),
-                education().animate()
-                    .scale(
-                    delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
-                    .fadeIn(
-                    delay: 400.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate),
-              ],
+      body: CommonUsedWidget.background(
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  experience().animate()
+                      .scale(
+                      delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
+                      .fadeIn(
+                      delay: 400.ms,
+                      duration: 1000.ms,
+                      curve: Curves.decelerate),
+                  education().animate()
+                      .scale(
+                      delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
+                      .fadeIn(
+                      delay: 400.ms,
+                      duration: 1000.ms,
+                      curve: Curves.decelerate),
+                ],
+              ),
             ),
           ),
         ),
