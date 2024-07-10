@@ -20,6 +20,11 @@ class ColorOfApp{
   static const Color carrierTimelineDot= Color.fromRGBO(255, 255, 255, 1.0);
 
 
+  // --Project Screen Color--
+  static const Color projectCursorSliderGradientTop= Color.fromRGBO(255, 255, 255, 1.0);
+  static const Color projectCursorSliderGradientDown= Color.fromRGBO(255, 255, 255, 1.0);
+
+
   // --Bottom Nav Color--
   static const Color bottomNavBackground = Color.fromRGBO(4, 0, 20, 1);
   static const Color bottomNavCard = Color.fromRGBO(255, 255, 255, 1);
