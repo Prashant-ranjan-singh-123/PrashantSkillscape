@@ -15,6 +15,11 @@ class ColorOfApp{
   static const Color homeSkillUnachieve= Color.fromRGBO(108, 114, 122, 1);
 
 
+  // -- Carrier Screen Color--
+  static const Color carrierTimeline= Color.fromRGBO(255, 255, 255, 1.0);
+  static const Color carrierTimelineDot= Color.fromRGBO(255, 255, 255, 1.0);
+
+
   // --Bottom Nav Color--
   static const Color bottomNavBackground = Color.fromRGBO(4, 0, 20, 1);
   static const Color bottomNavCard = Color.fromRGBO(255, 255, 255, 1);

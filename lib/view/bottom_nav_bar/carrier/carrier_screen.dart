@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/carrier/carrier_screen_data.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
+import '../../../shared/color.dart';
 import '../../../shared/global_widgets.dart';
 
 class CarrierScreen extends StatelessWidget {
@@ -22,20 +24,26 @@ class CarrierScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  experience().animate()
+                  experience()
+                      .animate()
                       .scale(
-                      delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
+                          delay: 400.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
                       .fadeIn(
-                      delay: 400.ms,
-                      duration: 1000.ms,
-                      curve: Curves.decelerate),
-                  education().animate()
+                          delay: 400.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
+                  education()
+                      .animate()
                       .scale(
-                      delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
+                          delay: 400.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
                       .fadeIn(
-                      delay: 400.ms,
-                      duration: 1000.ms,
-                      curve: Curves.decelerate),
+                          delay: 400.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
                 ],
               ),
             ),
@@ -62,25 +70,25 @@ class CarrierScreen extends StatelessWidget {
       padding: EdgeInsets.only(top: paddingTop, bottom: paddingBottom),
       child: isCenter
           ? Center(
-        child: Text(
-          heading,
-          style: const TextStyle(
-            fontSize: 40,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-          ),
-        ),
-      )
+              child: Text(
+                heading,
+                style: const TextStyle(
+                  fontSize: 40,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w800,
+                  color: ColorOfApp.textBold,
+                ),
+              ),
+            )
           : Text(
-        heading,
-        style: const TextStyle(
-          fontSize: 40,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w800,
-          color: Colors.white,
-        ),
-      ),
+              heading,
+              style: const TextStyle(
+                fontSize: 40,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w800,
+                color: ColorOfApp.textBold,
+              ),
+            ),
     );
   }
 
@@ -92,16 +100,19 @@ class CarrierScreen extends StatelessWidget {
   }) {
     return TimelineTile(
       alignment: TimelineAlign.manual,
-      lineXY: 1, // Adjust this value to move the timeline line closer to the left
+      lineXY:
+          1, // Adjust this value to move the timeline line closer to the left
       isLast: isLast,
       beforeLineStyle: const LineStyle(
-        color: Colors.white,
-        thickness: 2,
+        color: ColorOfApp.carrierTimeline,
+        thickness: 1,
       ),
       indicatorStyle: const IndicatorStyle(
         width: 20,
+        padding: EdgeInsets.symmetric(vertical: 10),
         height: 50,
-        color: Colors.white,
+        color: ColorOfApp.carrierTimelineDot,
+        drawGap: true,
       ),
       startChild: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -110,9 +121,9 @@ class CarrierScreen extends StatelessWidget {
             fun();
           },
           child: Card(
-            color: Colors.black,
-            shadowColor: Colors.white,
-            elevation: 10,
+            color: ColorOfApp.card,
+            shadowColor: ColorOfApp.cardShadow,
+            elevation: 15,
             child: Container(
               margin: const EdgeInsets.all(15),
               child: Column(
@@ -121,15 +132,18 @@ class CarrierScreen extends StatelessWidget {
                   Text(
                     heading,
                     style: const TextStyle(
-                      fontFamily: 'Oswald',
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                    ),
+                        fontFamily: 'Oswald',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                        color: ColorOfApp.textBold),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  Text(body),
+                  Text(
+                    body,
+                    style: const TextStyle(color: ColorOfApp.textLight),
+                  ),
                 ],
               ),
             ),
@@ -140,23 +154,22 @@ class CarrierScreen extends StatelessWidget {
   }
 
   Widget education() {
-    Widget my_card({
-      required String heading,
-      required String body,
-      required Function fun,
-      required int index
-    }) {
-      int delayTimeToShow  = (index*300)+400;
+    Widget my_card(
+        {required String heading,
+        required String body,
+        required Function fun,
+        required int index}) {
+      int delayTimeToShow = (index * 300) + 400;
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: GestureDetector(
-          onTap: (){
+          onTap: () {
             fun();
           },
           child: Card(
-            color: Colors.black,
-            shadowColor: Colors.white,
-            elevation: 10,
+            color: ColorOfApp.card,
+            shadowColor: ColorOfApp.cardShadow,
+            elevation: 15,
             child: Container(
               margin: const EdgeInsets.all(15),
               child: Column(
@@ -168,31 +181,38 @@ class CarrierScreen extends StatelessWidget {
                       fontFamily: 'Oswald',
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
+                      color: ColorOfApp.textBold
                     ),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  Text(body),
+                  Text(body, style: const TextStyle(color: ColorOfApp.textLight),),
                 ],
               ),
             ),
           ),
         ),
-      ).animate()
+      )
+          .animate()
           .scale(
-          delay: delayTimeToShow.ms, duration: 500.ms, curve: Curves.decelerate)
+              delay: delayTimeToShow.ms,
+              duration: 500.ms,
+              curve: Curves.decelerate)
           .fadeIn(
-          delay: delayTimeToShow.ms,
-          duration: 1000.ms,
-          curve: Curves.decelerate);
+              delay: delayTimeToShow.ms,
+              duration: 1000.ms,
+              curve: Curves.decelerate);
     }
 
     return Column(
       children: [
-        SizedBox(height: 40,),
+        const SizedBox(
+          height: 40,
+        ),
         const Divider(
           thickness: 0.5,
+          color: ColorOfApp.textLight
         ),
         heading(heading: 'Education'),
         ListView.builder(
@@ -204,10 +224,11 @@ class CarrierScreen extends StatelessWidget {
                   heading: CarrierScreenData.education[index + 1][0],
                   body: CarrierScreenData.education[index + 1][1],
                   fun: CarrierScreenData.education[index + 1][2],
-                  index: index+1
-              );
+                  index: index + 1);
             }),
-        SizedBox(height: 40,),
+        const SizedBox(
+          height: 40,
+        ),
       ],
     );
   }
