@@ -3,6 +3,7 @@ import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import '../../shared/color.dart';
 import '../../shared/global_widgets.dart';
@@ -213,9 +214,9 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
           });
         },
         items: [
-          _buildNavItem(CupertinoIcons.house_fill, 'About Me'),
-          _buildNavItem(Icons.school, 'Carrier'),
-          _buildNavItem(CupertinoIcons.cube_fill, 'Projects'),
+          _buildNavItem(Iconsax.tag_user, 'About Me'),
+          _buildNavItem(Iconsax.buildings, 'Carrier'),
+          _buildNavItem(Iconsax.box, 'Projects'),
         ],
       ),
     );

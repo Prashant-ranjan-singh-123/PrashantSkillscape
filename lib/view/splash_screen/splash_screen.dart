@@ -2,8 +2,11 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:prashant_potfolio/shared/app_asset.dart';
+import 'package:prashant_potfolio/shared/global_widgets.dart';
 import '../../shared/globalVar&Fun.dart';
 import '../bottom_nav_bar/Global_bottom_nav.dart';
+import '../on_boarding/check_first_run.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,7 +18,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> showOnboard() async {
     Future.delayed(const Duration(seconds: 3, milliseconds: 500), () {
-      Get.offAll(const GlobalNavBar(),
+      Get.offAll(const OnboardingOrMainScreen(),
           transition: Transition.fadeIn,
           duration: const Duration(seconds: 2));
     });
@@ -31,12 +34,14 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: myCustomColumn(
-          children: [
-            logo(),
-            nameOfApp(),
-            shortDiscription()
-          ]
+      body: CommonUsedWidget.background(
+        child: myCustomColumn(
+            children: [
+              logo(),
+              nameOfApp(),
+              shortDiscription()
+            ]
+        ),
       ),
     );
   }
@@ -58,18 +63,23 @@ class _SplashScreenState extends State<SplashScreen> {
     return SizedBox(
         width: returnSizeOfScreenWhichIsSmaller() * 0.5,
         height: returnSizeOfScreenWhichIsSmaller() * 0.5,
-        child: Image.asset('asset/image/prashant.png'));
+        child: Image.asset(AppAssets.iconMine));
   }
 
   Widget nameOfApp() {
-    return const AutoSizeText(
-      maxLines: 1,
-      'PrashantSkillscape',
-      style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w900,
-          fontFamily: 'Poppins',
-          color: Colors.white),
+    return Column(
+      children: [
+        SizedBox(height: 25,),
+        const AutoSizeText(
+          maxLines: 1,
+          'Portfolio',
+          style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.w900,
+              fontFamily: 'Poppins',
+              color: Colors.white),
+        ),
+      ],
     );
   }
 

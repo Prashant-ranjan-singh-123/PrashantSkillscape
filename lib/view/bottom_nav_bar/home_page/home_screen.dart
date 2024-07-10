@@ -174,13 +174,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ? SizedBox(
               height: Get.height * 0.4,
               width: Get.width,
-              child: Image.asset('asset/image/prashant.png',
+              child: Image.asset(AppAssets.iconMine,
                   height: 250.0, width: 250.0),
             )
           : SizedBox(
               height: Get.width * 0.5,
               width: Get.width,
-              child: Image.asset('asset/image/prashant.png',
+              child: Image.asset(AppAssets.iconMine,
                   height: 250.0, width: 250.0),
             ),
     );
