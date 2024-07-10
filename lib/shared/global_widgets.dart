@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:prashant_potfolio/shared/color.dart';
 import '../view/bottom_nav_bar/works/work_screen_data.dart';
 
 class BottonSheet {
@@ -346,16 +347,16 @@ class CommonUsedWidget {
     return AuraBox(
         spots: [
           AuraSpot(
-            color: Colors.blueAccent.withOpacity(0.3),
+            color: ColorOfApp.backgroundBubble,
             radius: 400.0,
-            alignment: Alignment(0.7,-0.7),
+            alignment: const Alignment(0.7,-0.7),
             blurRadius: 0,
             stops: const [0, 0.9],
           ),
           AuraSpot(
-            color: Colors.blueAccent.withOpacity(0.3),
+            color: ColorOfApp.backgroundBubble,
             radius: 400.0,
-            alignment: Alignment(-0.7,0.7),
+            alignment: const Alignment(-0.7,0.7),
             blurRadius: 0,
             stops: const [0, 0.9],
           ),
@@ -369,8 +370,8 @@ class CommonUsedWidget {
           height: 20,
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
-                const Color.fromRGBO(0, 3, 25, 1.0).withOpacity(0.5),
-                const Color.fromRGBO(0, 0, 0, 1.0).withOpacity(0.5),
+                ColorOfApp.background.withOpacity(0.9),
+                ColorOfApp.background.withOpacity(0.9),
               ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
           child: child,
         )
@@ -380,8 +381,8 @@ class CommonUsedWidget {
           width: Get.width,
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
-            const Color.fromRGBO(0, 3, 25, 1.0).withOpacity(0.5),
-            const Color.fromRGBO(0, 0, 0, 1.0).withOpacity(0.5),
+            ColorOfApp.background.withOpacity(0.9),
+            ColorOfApp.background.withOpacity(0.9),
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
           child: child,
         )

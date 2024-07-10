@@ -13,6 +13,7 @@ import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_data
 import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_logic.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
+import '../../../shared/color.dart';
 import '../../../shared/globalVar&Fun.dart';
 import '../../../shared/global_widgets.dart';
 
@@ -99,23 +100,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   contactMe()
                       .animate()
                       .scale(
-                      delay: 1600.ms,
-                      duration: 500.ms,
-                      curve: Curves.decelerate)
+                          delay: 1600.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
                       .fadeIn(
-                      delay: 1600.ms,
-                      duration: 1000.ms,
-                      curve: Curves.decelerate),
+                          delay: 1600.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate),
                   socialProfileSelf()
                       .animate()
                       .scale(
-                      delay: 1800.ms,
-                      duration: 500.ms,
-                      curve: Curves.decelerate)
+                          delay: 1800.ms,
+                          duration: 500.ms,
+                          curve: Curves.decelerate)
                       .fadeIn(
-                      delay: 1800.ms,
-                      duration: 1000.ms,
-                      curve: Curves.decelerate)
+                          delay: 1800.ms,
+                          duration: 1000.ms,
+                          curve: Curves.decelerate)
                   // experience()
                 ],
               ),
@@ -151,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontSize: fontSize,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w800,
-                  color: Colors.white,
+                  color: ColorOfApp.textBold,
                 ),
               ),
             )
@@ -161,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontSize: fontSize,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w800,
-                color: Colors.white,
+                color: ColorOfApp.textBold,
               ),
             ),
     );
@@ -192,16 +193,20 @@ class _HomeScreenState extends State<HomeScreen> {
               child: AutoSizeText(
                 HomeScreenData.name,
                 maxLines: 1,
-                style:
-                    TextStyle(fontSize: Get.width * 0.1, fontFamily: 'Oswald'),
+                style: TextStyle(
+                    color: ColorOfApp.textBold,
+                    fontSize: Get.width * 0.1,
+                    fontFamily: 'Oswald'),
               ),
             )
           : Center(
               child: AutoSizeText(
                 HomeScreenData.name,
                 maxLines: 1,
-                style:
-                    TextStyle(fontSize: Get.width * 0.1, fontFamily: 'Oswald'),
+                style: TextStyle(
+                    color: ColorOfApp.textBold,
+                    fontSize: Get.width * 0.1,
+                    fontFamily: 'Oswald'),
               ),
             ),
     );
@@ -216,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(
                   fontSize: Get.width,
                   fontFamily: 'Merriweather',
-                  color: Colors.grey),
+                  color: ColorOfApp.textLight),
             ),
           )
         : Center(
@@ -226,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(
                   fontSize: Get.width,
                   fontFamily: 'Merriweather',
-                  color: Colors.grey),
+                  color: ColorOfApp.textLight),
             ),
           );
   }
@@ -235,9 +240,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
       child: Card(
-        color: const Color.fromRGBO(12, 22, 21, 1.0),
-        shadowColor: const Color.fromRGBO(43,255,255,1),
-        elevation: 10,
+        color: ColorOfApp.card,
+        shadowColor: ColorOfApp.cardShadow,
+        elevation: 30,
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
@@ -245,6 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
               heading(heading: 'About', paddingTop: 0, paddingBottom: 20),
               Text(
                 HomeScreenData.discription_short,
+                style: const TextStyle(color: ColorOfApp.textLight),
               )
             ],
           ),
@@ -263,9 +269,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Row(
           children: [
             Card(
-              color: Colors.black,
+              color: ColorOfApp.card,
               elevation: 5,
-              shadowColor: const Color.fromRGBO(43,255,255,1),
+              shadowColor: ColorOfApp.cardShadow,
               child: SizedBox(
                 width: Get.width * 0.13,
                 height: Get.width * 0.13,
@@ -290,9 +296,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Row(
           children: [
             Card(
-              color: Colors.black,
+              color: ColorOfApp.card,
               elevation: 5,
-              shadowColor: const Color.fromRGBO(43,255,255,1),
+              shadowColor: ColorOfApp.cardShadow,
               child: SizedBox(
                 width: Get.width * 0.13,
                 height: Get.width * 0.13,
@@ -304,7 +310,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       scale: 1.7,
                       child: Icon(
                         Iconname,
-                        color: Colors.white,
+                        color: ColorOfApp.homeIconColor,
                       )),
                 ),
               ),
@@ -356,7 +362,7 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.all(15.0),
         child: Column(
           children: [
-            heading(heading: 'Skills', paddingTop: 0, paddingBottom: 20),
+            heading(heading: 'Skills', paddingTop: 0, paddingBottom: 40),
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -372,10 +378,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       animation: true,
                       animationDuration: 10000,
                       radius: Get.width / 7.2,
-                      lineWidth: 5,
+                      lineWidth: 4,
                       percent: HomeScreenData.skills[index]![1],
-                      progressColor: Colors.white,
-                      backgroundColor: Colors.white10,
+                      progressColor: ColorOfApp.homeSkillActive,
+                      backgroundColor: ColorOfApp.homeSkillUnachieve,
                       circularStrokeCap: CircularStrokeCap.square,
                     ),
                     const SizedBox(
@@ -387,7 +393,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w600,
                           fontSize: 15,
                           fontFamily: 'OpenSans',
-                          color: Color.fromRGBO(108, 106, 106, 1),
+                          color: ColorOfApp.textBold,
                         ))
                   ],
                 );
@@ -410,7 +416,7 @@ class _HomeScreenState extends State<HomeScreen> {
             fontWeight: FontWeight.w900,
             fontSize: 20,
             fontFamily: 'OpenSans',
-            color: Colors.white70,
+            color: ColorOfApp.textLight,
           ),
         ),
         const SizedBox(
@@ -420,7 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget socialProfileSelf(){
+  Widget socialProfileSelf() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -457,10 +463,14 @@ class _HomeScreenState extends State<HomeScreen> {
             )
                 .animate()
                 .scale(
-                delay: 700.ms, duration: 500.ms, curve: Curves.decelerate)
+                    delay: 700.ms, duration: 500.ms, curve: Curves.decelerate)
                 .fadeIn(
-                delay: 700.ms, duration: 1000.ms, curve: Curves.decelerate)),
-        const SizedBox(height: 40,)
+                    delay: 700.ms,
+                    duration: 1000.ms,
+                    curve: Curves.decelerate)),
+        const SizedBox(
+          height: 40,
+        )
       ],
     );
   }

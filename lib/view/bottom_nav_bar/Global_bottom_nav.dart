@@ -1,11 +1,10 @@
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
-import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import '../../shared/color.dart';
 import '../../shared/global_widgets.dart';
 import 'carrier/carrier_screen.dart';
 import 'home_page/home_screen.dart';
@@ -168,12 +167,12 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
         ),
         label: label,
         activeIcon: Card(
-          color: Colors.white,
-          elevation: 10,
-          shadowColor: Colors.white,
+          color: ColorOfApp.bottomNavCard,
+          elevation: 15,
+          shadowColor: ColorOfApp.bottomNavCardShadow,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-            child: Icon(icon, color: Colors.black),
+            child: Icon(icon, color: ColorOfApp.bottomNavActiveIcon),
           ),
         ),
       );
@@ -185,11 +184,11 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
         highlightColor: Colors.transparent,
       ),
       child: BottomNavigationBar(
-        backgroundColor: Colors.black,
+        backgroundColor: ColorOfApp.background,
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
-        unselectedItemColor: Colors.white.withOpacity(0.3),
-        selectedItemColor: Colors.white,
+        unselectedItemColor: ColorOfApp.bottomNavInactiveItem,
+        selectedItemColor: ColorOfApp.bottomNavActiveText,
         selectedLabelStyle: const TextStyle(color: Colors.white),
         unselectedLabelStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
         showSelectedLabels: true,
