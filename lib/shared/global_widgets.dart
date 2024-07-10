@@ -65,7 +65,7 @@ class BottonSheet {
         height: 5,
         margin: const EdgeInsets.symmetric(vertical: 8),
         decoration: BoxDecoration(
-          color: ColorOfApp.,
+          color: ColorOfApp.bottomSheetHandle,
           borderRadius: BorderRadius.circular(2.5),
         ),
       ),
@@ -86,7 +86,7 @@ class BottonSheet {
               },
               child: const Icon(
                 CupertinoIcons.back,
-                color: Colors.white,
+                color: ColorOfApp.bottomSheetIcon,
                 size: 30,
               ),
             ),
@@ -96,6 +96,7 @@ class BottonSheet {
             style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 25,
+                color: ColorOfApp.textBold,
                 fontFamily: 'Oswald'),
           ),
           Padding(
@@ -105,7 +106,7 @@ class BottonSheet {
                 BottomSheetLogic.send_button_logic();
               },
               child: const Icon(CupertinoIcons.share,
-                  color: Colors.white, size: 30),
+                  color: ColorOfApp.bottomSheetIcon, size: 30),
             ),
           )
         ],
@@ -120,10 +121,11 @@ class BottonSheet {
       child: SizedBox(
         width: Get.width * 0.8,
         child: Card(
+          color: ColorOfApp.card,
           elevation: 20,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          shadowColor: Colors.white,
+          shadowColor: ColorOfApp.cardShadow,
           child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(imageLocation)),
@@ -141,6 +143,7 @@ class BottonSheet {
             style: const TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 35,
+                color: ColorOfApp.textBold,
                 fontFamily: 'Merriweather')),
         SizedBox(
           height: Get.height * 0.02,
@@ -152,86 +155,80 @@ class BottonSheet {
   Widget _discription({required shortDiscription}) {
     return Text(
       shortDiscription,
-      style: const TextStyle(fontFamily: 'Oswald'),
+      style: const TextStyle(fontFamily: 'Oswald', color: ColorOfApp.textLight),
     );
   }
 
   Widget _externalLink({required String playstore, required String github}) {
-    Widget _playstorePlusGit(
-        {required String github, required String playstore}) {
+    Widget _githubButton({required VoidCallback onPressed}) {
+      return OutlinedButton(
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
+          ),
+          foregroundColor: ColorOfApp.background,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(MdiIcons.github, color: Colors.white),
+            const SizedBox(width: 10),
+            const Flexible(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Text(
+                  'Github',
+                  style: TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    Widget _playstoreButton({required VoidCallback onPressed}) {
+      return ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: ColorOfApp.cardShadow,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 3),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(MdiIcons.googlePlay, color: Colors.white),
+              const SizedBox(width: 10),
+              const Flexible(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Text(
+                    'PlayStore',
+                    style: TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    Widget _playstorePlusGit({required String github, required String playstore}) {
       return Padding(
-        padding: const EdgeInsets.only(top: 25, bottom: 25),
+        padding: const EdgeInsets.symmetric(vertical: 25),
         child: Row(
           children: [
             Expanded(
-              child: OutlinedButton(
-                  onPressed: () {
-                    BottomSheetLogic.open_github_project(link: github);
-                  },
-                  style: OutlinedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      foregroundColor: Colors.white),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        MdiIcons.github,
-                        color: Colors.white,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Flexible(
-                          child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Text(
-                          'Github',
-                          style: TextStyle(
-                              color: Colors.white, fontFamily: 'Poppins'),
-                        ),
-                      )),
-                    ],
-                  )),
+              child: _githubButton(onPressed: () => BottomSheetLogic.open_github_project(link: github)),
             ),
-            const SizedBox(
-              width: 15,
-            ),
+            const SizedBox(width: 15),
             Expanded(
-                child: ElevatedButton(
-              onPressed: () {
-                BottomSheetLogic.open_playstore_project(link: playstore);
-              },
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(10, 102, 194, 1),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5))),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 3),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      MdiIcons.googlePlay,
-                      color: Colors.white,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const Flexible(
-                        child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Text(
-                        'PlayStore',
-                        style: TextStyle(
-                            color: Colors.white, fontFamily: 'Poppins'),
-                      ),
-                    )),
-                  ],
-                ),
-              ),
-            ))
+              child: _playstoreButton(onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore)),
+            ),
           ],
         ),
       );
@@ -239,40 +236,11 @@ class BottonSheet {
 
     Widget _githubShow({required String github}) {
       return Padding(
-        padding: const EdgeInsets.only(top: 25, bottom: 25),
+        padding: const EdgeInsets.symmetric(vertical: 25),
         child: Row(
           children: [
             Expanded(
-              child: OutlinedButton(
-                  onPressed: () {
-                    BottomSheetLogic.open_github_project(link: github);
-                  },
-                  style: OutlinedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      foregroundColor: Colors.white),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        MdiIcons.github,
-                        color: Colors.white,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Flexible(
-                          child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Text(
-                          'Github',
-                          style: TextStyle(
-                              color: Colors.white, fontFamily: 'Poppins'),
-                        ),
-                      )),
-                    ],
-                  )),
+              child: _githubButton(onPressed: () => BottomSheetLogic.open_github_project(link: github)),
             ),
           ],
         ),
@@ -281,43 +249,12 @@ class BottonSheet {
 
     Widget _playStoreShow({required String playstore}) {
       return Padding(
-        padding: const EdgeInsets.only(top: 25, bottom: 25),
+        padding: const EdgeInsets.symmetric(vertical: 25),
         child: Row(
           children: [
             Expanded(
-                child: ElevatedButton(
-              onPressed: () {
-                BottomSheetLogic.open_playstore_project(link: playstore);
-              },
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(10, 102, 194, 1),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5))),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 3),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      MdiIcons.googlePlay,
-                      color: Colors.white,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const Flexible(
-                        child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Text(
-                        'PlayStore',
-                        style: TextStyle(
-                            color: Colors.white, fontFamily: 'Poppins'),
-                      ),
-                    )),
-                  ],
-                ),
-              ),
-            ))
+              child: _playstoreButton(onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore)),
+            ),
           ],
         ),
       );
