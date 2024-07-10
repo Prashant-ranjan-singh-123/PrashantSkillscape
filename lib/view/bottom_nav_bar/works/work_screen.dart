@@ -7,9 +7,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/works/work_screen_data.dart';
+import '../../../shared/color.dart';
 import '../../../shared/global_widgets.dart';
 
-class WorkScreen extends StatefulWidget{
+class WorkScreen extends StatefulWidget {
   WorkScreen({super.key});
 
   @override
@@ -98,6 +99,7 @@ class _HomeScreenState extends State<WorkScreen> {
             style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 25,
+                color: ColorOfApp.textBold,
                 fontFamily: 'Oswald'),
           ),
         ),
@@ -106,12 +108,13 @@ class _HomeScreenState extends State<WorkScreen> {
           child: Text(
             'Github Link | Playstore Link',
             style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 15,
-                fontFamily: 'OpenSans',
-                color: Color.fromRGBO(108, 106, 106, 1)),
+              fontWeight: FontWeight.w600,
+              fontSize: 15,
+              fontFamily: 'OpenSans',
+              color: ColorOfApp.textLight,
+            ),
           ),
-        ),
+        )
       ],
     );
   }
@@ -149,10 +152,11 @@ class _HomeScreenState extends State<WorkScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'My Live Projetcs (OpenSource)',
+              'My Live Projects',
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 25,
+                color: ColorOfApp.textBold,
                 fontFamily: 'Oswald',
               ),
             ),
@@ -162,7 +166,7 @@ class _HomeScreenState extends State<WorkScreen> {
                 fontWeight: FontWeight.w600,
                 fontSize: 15,
                 fontFamily: 'OpenSans',
-                color: Color.fromRGBO(108, 106, 106, 1),
+                color: ColorOfApp.textLight,
               ),
             ),
           ],
@@ -188,15 +192,14 @@ class _HomeScreenState extends State<WorkScreen> {
               exitBottomSheetDuration: const Duration(milliseconds: 300),
               barrierColor: Colors.black.withOpacity(0.8),
               elevation: 5,
-              isDismissible: false
-          );
+              isDismissible: false);
         },
         child: Column(
           children: [
             Card(
-              color: const Color.fromRGBO(236, 236, 236, 1),
+              color: ColorOfApp.card,
               elevation: 50,
-              shadowColor: Colors.grey.withOpacity(0.8),
+              shadowColor: ColorOfApp.cardShadow,
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
@@ -211,6 +214,7 @@ class _HomeScreenState extends State<WorkScreen> {
                   style: TextStyle(
                       fontWeight: FontWeight.w900,
                       fontSize: Get.width * 0.4,
+                      color: ColorOfApp.textBold,
                       fontFamily: 'Poppins')),
             )
           ],
@@ -223,27 +227,26 @@ class _HomeScreenState extends State<WorkScreen> {
         onTap: () {
           Get.bottomSheet(
               BottonSheet().bottomSheet(
-              heading: WorkScreenData.experience[index][0],
-              imageLocation: WorkScreenData.experience[index][2],
-              shortDiscription: WorkScreenData.experience[index][1],
-              playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
-              githubLink: WorkScreenData.experience[index][5]['Link'][1],
-            ),
+                heading: WorkScreenData.experience[index][0],
+                imageLocation: WorkScreenData.experience[index][2],
+                shortDiscription: WorkScreenData.experience[index][1],
+                playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
+                githubLink: WorkScreenData.experience[index][5]['Link'][1],
+              ),
               isScrollControlled: false,
               backgroundColor: Colors.transparent,
               enterBottomSheetDuration: const Duration(milliseconds: 300),
               exitBottomSheetDuration: const Duration(milliseconds: 300),
               barrierColor: Colors.black.withOpacity(0.8),
               elevation: 5,
-              isDismissible: false
-          );
+              isDismissible: false);
         },
         child: Column(
           children: [
             Card(
-              color: const Color.fromRGBO(236, 236, 236, 1),
+              color: ColorOfApp.textBold,
               elevation: 50,
-              shadowColor: Colors.grey.withOpacity(0.8),
+              shadowColor: ColorOfApp.cardShadow,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.asset(

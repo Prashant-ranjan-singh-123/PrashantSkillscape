@@ -21,8 +21,14 @@ class ColorOfApp{
 
 
   // --Project Screen Color--
-  static const Color projectCursorSliderGradientTop= Color.fromRGBO(255, 255, 255, 1.0);
+  static const Color projectCursorSliderGradientTop= Color.fromRGBO(65, 57, 248, 1.0);
   static const Color projectCursorSliderGradientDown= Color.fromRGBO(255, 255, 255, 1.0);
+  static const Color projectCursorSliderTextBold= Color.fromRGBO(4, 0, 20, 1);
+  static const Color projectCursorSliderTextLight= Color.fromRGBO(
+      51, 52, 58, 1.0);
+
+
+
 
 
   // --Bottom Nav Color--

@@ -23,7 +23,7 @@ class BottonSheet {
         return Container(
           width: Get.width,
           decoration: const BoxDecoration(
-            color: Colors.black,
+            color: ColorOfApp.background,
             borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
           ),
           child: Padding(
@@ -65,7 +65,7 @@ class BottonSheet {
         height: 5,
         margin: const EdgeInsets.symmetric(vertical: 8),
         decoration: BoxDecoration(
-          color: Colors.grey,
+          color: ColorOfApp.,
           borderRadius: BorderRadius.circular(2.5),
         ),
       ),

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prashant_potfolio/shared/app_asset.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../shared/color.dart';
 import '../../../shared/global_widgets.dart';
 import '../../../shared/under_development_dialog.dart';
 
@@ -69,7 +70,7 @@ class WorkScreenData {
         'Link': [
           '',
           'https://github.com/Prashant-ranjan-singh-123/shoe_haven',
-          ]
+        ]
       }
     ],
     4: [
@@ -121,7 +122,10 @@ class WorkScreenData {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           gradient: const LinearGradient(
-            colors: [Colors.white, Colors.grey], // adjust colors as needed
+            colors: [
+              ColorOfApp.projectCursorSliderGradientTop,
+              ColorOfApp.projectCursorSliderGradientDown
+            ], // adjust colors as needed
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -144,7 +148,7 @@ class WorkScreenData {
                           style: const TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 23,
-                            color: Colors.black,
+                            color: ColorOfApp.projectCursorSliderTextBold,
                             fontFamily: 'Merriweather',
                           )),
                       Expanded(
@@ -155,7 +159,7 @@ class WorkScreenData {
                             style: const TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-                              color: Color.fromRGBO(108, 106, 106, 1),
+                              color: ColorOfApp.projectCursorSliderTextLight,
                               fontFamily: 'Merriweather',
                             ),
                           )),
@@ -167,7 +171,7 @@ class WorkScreenData {
                       // const Spacer(),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black,
+                              backgroundColor: ColorOfApp.background,
                               elevation: 10,
                               shape: const RoundedRectangleBorder(
                                   borderRadius:
@@ -182,16 +186,17 @@ class WorkScreenData {
                                     githubLink: experience[5]['Link'][1]),
                                 isScrollControlled: false,
                                 backgroundColor: Colors.black,
-                                enterBottomSheetDuration: const Duration(milliseconds: 300),
-                                exitBottomSheetDuration: const Duration(milliseconds: 300),
+                                enterBottomSheetDuration:
+                                    const Duration(milliseconds: 300),
+                                exitBottomSheetDuration:
+                                    const Duration(milliseconds: 300),
                                 barrierColor: Colors.black.withOpacity(0.8),
                                 elevation: 5,
-                                isDismissible: false
-                            );
+                                isDismissible: false);
                           },
                           child: const Text(
                             '     Know More    ',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: ColorOfApp.textBold),
                           ))
                     ],
                   ),
@@ -211,26 +216,22 @@ class WorkScreenData {
   }
 }
 
-class BottomSheetLogic{
-  static void back_button_logic(){
+class BottomSheetLogic {
+  static void back_button_logic() {
     Get.back();
   }
 
-
-  static void send_button_logic(){
+  static void send_button_logic() {
     Development.showDialogBox();
   }
 
-
-  static void open_github_project({required String link}){
+  static void open_github_project({required String link}) {
     BottomSheetLogic.openGithub(dt: link);
   }
 
-
-  static void open_playstore_project({required String link}){
+  static void open_playstore_project({required String link}) {
     BottomSheetLogic.openPlayStore(dt: link);
   }
-
 
   // -- To Open Github with Link Logic --
   static void openGithub({required String dt}) async {
@@ -256,7 +257,6 @@ class BottomSheetLogic{
       }
     }
   }
-
 
   // Function to open Play Store link
   static void openPlayStore({required String dt}) async {
