@@ -15,7 +15,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> showOnboard() async {
-    await Future.delayed(const Duration(microseconds: 1), () {
+    await Future.delayed(const Duration(seconds: 1), () {
       Get.offAll(const OnboardingOrMainScreen());
     });
   }
