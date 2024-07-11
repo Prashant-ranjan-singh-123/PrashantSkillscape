@@ -1,5 +1,4 @@
 import 'package:prashant_potfolio/shared/app_asset.dart';
-import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_logic.dart';
 
 class HomeScreenData {
   static education_fun_call() {}

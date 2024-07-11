@@ -5,7 +5,6 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:prashant_potfolio/shared/app_asset.dart';
 import 'package:prashant_potfolio/shared/global_widgets.dart';
 import '../../shared/globalVar&Fun.dart';
-import '../bottom_nav_bar/Global_bottom_nav.dart';
 import '../on_boarding/check_first_run.dart';
 
 class SplashScreen extends StatefulWidget {

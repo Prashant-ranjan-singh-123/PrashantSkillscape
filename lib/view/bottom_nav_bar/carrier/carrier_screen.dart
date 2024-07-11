@@ -4,7 +4,6 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/carrier/carrier_screen_data.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-
 import '../../../shared/color.dart';
 import '../../../shared/global_widgets.dart';
 
