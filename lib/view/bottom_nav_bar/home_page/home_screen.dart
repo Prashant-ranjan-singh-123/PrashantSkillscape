@@ -3,7 +3,6 @@ import 'package:email_sender/email_sender.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -37,86 +36,14 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  topImageWidget()
-                      .animate()
-                      .scale(
-                          delay: 400.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 400.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
-                  nameOdDev()
-                      .animate()
-                      .scale(
-                          delay: 600.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 600.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
-                  professionOfDeveloper()
-                      .animate()
-                      .scale(
-                          delay: 800.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 800.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
-                  socialMedia()
-                      .animate()
-                      .scale(
-                          delay: 1000.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 1000.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
-                  aboutText()
-                      .animate()
-                      .scale(
-                          delay: 1200.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 1200.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
-                  skillText()
-                      .animate()
-                      .scale(
-                          delay: 1400.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 1400.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
-                  contactMe()
-                      .animate()
-                      .scale(
-                          delay: 1600.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 1600.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
+                  topImageWidget(),
+                  nameOdDev(),
+                  professionOfDeveloper(),
+                  socialMedia(),
+                  aboutText(),
+                  skillText(),
+                  contactMe(),
                   socialProfileSelf()
-                      .animate()
-                      .scale(
-                          delay: 1800.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 1800.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate)
                   // experience()
                 ],
               ),
@@ -460,14 +387,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   image: HomeScreenData.socialLink[index]![0],
                 ),
               ),
-            )
-                .animate()
-                .scale(
-                    delay: 700.ms, duration: 500.ms, curve: Curves.decelerate)
-                .fadeIn(
-                    delay: 700.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate)),
+            )),
         const SizedBox(
           height: 40,
         )

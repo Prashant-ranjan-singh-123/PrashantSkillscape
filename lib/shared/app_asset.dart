@@ -36,4 +36,5 @@ class AppAssets{
   static String lottieAboutMe = 'asset/lottie/about_me.json';
   static String lottieConnectMe = 'asset/lottie/connect_me.json';
   static String lottieProjects = 'asset/lottie/projects.json';
+  static String lottieConstruction = 'asset/lottie/under_construction.json';
 }

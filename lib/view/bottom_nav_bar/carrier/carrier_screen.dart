@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/carrier/carrier_screen_data.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
@@ -24,26 +23,8 @@ class CarrierScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  experience()
-                      .animate()
-                      .scale(
-                          delay: 400.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 400.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
-                  education()
-                      .animate()
-                      .scale(
-                          delay: 400.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 400.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
+                  experience(),
+                  education(),
                 ],
               ),
             ),
@@ -193,16 +174,7 @@ class CarrierScreen extends StatelessWidget {
             ),
           ),
         ),
-      )
-          .animate()
-          .scale(
-              delay: delayTimeToShow.ms,
-              duration: 500.ms,
-              curve: Curves.decelerate)
-          .fadeIn(
-              delay: delayTimeToShow.ms,
-              duration: 1000.ms,
-              curve: Curves.decelerate);
+      );
     }
 
     return Column(

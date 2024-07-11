@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/works/work_screen_data.dart';
 import '../../../shared/color.dart';
@@ -35,46 +34,10 @@ class _HomeScreenState extends State<WorkScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  heading_and_subtitle_top()
-                      .animate()
-                      .scale(
-                          delay: 400.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .desaturate(
-                          delay: 400.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
-                  CustomCoursalSclider()
-                      .animate()
-                      .scale(
-                          delay: 600.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 600.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
-                  types()
-                      .animate()
-                      .scale(
-                          delay: 800.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 800.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate),
+                  heading_and_subtitle_top(),
+                  CustomCoursalSclider(),
+                  types(),
                   grid_view_items()
-                      .animate()
-                      .scale(
-                          delay: 1000.ms,
-                          duration: 500.ms,
-                          curve: Curves.decelerate)
-                      .fadeIn(
-                          delay: 1000.ms,
-                          duration: 1000.ms,
-                          curve: Curves.decelerate)
                 ],
               ),
             ),

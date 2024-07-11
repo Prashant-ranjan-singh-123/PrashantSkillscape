@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:prashant_potfolio/shared/global_widgets.dart';
@@ -38,20 +37,14 @@ class PageViewShow extends StatelessWidget {
                 SizedBox(
                   height: returnSizeOfScreenWhichIsSmaller() * 0.5,
                   width: returnSizeOfScreenWhichIsBigger(),
-                  child: buildPicture()
-                      .animate()
-                      .scale(duration: 1000.ms, curve: Curves.decelerate)
-                      .fadeIn(duration: 2000.ms),
+                  child: buildPicture(),
                 ),
                 const SizedBox(height: 10),
                 Text(heading,
                         style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
-                            fontFamily: 'Poppins'))
-                    .animate()
-                    .scale(duration: 1000.ms, curve: Curves.decelerate)
-                    .fadeIn(duration: 2000.ms),
+                            fontFamily: 'Poppins')),
                 const SizedBox(height: 15),
                 SizedBox(
                   width: Get.width * 0.8,
@@ -62,10 +55,7 @@ class PageViewShow extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         fontSize: 14),
                     textAlign: TextAlign.center,
-                  )
-                      .animate()
-                      .scale(duration: 1000.ms, curve: Curves.decelerate)
-                      .fadeIn(duration: 2000.ms),
+                  ),
                 ),
               ],
             ),
@@ -93,10 +83,7 @@ class PageViewShow extends StatelessWidget {
                   SizedBox(
                     height: returnSizeOfScreenWhichIsSmaller() * 0.6,
                     width: returnSizeOfScreenWhichIsSmaller(),
-                    child: buildPicture()
-                        .animate()
-                        .scale(duration: 1000.ms, curve: Curves.decelerate)
-                        .fadeIn(duration: 2000.ms),
+                    child: buildPicture(),
                   ),
                   const SizedBox(height: 20),
                   AutoSizeText(heading,
@@ -104,10 +91,7 @@ class PageViewShow extends StatelessWidget {
                           style: const TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.w700,
-                              fontFamily: 'Poppins'))
-                      .animate()
-                      .scale(duration: 1000.ms, curve: Curves.decelerate)
-                      .fadeIn(duration: 2000.ms),
+                              fontFamily: 'Poppins')),
                   const SizedBox(height: 15),
                   SizedBox(
                     width: Get.width * 0.8,
@@ -119,10 +103,7 @@ class PageViewShow extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           fontSize: 14),
                       textAlign: TextAlign.center,
-                    )
-                        .animate()
-                        .scale(duration: 1000.ms, curve: Curves.decelerate)
-                        .fadeIn(duration: 2000.ms),
+                    ),
                   ),
                 ],
               ),

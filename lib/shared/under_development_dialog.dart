@@ -1,7 +1,9 @@
 import 'package:android_intent_plus/android_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:prashant_potfolio/shared/app_asset.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Development{
@@ -16,7 +18,7 @@ class Development{
     }
 
     String dt =
-        'https://github.com/Prashant-ranjan-singh-123/shoe_haven';
+        'https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape';
     bool isInstalled = await isGithubInInstalled();
     if (isInstalled != false) {
       AndroidIntent intent = AndroidIntent(action: 'action_view', data: dt);
@@ -44,10 +46,10 @@ class Development{
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            // SizedBox(
-            //   width: 200,
-            //   child: Lottie.asset('assets/lottie/under_construction.json', reverse: true),
-            // ),
+            SizedBox(
+              width: 200,
+              child: Lottie.asset(AppAssets.lottieConstruction, reverse: true),
+            ),
             const SizedBox(height: 32),
             const Text(
               maxLines: 1,

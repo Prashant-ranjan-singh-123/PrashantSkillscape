@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:prashant_potfolio/shared/app_asset.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/Global_bottom_nav.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import 'page_view_show.dart';
+
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});

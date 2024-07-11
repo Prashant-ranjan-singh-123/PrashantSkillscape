@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 
 import '../works/work_screen_data.dart';
@@ -20,22 +19,8 @@ class CertificateScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                heading_and_subtitle_top().animate()
-                    .scale(
-                    delay: 400.ms, duration: 500.ms, curve: Curves.decelerate)
-                    .desaturate(
-                    delay: 400.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate),
-
-                CustomCoursalSclider()
-                    .animate()
-                    .scale(
-                    delay: 600.ms, duration: 500.ms, curve: Curves.decelerate)
-                    .fadeIn(
-                    delay: 600.ms,
-                    duration: 1000.ms,
-                    curve: Curves.decelerate),
+                heading_and_subtitle_top(),
+                CustomCoursalSclider(),
               ],
             ),
           ),
