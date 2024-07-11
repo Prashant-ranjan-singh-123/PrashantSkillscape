@@ -1,14 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:prashant_potfolio/shared/app_asset.dart';
 import 'package:prashant_potfolio/shared/global_widgets.dart';
 import '../../shared/globalVar&Fun.dart';
 import '../on_boarding/check_first_run.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -16,8 +15,8 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> showOnboard() async {
-    Future.delayed(const Duration(seconds: 3, milliseconds: 500), () {
-      Get.offAll(const OnboardingOrMainScreen(),
+    await Future.delayed(const Duration(seconds: 3, milliseconds: 500), () {
+      Get.offAll(() => const OnboardingOrMainScreen(),
           transition: Transition.fadeIn,
           duration: const Duration(seconds: 2));
     });
@@ -35,11 +34,11 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.black,
       body: CommonUsedWidget.background(
         child: myCustomColumn(
-            children: [
-              logo(),
-              nameOfApp(),
-              shortDiscription()
-            ]
+          children: [
+            logo(),
+            nameOfApp(),
+            shortDescription()
+          ],
         ),
       ),
     );
@@ -60,32 +59,34 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Widget logo() {
     return SizedBox(
-        width: returnSizeOfScreenWhichIsSmaller() * 0.5,
-        height: returnSizeOfScreenWhichIsSmaller() * 0.5,
-        child: Image.asset(AppAssets.iconMine));
+      width: returnSizeOfScreenWhichIsSmaller() * 0.5,
+      height: returnSizeOfScreenWhichIsSmaller() * 0.5,
+      child: Image.asset(AppAssets.iconMine),
+    );
   }
 
   Widget nameOfApp() {
     return Column(
-      children: [
-        SizedBox(height: 25,),
-        const AutoSizeText(
-          maxLines: 1,
+      children: const [
+        SizedBox(height: 25),
+        AutoSizeText(
           'Portfolio',
+          maxLines: 1,
           style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.w900,
-              fontFamily: 'Poppins',
-              color: Colors.white),
+            fontSize: 25,
+            fontWeight: FontWeight.w900,
+            fontFamily: 'Poppins',
+            color: Colors.white,
+          ),
         ),
       ],
     );
   }
 
-  Widget shortDiscription() {
+  Widget shortDescription() {
     return const AutoSizeText(
-      maxLines: 1,
       '---Flutter Developer---',
+      maxLines: 1,
       style: TextStyle(fontFamily: 'OpenSans', color: Colors.white),
     );
   }
