@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> showOnboard() async {
     await Future.delayed(const Duration(seconds: 1), () {
-      Get.offAll(const OnboardingOrMainScreen());
+      Get.offAll(() => OnboardingOrMainScreen());
     });
   }
 
@@ -33,9 +34,9 @@ class _SplashScreenState extends State<SplashScreen> {
       body: CommonUsedWidget.background(
         child: myCustomColumn(
           children: [
-            logo(),
-            nameOfApp(),
-            shortDescription()
+            ZoomIn(child: logo()),
+            ZoomIn(child: nameOfApp()),
+            ZoomIn(child: shortDescription())
           ],
         ),
       ),

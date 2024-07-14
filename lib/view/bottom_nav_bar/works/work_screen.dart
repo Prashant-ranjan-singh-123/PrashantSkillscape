@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +35,10 @@ class _HomeScreenState extends State<WorkScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  heading_and_subtitle_top(),
-                  CustomCoursalSclider(),
-                  types(),
-                  grid_view_items()
+                  ZoomIn(delay: Duration(milliseconds: 200), duration: Duration(milliseconds: 400), curve: Curves.decelerate , child: heading_and_subtitle_top()),
+                  ZoomIn(delay: Duration(milliseconds: 500), duration: Duration(milliseconds: 400), curve: Curves.decelerate , child: CustomCoursalSclider()),
+                  ZoomIn(delay: Duration(milliseconds: 800), duration: Duration(milliseconds: 400), curve: Curves.decelerate , child: types()),
+                  ZoomIn(delay: Duration(milliseconds: 1100), duration: Duration(milliseconds: 400), curve: Curves.decelerate , child: grid_view_items())
                 ],
               ),
             ),

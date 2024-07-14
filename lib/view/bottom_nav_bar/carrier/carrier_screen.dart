@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -191,11 +192,14 @@ class CarrierScreen extends StatelessWidget {
             shrinkWrap: true,
             itemCount: CarrierScreenData.education.length,
             itemBuilder: (_, index) {
-              return my_card(
-                  heading: CarrierScreenData.education[index + 1][0],
-                  body: CarrierScreenData.education[index + 1][1],
-                  fun: CarrierScreenData.education[index + 1][2],
-                  index: index + 1);
+              return ZoomIn(
+                delay: Duration(milliseconds: (CarrierScreenData.experience.length - 1)),
+                child: my_card(
+                    heading: CarrierScreenData.education[index + 1][0],
+                    body: CarrierScreenData.education[index + 1][1],
+                    fun: CarrierScreenData.education[index + 1][2],
+                    index: index + 1),
+              );
             }),
         const SizedBox(
           height: 40,
@@ -215,17 +219,25 @@ class CarrierScreen extends StatelessWidget {
             reverse: true,
             itemBuilder: (_, index) {
               if (index == 0) {
-                return myCustomTimeline(
-                    isLast: true,
-                    heading: CarrierScreenData.experience[index + 1][0],
-                    body: CarrierScreenData.experience[index + 1][1],
-                    fun: CarrierScreenData.experience[index + 1][2]);
+                return ZoomIn(
+                  delay: Duration(milliseconds: (CarrierScreenData.experience.length - 1 - index) * 200),
+                  curve: Curves.decelerate,
+                  child: myCustomTimeline(
+                      isLast: true,
+                      heading: CarrierScreenData.experience[index + 1][0],
+                      body: CarrierScreenData.experience[index + 1][1],
+                      fun: CarrierScreenData.experience[index + 1][2]),
+                );
               } else {
-                return myCustomTimeline(
-                    isLast: false,
-                    heading: CarrierScreenData.experience[index + 1][0],
-                    body: CarrierScreenData.experience[index + 1][1],
-                    fun: CarrierScreenData.experience[index + 1][2]);
+                return ZoomIn(
+                  delay: Duration(milliseconds: (CarrierScreenData.experience.length - 1 - index) * 200),
+                  curve: Curves.decelerate,
+                  child: myCustomTimeline(
+                      isLast: false,
+                      heading: CarrierScreenData.experience[index + 1][0],
+                      body: CarrierScreenData.experience[index + 1][1],
+                      fun: CarrierScreenData.experience[index + 1][2]),
+                );
               }
             })
       ],

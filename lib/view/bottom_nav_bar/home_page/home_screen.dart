@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,14 +33,14 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  topImageWidget(),
-                  nameOdDev(),
-                  professionOfDeveloper(),
-                  socialMedia(),
-                  aboutText(),
-                  skillText(),
-                  contactMe(),
-                  socialProfileSelf()
+                  FadeInDown(child: topImageWidget()),
+                  JelloIn(delay: Duration(milliseconds: 200), child: nameOdDev()),
+                  SlideInUp(delay: Duration(milliseconds: 400), child: professionOfDeveloper()),
+                  ZoomIn(delay: Duration(milliseconds: 600), child: socialMedia()),
+                  SlideInUp(delay: Duration(milliseconds: 800), child: aboutText()),
+                  SlideInUp(delay: Duration(milliseconds: 1000), child: skillText()),
+                  SlideInUp(delay: Duration(milliseconds: 1200), child: contactMe()),
+                  SlideInUp(delay: Duration(milliseconds: 1400), child: socialProfileSelf())
                   // experience()
                 ],
               ),
