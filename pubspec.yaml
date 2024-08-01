@@ -106,7 +106,6 @@ flutter:
     - family: Oswald
       fonts:
         - asset: asset/font/Oswald.ttf
-
     - family: Merriweather
       fonts:
         - asset: asset/font/Merriweather.ttf
