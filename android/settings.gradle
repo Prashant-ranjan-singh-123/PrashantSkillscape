@@ -15,7 +15,6 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-
 plugins {
     id "dev.flutter.flutter-plugin-loader" version "1.0.0"
     id "com.android.application" version "7.3.0" apply false
