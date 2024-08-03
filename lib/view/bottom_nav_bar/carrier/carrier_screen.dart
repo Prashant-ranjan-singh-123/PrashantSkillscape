@@ -201,7 +201,6 @@ class CarrierScreen extends StatelessWidget {
                     index: index + 1),
               );
             }),
-
         const SizedBox(
           height: 40,
         ),
