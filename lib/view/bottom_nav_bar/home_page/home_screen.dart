@@ -33,14 +33,14 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FadeInDown(child: topImageWidget()),
-                  JelloIn(delay: Duration(milliseconds: 200), child: nameOdDev()),
-                  SlideInUp(delay: Duration(milliseconds: 400), child: professionOfDeveloper()),
-                  ZoomIn(delay: Duration(milliseconds: 600), child: socialMedia()),
-                  SlideInUp(delay: Duration(milliseconds: 800), child: aboutText()),
-                  SlideInUp(delay: Duration(milliseconds: 1000), child: skillText()),
-                  SlideInUp(delay: Duration(milliseconds: 1200), child: contactMe()),
-                  SlideInUp(delay: Duration(milliseconds: 1400), child: socialProfileSelf())
+                  FadeInDownBig(child: topImageWidget()),
+                  FadeInDownBig(delay: Duration(milliseconds: 100), child: nameOdDev()),
+                  FadeInDownBig(delay: Duration(milliseconds: 200), child: professionOfDeveloper()),
+                  FadeInDownBig(delay: Duration(milliseconds: 300), child: socialMedia()),
+                  FadeInDownBig(delay: Duration(milliseconds: 400), child: aboutText()),
+                  FadeInDownBig(delay: Duration(milliseconds: 500), child: skillText()),
+                  FadeInDownBig(delay: Duration(milliseconds: 600), child: contactMe()),
+                  FadeInDownBig(delay: Duration(milliseconds: 700), child: socialProfileSelf())
                   // experience()
                 ],
               ),

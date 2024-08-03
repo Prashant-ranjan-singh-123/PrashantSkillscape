@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/cupertino.dart';
@@ -39,8 +40,9 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorOfApp.background,
       body: CommonUsedWidget.background(child: bottom_nav_bar_2_body()),
-      bottomNavigationBar: bottom_nav_bar_2(),
+      bottomNavigationBar: FadeInUpBig(child: bottom_nav_bar_2(), delay: Duration(milliseconds: 400),),
     );
   }
 
