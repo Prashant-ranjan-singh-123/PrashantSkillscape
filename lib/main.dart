@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: Typography.whiteMountainView,
       ),
+
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.white,
