@@ -42,7 +42,7 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
     return Scaffold(
       backgroundColor: ColorOfApp.background,
       body: CommonUsedWidget.background(child: bottom_nav_bar_2_body()),
-      bottomNavigationBar: FadeInUpBig(child: bottom_nav_bar_2(), delay: Duration(milliseconds: 400),),
+      bottomNavigationBar: bottom_nav_bar_2(),
     );
   }
 

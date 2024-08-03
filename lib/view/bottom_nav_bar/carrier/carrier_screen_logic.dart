@@ -38,6 +38,18 @@ class CarrierScreenLogic {
     }
   }
 
+  // -- To Open bachler Logic --
+  static void openPageNotFound() async {
+    print('object');
+    String dt = CarrierScreenData.page_not_found;
+    Uri url = Uri.parse(dt);
+    try {
+      await launchUrl(url);
+    }catch (e){
+      throw 'Could not launch $url';
+    }
+  }
+
   // -- To Open oasis_link Logic --
   static void openOasis() async {
     print('object');

@@ -63,13 +63,13 @@ class CarrierScreenData {
       'Appzeto (Junior Flutter Dev.)',
       'Sep 2023 - Nov 2023\n\n'
           'Through this Period, I immersed myself in Flutter development, gaining hands-on experience with cross-platform app creation, state management, and UI design, while collaborating on real projects that sharpened my skills and prepared me for a career in modern mobile development.',
-      CarrierScreenLogic.openBachler
+      CarrierScreenLogic.openPageNotFound
     ],
     7: [
       'Infovirtech (Junior Flutter Dev.)',
       'Jul 2023 - Aug 2023\n\n'
           'I immersed myself in Flutter development, gaining extensive hands-on experience in cross-platform app creation, state management, and UI design. Collaborating closely on real projects',
-      CarrierScreenLogic.openBachler
+      CarrierScreenLogic.openPageNotFound
     ]
   };
 
@@ -77,6 +77,7 @@ class CarrierScreenData {
   static String tenth_website_link = 'https://gisindore.in/';
   static String twelth_website_link = 'https://sitadevischool.in/';
   static String bachler_website_link = 'https://www.medicaps.ac.in/';
+  static String page_not_found = 'http://google.com/this-page-does-not-exist';
 
   // -- Experience List Link
   static String oasis_link = 'https://github.com/Prashant-ranjan-singh-123/OasisInfobyte_Java_Project';

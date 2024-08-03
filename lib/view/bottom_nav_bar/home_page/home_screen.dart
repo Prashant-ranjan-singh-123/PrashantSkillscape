@@ -300,7 +300,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     CircularPercentIndicator(
                       animation: true,
-                      animationDuration: 10000,
+                      animationDuration: 6000,
                       radius: Get.width / 7.2,
                       lineWidth: 4,
                       percent: HomeScreenData.skills[index]![1],
