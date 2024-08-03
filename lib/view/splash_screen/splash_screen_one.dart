@@ -22,6 +22,7 @@ class _SplashScreenTempState extends State<SplashScreenTemp> {
     });
   }
 
+
   @override
   void initState() {
     super.initState();
