@@ -211,7 +211,7 @@ class CarrierScreen extends StatelessWidget {
   Widget experience() {
     return Column(
       children: [
-        heading(heading: 'Experience'),
+        FadeInDownBig(child: heading(heading: 'Experience')),
         ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
@@ -219,8 +219,8 @@ class CarrierScreen extends StatelessWidget {
             reverse: true,
             itemBuilder: (_, index) {
               if (index == 0) {
-                return ZoomIn(
-                  delay: Duration(milliseconds: (CarrierScreenData.experience.length - 1 - index) * 200),
+                return FadeInDownBig(
+                  delay: Duration(milliseconds: (CarrierScreenData.experience.length - 1 - index) * 300),
                   curve: Curves.decelerate,
                   child: myCustomTimeline(
                       isLast: true,
@@ -229,8 +229,8 @@ class CarrierScreen extends StatelessWidget {
                       fun: CarrierScreenData.experience[index + 1][2]),
                 );
               } else {
-                return ZoomIn(
-                  delay: Duration(milliseconds: (CarrierScreenData.experience.length - 1 - index) * 200),
+                return FadeInDownBig(
+                  delay: Duration(milliseconds: (CarrierScreenData.experience.length - 1 - index) * 300),
                   curve: Curves.decelerate,
                   child: myCustomTimeline(
                       isLast: false,

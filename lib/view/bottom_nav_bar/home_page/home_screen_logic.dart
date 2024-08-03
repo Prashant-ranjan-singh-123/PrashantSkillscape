@@ -97,7 +97,7 @@ class HomeScreenLogic {
       scheme: 'mailto',
       path: HomeScreenData.socialLink[4]![1],
       query: encodeQueryParameters(<String, String>{
-        'subject': 'Inquiry About Your Flutter Portfolio',
+        'subject': 'Seen Your Portfolio Application',
       }),
     );
     launchUrl(emailLaunchUri);
