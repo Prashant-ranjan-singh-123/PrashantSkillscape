@@ -48,6 +48,32 @@ class WorkScreenData {
       }
     ],
     2: [
+      'Portfolio',
+      'PrashantSkillscape: Your professional journey, beautifully presented. This Flutter-built portfolio app showcases your skills, experience, and achievements with style. Featuring Material Design 3, it displays your name, designation, social media links, and a concise summary. Easily customizable, it highlights your education, work history, projects, and certifications. Whether you\'re a Flutter expert or novice, adapting this app is simple. Make a lasting impression with PrashantSkillscape - where your career story comes to life in a tap.',
+      AppAssets.featureGraphicPrashantSkillscape,
+      AppAssets.appScreenPrashantSkillScape,
+      'Playstore | Github',
+      {
+        'Link': [
+          'https://play.google.com/store/apps/details?id=com.prashant.project.portfolio',
+          'https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape',
+        ]
+      }
+    ],
+    3: [
+      'Tic Tac Tangle',
+      'You have the opportunity to engage in a game of Tic Tac Toe on your Android phone. There is no requirement to use paper in order to partake in this intriguing puzzle game! At present, you are able to enjoy the game of Tic Tac Toe on your Android device without any cost. Our latest rendition showcases a contemporary twist with an appealing glow design.',
+      AppAssets.featureGraphicTicTacTangle,
+      AppAssets.appScreenTicTacTangle,
+      'Playstore | Github',
+      {
+        'Link': [
+          'https://play.google.com/store/apps/details?id=com.prashant.game.tictactoe.tic_tac_toe_final',
+          'https://github.com/Prashant-ranjan-singh-123/Modern-Tic-Tac-Tangle',
+        ]
+      }
+    ],
+    4: [
       'Food Mania',
       'Get ready to tantalize your taste buds and unleash your inner chef with Food Mania, a recipe app built with love using Flutter! Immerse yourself in a world of culinary delights as you browse through our ever-growing collection of delicious dishes.',
       AppAssets.featureGraphicFoodMania,
@@ -55,12 +81,12 @@ class WorkScreenData {
       'Playstore | Github',
       {
         'Link': [
-          '',
+          'https://play.google.com/store/apps/details?id=com.prashant.foodmania.project',
           'https://github.com/Prashant-ranjan-singh-123/Food-Mania',
         ]
       }
     ],
-    3: [
+    5: [
       'ShoeHaven',
       'Welcome to our sleek and stylish shoe-buying app, built entirely with Flutter. Immerse yourself in a world of modern design and seamless animations as you browse through our collection of footwear.',
       AppAssets.featureGraphicShoeHaven,
@@ -73,7 +99,7 @@ class WorkScreenData {
         ]
       }
     ],
-    4: [
+    6: [
       'Priority list',
       'This comprehensive app empowers you to manage to-do\'s, manage time and notify about your daily rutine tasks. From streamlined installation to free UI, Priority List equips you for success.',
       AppAssets.featureGraphicPriorityList,
@@ -86,7 +112,7 @@ class WorkScreenData {
         ]
       }
     ],
-    5: [
+    7: [
       'Flutter Unwrapped',
       'Flutter Unwrapped unlocks the world of Flutter development on your mobile device. This comprehensive app empowers you to learn the fundamentals, build practical skills, and prepare for your Flutter developer journey. From streamlined installation to free UI kits, Flutter Unwrapped equips you for success.',
       AppAssets.featureGraphicFlutterUnwrapped,
@@ -99,7 +125,7 @@ class WorkScreenData {
         ]
       }
     ],
-    6: [
+    8: [
       'Skilled Worker',
       'It\'s a notification app that allows users to sign up with specific categories like Doctor, Photographer, Programmer etc. Upon signup, the chosen category is attached to the profile. With a premium plan, users can send notifications to specific groups or all members of the app. Notifications include a title, message, and an image that others can download.',
       AppAssets.featureGraphicSkilledWorker,

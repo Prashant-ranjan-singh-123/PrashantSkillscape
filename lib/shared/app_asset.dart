@@ -22,6 +22,9 @@ class AppAssets{
   static String appScreenPriorityList = 'asset/image/project_image/screen/priority_list.png';
   static String appScreenFlutterUnwrapped = 'asset/image/project_image/screen/flutter_unwrapped.png';
   static String appScreenSkilledWorker = 'asset/image/project_image/screen/skilled_worker.png';
+  static String appScreenPrashantSkillScape = 'asset/image/project_image/screen/prashant_skillscape.png';
+  static String appScreenTicTacTangle = 'asset/image/project_image/screen/tic_tac_tangle.png';
+
 
 
   // --Feature Graphic--
@@ -32,6 +35,8 @@ class AppAssets{
   static String featureGraphicPriorityList = 'asset/image/project_image/feature_graphic/priority_list.png';
   static String featureGraphicFlutterUnwrapped = 'asset/image/project_image/feature_graphic/flutter_unwrapped.png';
   static String featureGraphicSkilledWorker = 'asset/image/project_image/feature_graphic/skilled_worker.png';
+  static String featureGraphicPrashantSkillscape = 'asset/image/project_image/feature_graphic/prashant_skillscape.png';
+  static String featureGraphicTicTacTangle = 'asset/image/project_image/feature_graphic/tic_tac_tangle.png';
 
   static String lottieAboutMe = 'asset/lottie/about_me.json';
   static String lottieConnectMe = 'asset/lottie/connect_me.json';
