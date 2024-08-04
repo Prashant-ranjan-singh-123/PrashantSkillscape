@@ -25,8 +25,6 @@ class AppAssets{
   static String appScreenPrashantSkillScape = 'asset/image/project_image/screen/prashant_skillscape.png';
   static String appScreenTicTacTangle = 'asset/image/project_image/screen/tic_tac_tangle.png';
 
-
-
   // --Feature Graphic--
   static String featureGraphicDoctorOnHome = 'asset/image/project_image/feature_graphic/doctor_on_home.png';
   static String featureGraphicMathmaticaMind = 'asset/image/project_image/feature_graphic/mathmatica_mind.png';
@@ -38,6 +36,20 @@ class AppAssets{
   static String featureGraphicPrashantSkillscape = 'asset/image/project_image/feature_graphic/prashant_skillscape.png';
   static String featureGraphicTicTacTangle = 'asset/image/project_image/feature_graphic/tic_tac_tangle.png';
 
+  // --Certificate Images--
+  static String certificate_cyber_cisco = 'asset/image/certificates_images/cyber_cisco.jpg';
+  static String certificate_cyber_coursera_ibm = 'asset/image/certificates_images/cyber_coursera_ibm.jpg';
+  static String certificate_cyber_forge = 'asset/image/certificates_images/cyber_forge.jpg';
+  static String certificate_cyber_internshala = 'asset/image/certificates_images/cyber_internshala.jpg';
+  static String certificate_cyber_pledge = 'asset/image/certificates_images/cyber_pledge.jpg';
+  static String certificate_cyber_vidya_vikas_manadal = 'asset/image/certificates_images/cyber_vidya_vikas_mandal.jpg';
+  static String certificate_dsa_courseera_uc_san_diego = 'asset/image/certificates_images/dsa_coursera_uc_san_diego.jpg';
+  static String certificate_java_coursera_course_network = 'asset/image/certificates_images/java_courseera_course_network.jpg';
+  static String certificate_python_coursera_google = 'asset/image/certificates_images/python_coursera_google.jpg';
+  static String certificate_python_coursera_infosys = 'asset/image/certificates_images/python_coursera_infosys.jpg';
+  static String certificate_python_python_institure = 'asset/image/certificates_images/python_python_inst.jpg';
+
+  // --Lottie Animation--
   static String lottieAboutMe = 'asset/lottie/about_me.json';
   static String lottieConnectMe = 'asset/lottie/connect_me.json';
   static String lottieProjects = 'asset/lottie/projects.json';
