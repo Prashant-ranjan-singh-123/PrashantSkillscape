@@ -1,127 +1,119 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prashant_potfolio/shared/app_asset.dart';
 
 class CertificateScreenData{
   static List<Widget> cursol_slider_item = [
-    CertificateScreenData.customCard(experience: experience[0]),
-    CertificateScreenData.customCard(experience: experience[1]),
-    CertificateScreenData.customCard(experience: experience[2]),
-    CertificateScreenData.customCard(experience: experience[3]),
-    CertificateScreenData.customCard(experience: experience[4]),
-    CertificateScreenData.customCard(experience: experience[5]),
-    CertificateScreenData.customCard(experience: experience[6]),
-    CertificateScreenData.customCard(experience: experience[7]),
-    CertificateScreenData.customCard(experience: experience[8]),
-    CertificateScreenData.customCard(experience: experience[9]),
-    CertificateScreenData.customCard(experience: experience[10]),
-    CertificateScreenData.customCard(experience: experience[11]),
+    CertificateScreenData.customCard(experience: experience[0]!),
+    CertificateScreenData.customCard(experience: experience[1]!),
+    CertificateScreenData.customCard(experience: experience[2]!),
+    CertificateScreenData.customCard(experience: experience[3]!),
+    CertificateScreenData.customCard(experience: experience[4]!),
+    CertificateScreenData.customCard(experience: experience[5]!),
+    CertificateScreenData.customCard(experience: experience[6]!),
+    CertificateScreenData.customCard(experience: experience[7]!),
+    CertificateScreenData.customCard(experience: experience[8]!),
+    CertificateScreenData.customCard(experience: experience[9]!),
+    CertificateScreenData.customCard(experience: experience[10]!),
+    CertificateScreenData.customCard(experience: experience[11]!),
   ];
 
   static Map<int, Map<String, dynamic>> experience = {
     0: {
-      "certName": "",
+      "certName": "Cybersecurity Essentials",
       "description": "",
-      "featureGraphic": ,
+      "featureGraphic":AppAssets.certificate_cyber_cisco,
       "links": {
         "drive_link": "",
         "verify_link": ""
       }
     },
     1: {
-      "certName": "",
+      "certName": "Cyber Tool And Cyber Attack",
       "description": "",
-      "featureGraphic": ,
+      "featureGraphic": AppAssets.certificate_cyber_coursera_ibm,
       "links": {
         "drive_link": "",
         "verify_link": ""
       }
     },
     2: {
-      "certName": "",
+      "certName": "Anz Program",
       "description": "",
-      "featureGraphic": ,
+      "featureGraphic": AppAssets.certificate_cyber_forge,
       "links": {
         "drive_link": "",
         "verify_link": ""
       }
     },
     3: {
-      "certName": "",
+      "certName": "Cyber Security Training",
       "description": "",
-      "featureGraphic": ,
+      "featureGraphic": AppAssets.certificate_cyber_internshala,
       "links": {
         "drive_link": "",
         "verify_link": ""
       }
     },
     4: {
-      "certName": "",
+      "certName": "Cyber Security Pledge",
       "description": "",
-      "featureGraphic": ,
+      "featureGraphic": AppAssets.certificate_cyber_pledge,
       "links": {
         "drive_link": "",
         "verify_link": ""
       }
     },
     5: {
-      "certName": "",
+      "certName": "Cyber Security Awareness",
       "description": "",
-      "featureGraphic": ,
+      "featureGraphic": AppAssets.certificate_cyber_vidya_vikas_manadal,
       "links": {
         "drive_link": "",
         "verify_link": ""
       }
     },
     6: {
-      "certName": "",
+      "certName": "Data Structure",
       "description": "",
-      "featureGraphic": ,
+      "featureGraphic": AppAssets.certificate_dsa_courseera_uc_san_diego,
       "links": {
         "drive_link": "",
         "verify_link": ""
       }
     },
     7: {
-      "certName": "",
+      "certName": "Text Based Bank in Java",
       "description": "",
-      "featureGraphic": ,
+      "featureGraphic": AppAssets.certificate_java_coursera_course_network,
       "links": {
         "drive_link": "",
         "verify_link": ""
       }
     },
     8: {
-      "certName": "",
+      "certName": "Crash Course on Python",
       "description": "",
-      "featureGraphic": ,
+      "featureGraphic": AppAssets.certificate_python_coursera_google,
       "links": {
         "drive_link": "",
         "verify_link": ""
       }
     },
     9: {
-      "certName": "",
+      "certName": "Python Mastery",
       "description": "",
-      "featureGraphic": ,
+      "featureGraphic": AppAssets.certificate_python_coursera_infosys,
       "links": {
         "drive_link": "",
         "verify_link": ""
       }
     },
     10: {
-      "certName": "",
+      "certName": "Programming essential in python",
       "description": "",
-      "featureGraphic": ,
-      "links": {
-        "drive_link": "",
-        "verify_link": ""
-      }
-    },
-    11: {
-      "certName": "",
-      "description": "",
-      "featureGraphic": ,
+      "featureGraphic": AppAssets.certificate_python_python_institure,
       "links": {
         "drive_link": "",
         "verify_link": ""
@@ -129,7 +121,7 @@ class CertificateScreenData{
     },
   };
 
-  static Widget customCard({required List<dynamic> experience}){
+  static Widget customCard({required Map<String, dynamic> experience}){
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
@@ -164,7 +156,7 @@ class CertificateScreenData{
                       //         imageLocation: experience[2],
                       //         shortDiscription: experience[1],
                       //         playstoreLink: experience[5]['Link'][1],
-                      //         githubLink: experience[5]['Link'][0]),
+                      //         githubLink: experience[5]['Link'][0]!),
                       //     transition: Transition.fadeIn,
                       //     duration: 500.ms);
                     },
