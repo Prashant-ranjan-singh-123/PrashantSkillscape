@@ -65,56 +65,6 @@ class CertificateScreen extends StatelessWidget {
     );
   }
 
-  Widget customCard({required List<dynamic> experience}){
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          gradient: const LinearGradient(
-            colors: [Colors.white, Colors.grey], // adjust colors as needed
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-          child: SizedBox(
-            height: Get.height * 0.2,
-            width: Get.width,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        elevation: 10,
-                        shape: const RoundedRectangleBorder(
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(10)))),
-                    onPressed: () {
-                      // Get.to(
-                      //     ShowDetail(
-                      //         heading: experience[0],
-                      //         imageLocation: experience[2],
-                      //         shortDiscription: experience[1],
-                      //         playstoreLink: experience[5]['Link'][1],
-                      //         githubLink: experience[5]['Link'][0]),
-                      //     transition: Transition.fadeIn,
-                      //     duration: 500.ms);
-                    },
-                    child: const Text(
-                      '     Know More    ',
-                      style: TextStyle(color: Colors.white),
-                    ))
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 
   Widget CustomCoursalSclider(){
     return Padding(
