@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prashant_potfolio/shared/global_widgets.dart';
 
 import '../works/work_screen_data.dart';
 
@@ -11,17 +12,19 @@ class CertificateScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SizedBox(
-        width: Get.width,
-        height: Get.height,
-        child: SingleChildScrollView(
-          child: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                heading_and_subtitle_top(),
-                CustomCoursalSclider(),
-              ],
+      body: CommonUsedWidget.background(
+        child: SizedBox(
+          width: Get.width,
+          height: Get.height,
+          child: SingleChildScrollView(
+            child: SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  heading_and_subtitle_top(),
+                  CustomCoursalSclider(),
+                ],
+              ),
             ),
           ),
         ),

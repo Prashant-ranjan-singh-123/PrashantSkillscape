@@ -9,6 +9,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import '../../shared/color.dart';
 import '../../shared/global_widgets.dart';
 import 'carrier/carrier_screen.dart';
+import 'certificate/certificate_screen.dart';
 import 'home_page/home_screen.dart';
 import 'works/work_screen.dart';
 
@@ -20,7 +21,7 @@ class GlobalNavBar extends StatefulWidget {
 }
 
 class _GlobalNavBarState extends State<GlobalNavBar> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 3;
 
   // Notch Bar
   final _pageController = PageController(initialPage: 0);
@@ -29,12 +30,13 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
   final NotchBottomBarController _controller =
       NotchBottomBarController(index: 0);
 
-  int maxCount = 3;
+  int maxCount = 4;
 
   final List<Widget> bottomBarPages = [
     HomeScreen(),
     CarrierScreen(),
     WorkScreen(),
+    CertificateScreen()
   ];
 
   @override
@@ -209,6 +211,8 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
               case 2:
                 _selectedIndex = 2;
                 break;
+              case 3:
+                _selectedIndex = 3;
               default:
                 _selectedIndex = 0;
                 break;
@@ -219,6 +223,7 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
           _buildNavItem(Iconsax.tag_user, 'About Me'),
           _buildNavItem(Iconsax.buildings, 'Carrier'),
           _buildNavItem(Iconsax.box, 'Projects'),
+          _buildNavItem(Iconsax.book, 'Certificate'),
         ],
       ),
     );
@@ -229,8 +234,10 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
       return HomeScreen();
     } else if (_selectedIndex == 1) {
       return CarrierScreen();
-    } else {
+    } else if (_selectedIndex == 2) {
       return WorkScreen();
+    } else {
+      return CertificateScreen();
     }
   }
 }
