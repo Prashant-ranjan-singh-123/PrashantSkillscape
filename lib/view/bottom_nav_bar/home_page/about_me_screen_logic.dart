@@ -1,6 +1,6 @@
 import 'package:android_intent_plus/android_intent.dart';
 import 'package:flutter/material.dart';
-import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/home_screen_data.dart';
+import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/about_me_screen_data.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:math';
 import 'dart:ui';

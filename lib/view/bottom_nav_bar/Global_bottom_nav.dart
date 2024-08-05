@@ -10,8 +10,8 @@ import '../../shared/color.dart';
 import '../../shared/global_widgets.dart';
 import 'carrier/carrier_screen.dart';
 import 'certificate/certificate_screen.dart';
-import 'home_page/home_screen.dart';
-import 'works/work_screen.dart';
+import 'home_page/about_me_screen.dart';
+import 'works/project_screen.dart';
 
 class GlobalNavBar extends StatefulWidget {
   const GlobalNavBar({super.key});

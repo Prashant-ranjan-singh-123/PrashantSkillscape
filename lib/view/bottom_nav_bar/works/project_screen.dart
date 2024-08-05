@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:prashant_potfolio/view/bottom_nav_bar/works/work_screen_data.dart';
+import 'package:prashant_potfolio/view/bottom_nav_bar/works/project_screen_data.dart';
 import '../../../shared/color.dart';
 import '../../../shared/global_widgets.dart';
 

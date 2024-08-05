@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:prashant_potfolio/shared/color.dart';
-import '../view/bottom_nav_bar/works/work_screen_data.dart';
+import '../view/bottom_nav_bar/works/project_screen_data.dart';
 
 class BottonSheet {
   DraggableScrollableSheet bottomSheet({
