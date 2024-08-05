@@ -208,7 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(
-              width: Get.width * 0.03,
+              width: Get.width * 0.035,
             )
           ],
         ),

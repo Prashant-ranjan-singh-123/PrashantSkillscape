@@ -1,5 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -25,27 +27,48 @@ class _CertificateScreenState extends State<CertificateScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: CommonUsedWidget.background(
-        child: SizedBox(
-          width: Get.width,
-          height: Get.height,
+      body: myColumn(children: [
+        ZoomIn(
+            delay: Duration(milliseconds: 200),
+            duration: Duration(milliseconds: 400),
+            curve: Curves.decelerate,
+            child: heading_and_subtitle_top()),
+        ZoomIn(
+            delay: Duration(milliseconds: 500),
+            duration: Duration(milliseconds: 400),
+            curve: Curves.decelerate,
+            child: CustomCoursalSclider()),
+        ZoomIn(
+          delay: Duration(milliseconds: 800),
+          duration: Duration(milliseconds: 400),
+          curve: Curves.decelerate,
+          child: CertificateScreenLogic(
+            onCategorySelected: (category) {
+              setState(() {
+                currentCategory = category;
+              });
+            },
+          ),
+        ),
+        ZoomIn(
+            delay: Duration(milliseconds: 1100),
+            duration: Duration(milliseconds: 400),
+            curve: Curves.decelerate,
+            child: grid_view_items(selectedCategory: currentCategory))
+      ]),
+    );
+  }
+
+  Widget myColumn({required List<Widget> children}) {
+    return CommonUsedWidget.background(
+      child: SizedBox(
+        width: Get.width,
+        height: Get.height,
+        child: SafeArea(
           child: SingleChildScrollView(
-            child: SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  heading_and_subtitle_top(),
-                  CustomCoursalSclider(),
-                  CertificateScreenLogic(
-                    onCategorySelected: (category) {
-                      setState(() {
-                        currentCategory = category;
-                      });
-                    },
-                  ),
-                  grid_view_items(selectedCategory: currentCategory)
-                ],
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: children,
             ),
           ),
         ),
@@ -114,11 +137,15 @@ class _CertificateScreenState extends State<CertificateScreen> {
     Widget _buildItem({required Map<String, dynamic> map}) {
       String certName = map['certName'];
       String featureGraphic = map['featureGraphic'];
+      String verifyLink = map['links']['verify_link'];
 
       return GestureDetector(
         onTap: () {
           _showLargeImage(
-              image: featureGraphic, context: context, certName: certName);
+              image: featureGraphic,
+              context: context,
+              certName: certName,
+              verifyLink: verifyLink);
         },
         child: Column(
           children: [
@@ -184,8 +211,9 @@ class _CertificateScreenState extends State<CertificateScreen> {
 
   void _showLargeImage(
       {required String image,
-        required BuildContext context,
-        required String certName}) {
+      required BuildContext context,
+      required String certName,
+      required String verifyLink}) {
     Get.dialog(
       barrierColor: Colors.black.withOpacity(0.95),
       transitionCurve: Curves.easeInExpo,
@@ -228,12 +256,10 @@ class _CertificateScreenState extends State<CertificateScreen> {
             children: [
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(
-                      113, 43, 62, 1),
+                  backgroundColor: const Color.fromRGBO(113, 43, 62, 1),
                   elevation: 15,
                   padding: EdgeInsets.all(10),
-                  shadowColor: const Color.fromRGBO(
-                      113, 43, 62, 1),
+                  shadowColor: const Color.fromRGBO(113, 43, 62, 1),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -243,8 +269,13 @@ class _CertificateScreenState extends State<CertificateScreen> {
                 },
                 child: Row(
                   children: [
-                    Icon(Iconsax.back_square, color: Colors.white,),
-                    SizedBox(width: 5,),
+                    Icon(
+                      Iconsax.back_square,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       'Close',
                       style: TextStyle(color: ColorOfApp.textBold),
@@ -264,13 +295,17 @@ class _CertificateScreenState extends State<CertificateScreen> {
                   ),
                 ),
                 onPressed: () {
-                  // Implement verify functionality here
-                  print('Verify button pressed');
+                  CertificateScreenLogicOpenLink.openBachler(link: verifyLink);
                 },
                 child: Row(
                   children: [
-                    Icon(Iconsax.verify, color: Colors.black,),
-                    SizedBox(width: 5,),
+                    Icon(
+                      Iconsax.verify,
+                      color: Colors.black,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       'Verify',
                       style: TextStyle(color: Colors.black),

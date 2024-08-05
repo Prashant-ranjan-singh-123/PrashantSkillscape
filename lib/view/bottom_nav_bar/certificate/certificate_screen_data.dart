@@ -19,7 +19,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_cyber_cisco,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://www.linkedin.com/posts/prashant-ranjan-singh-b9b6b9217_cybersecurity-essentials-certificate-activity-7075896147394932736-tOTR?utm_source=share&utm_medium=member_desktop"
         }
       },
       1: {
@@ -28,7 +28,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_cyber_coursera_ibm,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://www.coursera.org/account/accomplishments/verify/SUJJGLV2RGWN"
         }
       },
       2: {
@@ -37,7 +37,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_cyber_forge,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://drive.google.com/file/d/1lTJytn15li1GptQZSpaILVB8LUWKPuJV/view"
         }
       },
       3: {
@@ -46,7 +46,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_cyber_internshala,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://trainings.internshala.com/verify-certificate/?certificate_number=6008C8EF-1E96-A05E-178B-9250A18B010D"
         }
       },
       4: {
@@ -55,7 +55,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_cyber_pledge,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://infosecawareness.in/validate-certificate?certid=ISEA/PDG/EVERYONE/009396"
         }
       },
       5: {
@@ -64,7 +64,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_cyber_vidya_vikas_manadal,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://drive.google.com/file/d/131zILbW6Q5PvQbKfW0UUuuddZXKQKogp/view"
         }
       },
     },
@@ -75,7 +75,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_dsa_courseera_uc_san_diego,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://www.coursera.org/account/accomplishments/verify/L3T9MGZSDCP4"
         }
       },
     },
@@ -86,7 +86,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_java_coursera_course_network,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://www.coursera.org/account/accomplishments/verify/BUPAGYWQL7N4"
         }
       },
     },
@@ -97,7 +97,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_python_coursera_google,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://www.coursera.org/account/accomplishments/verify/VD8UTHZN7TQ3"
         }
       },
       1: {
@@ -106,7 +106,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_python_coursera_infosys,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://www.coursera.org/account/accomplishments/verify/J8U5R2XYLZBD"
         }
       },
       2: {
@@ -115,7 +115,7 @@ class CertificateScreenData {
         "featureGraphic": AppAssets.certificate_python_python_institure,
         "links": {
           "drive_link": "",
-          "verify_link": ""
+          "verify_link": "https://www.linkedin.com/feed/update/urn:li:activity:7080081421129629696/?originTrackingId=A57Ywj%2FeTxu8Qgmx3E4ctQ%3D%3D"
         }
       },
     }

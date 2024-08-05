@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prashant_potfolio/shared/color.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'certificate_screen_data.dart';
 
 class CertificateScreenLogic extends StatefulWidget {
@@ -81,5 +82,18 @@ class _CertificateScreenLogicState extends State<CertificateScreenLogic> {
         ),
       ),
     );
+  }
+}
+
+class CertificateScreenLogicOpenLink{
+  // --Open Link--
+  static void openBachler({required String link}) async {
+    String dt = link;
+    Uri url = Uri.parse(dt);
+    try {
+      await launchUrl(url);
+    }catch (e){
+      throw 'Could not launch $url';
+    }
   }
 }

@@ -21,7 +21,7 @@ class GlobalNavBar extends StatefulWidget {
 }
 
 class _GlobalNavBarState extends State<GlobalNavBar> {
-  int _selectedIndex = 3;
+  int _selectedIndex = 0;
 
   // Notch Bar
   final _pageController = PageController(initialPage: 0);
