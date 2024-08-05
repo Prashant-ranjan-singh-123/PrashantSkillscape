@@ -21,7 +21,8 @@ class OnboardingOrMainScreen extends StatelessWidget {
             if (snap.hasError) {
               return hasError();
             } else {
-              bool isFirstRunVar = snap.data as bool;
+              // bool isFirstRunVar = snap.data as bool;
+              bool isFirstRunVar = true;
               if (isFirstRunVar) {
                 return const OnBoardingScreen();
               } else {

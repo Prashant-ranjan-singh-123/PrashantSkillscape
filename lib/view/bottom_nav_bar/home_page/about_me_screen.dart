@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: Get.width*0.03),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -208,7 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(
-              width: Get.width * 0.035,
+              width: Get.width * 0.053,
             )
           ],
         ),
@@ -301,8 +301,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     CircularPercentIndicator(
                       animation: true,
                       animationDuration: 6000,
-                      radius: Get.width / 7.2,
-                      lineWidth: 4,
+                      radius: Get.width / 6.2,
+                      lineWidth: 10,
                       percent: HomeScreenData.skills[index]![1],
                       progressColor: ColorOfApp.homeSkillActive,
                       backgroundColor: ColorOfApp.homeSkillUnachieve,
