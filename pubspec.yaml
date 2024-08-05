@@ -91,6 +91,7 @@ flutter:
     - asset/image/project_image/screen/
     - asset/image/project_image/feature_graphic/
     - asset/image/social3by4AspecRatioImage/
+    - asset/image/certificates_images/
     - asset/font/
     - asset/lottie/
 
