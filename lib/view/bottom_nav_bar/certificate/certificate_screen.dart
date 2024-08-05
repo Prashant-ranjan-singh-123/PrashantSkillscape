@@ -2,10 +2,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:prashant_potfolio/shared/global_widgets.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/certificate/certificate_screen_data.dart';
 
 import '../../../shared/color.dart';
+import '../../../shared/under_development_dialog.dart';
 import 'certificate_screen_logic.dart';
 
 class CertificateScreen extends StatefulWidget {
@@ -50,7 +53,7 @@ class _CertificateScreenState extends State<CertificateScreen> {
     );
   }
 
-  Widget heading_and_subtitle_top(){
+  Widget heading_and_subtitle_top() {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -83,7 +86,7 @@ class _CertificateScreenState extends State<CertificateScreen> {
     );
   }
 
-  Widget CustomCoursalSclider(){
+  Widget CustomCoursalSclider() {
     return Padding(
       padding: const EdgeInsets.only(top: 30),
       child: CarouselSlider(
@@ -100,9 +103,7 @@ class _CertificateScreenState extends State<CertificateScreen> {
           autoPlayCurve: Curves.fastOutSlowIn,
           enlargeCenterPage: true,
           enlargeFactor: 0.4,
-          onPageChanged: (page, _) {
-
-          },
+          onPageChanged: (page, _) {},
           scrollDirection: Axis.horizontal,
         ),
       ),
@@ -110,14 +111,14 @@ class _CertificateScreenState extends State<CertificateScreen> {
   }
 
   Widget grid_view_items({required String selectedCategory}) {
-
     Widget _buildItem({required Map<String, dynamic> map}) {
       String certName = map['certName'];
       String featureGraphic = map['featureGraphic'];
 
       return GestureDetector(
         onTap: () {
-          // Add onTap functionality here
+          _showLargeImage(
+              image: featureGraphic, context: context, certName: certName);
         },
         child: Column(
           children: [
@@ -165,16 +166,121 @@ class _CertificateScreenState extends State<CertificateScreen> {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // number of items in each row
-            mainAxisSpacing: 10.0, // spacing between rows
-            childAspectRatio: 1 / 1,
-            crossAxisSpacing: 25.0, //pacing between columns
+          crossAxisCount: 2, // number of items in each row
+          mainAxisSpacing: 10.0, // spacing between rows
+          childAspectRatio: 1 / 1,
+          crossAxisSpacing: 25.0, //pacing between columns
         ),
         itemBuilder: (context, index) {
-          return _buildItem(map: CertificateScreenData.experience[selectedCategory]![index]);
+          return _buildItem(
+              map: CertificateScreenData.experience[selectedCategory]![index]);
         },
-        itemCount: CertificateScreenData.experience[selectedCategory]?.length ?? 0,
+        itemCount:
+            CertificateScreenData.experience[selectedCategory]?.length ?? 0,
         // itemCount: 1, // Number of items you want to display
+      ),
+    );
+  }
+
+  void _showLargeImage(
+      {required String image,
+        required BuildContext context,
+        required String certName}) {
+    Get.dialog(
+      barrierColor: Colors.black.withOpacity(0.95),
+      transitionCurve: Curves.easeInExpo,
+      transitionDuration: Duration(milliseconds: 500),
+      AlertDialog(
+        backgroundColor: ColorOfApp.card,
+        surfaceTintColor: ColorOfApp.card,
+        shadowColor: ColorOfApp.cardShadow.withOpacity(1),
+        elevation: 100,
+        title: Center(
+          child: Text(
+            certName,
+            maxLines: 1,
+            style: TextStyle(fontFamily: 'Merriweather', fontSize: 15),
+          ),
+        ),
+        content: Container(
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            boxShadow: [
+              BoxShadow(
+                color: ColorOfApp.cardShadow.withOpacity(0.0),
+                blurStyle: BlurStyle.normal,
+                spreadRadius: 20,
+                blurRadius: 150,
+              )
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            child: Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        actions: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(
+                      113, 43, 62, 1),
+                  elevation: 15,
+                  padding: EdgeInsets.all(10),
+                  shadowColor: const Color.fromRGBO(
+                      113, 43, 62, 1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed: () {
+                  Get.back();
+                },
+                child: Row(
+                  children: [
+                    Icon(Iconsax.back_square, color: Colors.white,),
+                    SizedBox(width: 5,),
+                    Text(
+                      'Close',
+                      style: TextStyle(color: ColorOfApp.textBold),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 10), // Add some spacing between buttons
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: ColorOfApp.bottomNavCard,
+                  elevation: 10,
+                  padding: EdgeInsets.all(10),
+                  shadowColor: ColorOfApp.bottomNavCardShadow,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed: () {
+                  // Implement verify functionality here
+                  print('Verify button pressed');
+                },
+                child: Row(
+                  children: [
+                    Icon(Iconsax.verify, color: Colors.black,),
+                    SizedBox(width: 5,),
+                    Text(
+                      'Verify',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
