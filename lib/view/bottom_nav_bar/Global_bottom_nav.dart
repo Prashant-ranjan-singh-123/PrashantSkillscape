@@ -43,7 +43,11 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorOfApp.background,
-      body: CommonUsedWidget.background(child: bottom_nav_bar_2_body()),
+      body: OrientationBuilder(
+        builder: (context, snapshot) {
+          return CommonUsedWidget.background(child: bottom_nav_bar_2_body());
+        }
+      ),
       bottomNavigationBar: bottom_nav_bar_2(),
     );
   }
