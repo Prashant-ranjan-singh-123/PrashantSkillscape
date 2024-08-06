@@ -101,11 +101,11 @@ flutter run build apk --release
 <details>
 <table>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/Food-Mania/main/readme_images/image_0.png" width="499dp"></td>
-    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/Food-Mania/main/readme_images/image_1.png" width="499dp"></td>
+    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/1.png" width="499dp"></td>
+    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/2.png" width="499dp"></td>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/Food-Mania/main/readme_images/image_3.png" width="499dp"></td>
-    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/Food-Mania/main/readme_images/image_6.png" width="499dp"></td>
+    <td><img src=https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/3.png" width="499dp"></td>
+    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/4.png" width="499dp"></td>
  </table>
 </details>
 
@@ -120,7 +120,7 @@ https://flutter.dev/
 
 2. Fetch latest source code from master branch.
 ```
-git clone https://github.com/Prashant-ranjan-singh-123/Food-Mania.git
+git clone https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape.git
 ```
 
 3. Download Dependency:
@@ -138,11 +138,7 @@ flutter run
 ## TODO
 
 - [ ] Add Documentation.
-- [ ] Make Profile Screen UI.
-- [ ] Add Native Splash Screen.
-- [ ] Getx State Management.
-- [ ] Like Item should go to Favourite Page.
-- [ ] Perseverant Favourite Page Item.
+- [ ] Make Editable By User.
 
 <br>
 
@@ -204,8 +200,8 @@ SOFTWARE.
 
 ## 👨‍💻 Contributors
 
-<a href='https://github.com/Prashant-ranjan-singh-123/Food-Mania/graphs/contributors'>
-  <img src='https://contrib.rocks/image?repo=Prashant-ranjan-singh-123/Food-Mania' />
+<a href='https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape/graphs/contributors'>
+  <img src='https://contrib.rocks/image?repo=Prashant-ranjan-singh-123/PrashantSkillscape' />
 </a>
 
 </div>
