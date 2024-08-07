@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prashant_potfolio/view/drawer/test.dart';
 import 'package:prashant_potfolio/view/splash_screen/splash_screen.dart';
 import 'package:prashant_potfolio/view/splash_screen/splash_screen_one.dart';
 
 void main() {
+  Get.put(MyDrawerController());
   runApp(const MyApp());
 }
 
@@ -32,7 +34,8 @@ class MyApp extends StatelessWidget {
         textTheme: Typography.whiteMountainView,
       ),
       themeMode: ThemeMode.dark,
-      home: const SplashScreenTemp(),
+      // home: const SplashScreenTemp(),
+        home: MyHomePage(),
     );
   }
 }

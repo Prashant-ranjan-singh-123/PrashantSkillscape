@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:prashant_potfolio/view/drawer/test.dart';
 import '../../shared/color.dart';
 import '../../shared/global_widgets.dart';
 import 'carrier/carrier_screen.dart';
@@ -36,7 +37,7 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
     HomeScreen(),
     CarrierScreen(),
     WorkScreen(),
-    CertificateScreen()
+    CertificateScreen(),
   ];
 
   @override
@@ -226,8 +227,8 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
         items: [
           _buildNavItem(Iconsax.tag_user, 'About Me'),
           _buildNavItem(Iconsax.buildings, 'Carrier'),
-          _buildNavItem(Iconsax.box, 'Projects'),
-          _buildNavItem(Iconsax.book, 'Certificate'),
+          _buildNavItem(Iconsax.magic_star, 'Projects'),
+          _buildNavItem(Iconsax.medal_star, 'Certificate'),
         ],
       ),
     );

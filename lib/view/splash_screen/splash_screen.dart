@@ -30,13 +30,17 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: CommonUsedWidget.background(
-        child: myCustomColumn(children: [
-          Lottie.asset(AppAssets.lottieHello, repeat: false)
-        ]),
-      ),
+    return OrientationBuilder(
+      builder: (context, snapshot) {
+        return Scaffold(
+          backgroundColor: Colors.black,
+          body: CommonUsedWidget.background(
+            child: myCustomColumn(children: [
+              Lottie.asset(AppAssets.lottieHello, repeat: false)
+            ]),
+          ),
+        );
+      }
     );
   }
   Widget myCustomColumn({required List<Widget> children}) {

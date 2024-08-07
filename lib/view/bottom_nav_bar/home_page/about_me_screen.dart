@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:prashant_potfolio/shared/app_asset.dart';
@@ -12,6 +13,7 @@ import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/about_me_screen_
 import '../../../shared/color.dart';
 import '../../../shared/globalVar&Fun.dart';
 import '../../../shared/global_widgets.dart';
+import '../../drawer/test.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -21,6 +23,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final MyDrawerController drawerController = Get.put(MyDrawerController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,19 +98,27 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget topImageWidget() {
     return padding_between_element(
-      child: isHeightBigger()
-          ? SizedBox(
-              height: Get.height * 0.4,
-              width: Get.width,
-              child: Image.asset(AppAssets.iconMine,
-                  height: 250.0, width: 250.0),
-            )
-          : SizedBox(
-              height: Get.width * 0.5,
-              width: Get.width,
-              child: Image.asset(AppAssets.iconMine,
-                  height: 250.0, width: 250.0),
-            ),
+      child: Stack(
+        children: [
+          isHeightBigger()
+              ? SizedBox(
+                  height: Get.height * 0.4,
+                  width: Get.width,
+                  child: Image.asset(AppAssets.iconMine,
+                      height: 250.0, width: 250.0),
+                )
+              : SizedBox(
+                  height: Get.width * 0.5,
+                  width: Get.width,
+                  child: Image.asset(AppAssets.iconMine,
+                      height: 250.0, width: 250.0),
+                ),
+          
+          IconButton(onPressed: (){
+            drawerController.toggleDrawer();
+          }, icon: Icon(Iconsax.menu, size: 25,))
+        ],
+      ),
     );
   }
 

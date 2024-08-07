@@ -1,6 +1,7 @@
 class AppAssets{
   // --Icon--
   static String iconMine = 'asset/image/logo.png';
+  static String iconMineCircular = 'asset/image/logo_circular.png';
   static String iconWebsite = 'asset/image/website.png';
   static String iconTelegram = 'asset/image/telegram.png';
   static String iconLinkedin = 'asset/image/linkedin.png';
