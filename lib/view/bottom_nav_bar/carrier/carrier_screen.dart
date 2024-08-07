@@ -215,18 +215,29 @@ class CarrierScreen extends StatelessWidget {
   Widget experience() {
     return Column(
       children: [
-        Stack(
-          children: [
-            FadeInDownBig(child: heading(heading: 'Experience')),
-            FadeInDownBig(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 35),
-                child: IconButton(onPressed: (){
-                  drawerController.toggleDrawer();
-                }, icon: Icon(Iconsax.menu, size: 25,)),
-              ),
-            )
-          ],
+        LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            return Row(
+              children: [
+                FadeInDownBig(
+                  child: IconButton(
+                    onPressed: () {
+                      drawerController.toggleDrawer();
+                    },
+                    icon: Icon(Iconsax.menu, size: 25),
+                  ),
+                ),
+                Expanded(
+                  child: FadeInDownBig(
+                    child: Center(
+                      child: heading(heading: 'Experience'),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 48),
+              ],
+            );
+          },
         ),
         ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
