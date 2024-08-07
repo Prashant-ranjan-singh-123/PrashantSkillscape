@@ -2,6 +2,7 @@ import 'package:android_intent_plus/android_intent.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
+import 'package:prashant_potfolio/view/drawer/home_page_edit/home_page_edit_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'AppStartingPoint.dart';
 
@@ -12,30 +13,19 @@ final MyDrawerController drawerController = Get.put(MyDrawerController());
 class DrawerLogic{
   static void aboutMeButton(){
     controlle.setPageIndex(0);
-    if(!drawerController.isClosed){
-      ZoomDrawer.of(Get.context!)?.close();
-    }
+    // Get.to(HomePageEditUi());
   }
 
   static void carrierButton(){
     controlle.setPageIndex(1);
-    if(!drawerController.isClosed){
-      ZoomDrawer.of(Get.context!)?.close();
-    }
   }
 
   static void projectButton(){
     controlle.setPageIndex(2);
-    if(!drawerController.isClosed){
-      ZoomDrawer.of(Get.context!)?.close();
-    }
   }
 
   static void certificateButton(){
     controlle.setPageIndex(3);
-    if(!drawerController.isClosed){
-      ZoomDrawer.of(Get.context!)?.close();
-    }
   }
 
   static Future<void> contributeButton() async {

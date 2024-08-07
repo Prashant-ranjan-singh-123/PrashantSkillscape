@@ -155,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
               HomeScreenData.role,
               maxLines: 1,
               style: TextStyle(
-                  fontSize: Get.width,
+                  fontSize: 25,
                   fontFamily: 'Merriweather',
                   color: ColorOfApp.textLight),
             ),
@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
               HomeScreenData.role,
               maxLines: 1,
               style: TextStyle(
-                  fontSize: Get.width,
+                  fontSize: 25,
                   fontFamily: 'Merriweather',
                   color: ColorOfApp.textLight),
             ),
