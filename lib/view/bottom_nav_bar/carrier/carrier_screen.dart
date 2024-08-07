@@ -220,7 +220,7 @@ class CarrierScreen extends StatelessWidget {
             FadeInDownBig(child: heading(heading: 'Experience')),
             FadeInDownBig(
               child: Padding(
-                padding: const EdgeInsets.only(top: 25),
+                padding: const EdgeInsets.only(top: 35),
                 child: IconButton(onPressed: (){
                   drawerController.toggleDrawer();
                 }, icon: Icon(Iconsax.menu, size: 25,)),
