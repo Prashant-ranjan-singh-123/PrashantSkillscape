@@ -6,9 +6,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/works/project_screen_data.dart';
 import '../../../shared/color.dart';
 import '../../../shared/global_widgets.dart';
+import '../../drawer/AppStartingPoint.dart';
 
 class WorkScreen extends StatefulWidget {
   WorkScreen({super.key});
@@ -18,12 +20,13 @@ class WorkScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<WorkScreen> {
+  final MyDrawerController drawerController = Get.put(MyDrawerController());
+
   @override
   void initState() {}
 
   @override
   Widget build(BuildContext context) {
-    // print('length is: ${_categories.length}');
     return Scaffold(
       backgroundColor: Colors.black,
       body: CommonUsedWidget.background(
@@ -49,36 +52,46 @@ class _HomeScreenState extends State<WorkScreen> {
   }
 
   Widget heading_and_subtitle_top() {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
+    return Row(
       children: [
-        SizedBox(
-          height: 20,
-        ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          child: Text(
-            'My Live Projects',
-            style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 25,
-                color: ColorOfApp.textBold,
-                fontFamily: 'Oswald'),
-          ),
+          padding: const EdgeInsets.only(top: 20),
+          child: IconButton(onPressed: (){
+            drawerController.toggleDrawer();
+          }, icon: Icon(Iconsax.menu, size: 25,)),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          child: Text(
-            'Github Link | Playstore Link',
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 15,
-              fontFamily: 'OpenSans',
-              color: ColorOfApp.textLight,
+        const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 20,
             ),
-          ),
-        )
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Text(
+                'My Live Projects',
+                style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 25,
+                    color: ColorOfApp.textBold,
+                    fontFamily: 'Oswald'),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Text(
+                'Github Link | Playstore Link',
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                  fontFamily: 'OpenSans',
+                  color: ColorOfApp.textLight,
+                ),
+              ),
+            )
+          ],
+        ),
       ],
     );
   }

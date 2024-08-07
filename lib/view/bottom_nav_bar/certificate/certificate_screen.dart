@@ -11,6 +11,7 @@ import 'package:prashant_potfolio/view/bottom_nav_bar/certificate/certificate_sc
 
 import '../../../shared/color.dart';
 import '../../../shared/under_development_dialog.dart';
+import '../../drawer/AppStartingPoint.dart';
 import 'certificate_screen_logic.dart';
 
 class CertificateScreen extends StatefulWidget {
@@ -22,6 +23,7 @@ class CertificateScreen extends StatefulWidget {
 
 class _CertificateScreenState extends State<CertificateScreen> {
   String currentCategory = 'Cyber';
+  final MyDrawerController drawerController = Get.put(MyDrawerController());
 
   @override
   Widget build(BuildContext context) {
@@ -77,33 +79,43 @@ class _CertificateScreenState extends State<CertificateScreen> {
   }
 
   Widget heading_and_subtitle_top() {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
+    return Row(
       children: [
-        SizedBox(
-          height: 20,
-        ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          child: Text(
-            'My Certificates',
-            style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 25,
-                fontFamily: 'Oswald'),
-          ),
+          padding: const EdgeInsets.only(top: 20),
+          child: IconButton(onPressed: (){
+            drawerController.toggleDrawer();
+          }, icon: Icon(Iconsax.menu, size: 25,)),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          child: Text(
-            'Verifiable',
-            style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 15,
-                fontFamily: 'OpenSans',
-                color: Color.fromRGBO(108, 106, 106, 1)),
-          ),
+        const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Text(
+                'My Certificates',
+                style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 25,
+                    fontFamily: 'Oswald'),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Text(
+                'Verifiable',
+                style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                    fontFamily: 'OpenSans',
+                    color: Color.fromRGBO(108, 106, 106, 1)),
+              ),
+            ),
+          ],
         ),
       ],
     );

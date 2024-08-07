@@ -3,13 +3,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/carrier/carrier_screen_data.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import '../../../shared/color.dart';
 import '../../../shared/global_widgets.dart';
+import '../../drawer/AppStartingPoint.dart';
 
 class CarrierScreen extends StatelessWidget {
   CarrierScreen({super.key});
+  final MyDrawerController drawerController = Get.put(MyDrawerController());
 
   @override
   Widget build(BuildContext context) {
@@ -211,7 +215,19 @@ class CarrierScreen extends StatelessWidget {
   Widget experience() {
     return Column(
       children: [
-        FadeInDownBig(child: heading(heading: 'Experience')),
+        Stack(
+          children: [
+            FadeInDownBig(child: heading(heading: 'Experience')),
+            FadeInDownBig(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 25),
+                child: IconButton(onPressed: (){
+                  drawerController.toggleDrawer();
+                }, icon: Icon(Iconsax.menu, size: 25,)),
+              ),
+            )
+          ],
+        ),
         ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,

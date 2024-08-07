@@ -4,6 +4,7 @@ import 'package:prashant_potfolio/view/bottom_nav_bar/Global_bottom_nav.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../shared/app_asset.dart';
 import '../../shared/color.dart';
+import '../drawer/AppStartingPoint.dart';
 import 'page_view_show.dart';
 
 
@@ -137,7 +138,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     else
                       InkWell(
                           onTap: () {
-                            Get.off(const GlobalNavBar(),
+                            Get.off(MainApp(isRTL: false,),
                                 transition: Transition.zoom,
                                 duration: const Duration(milliseconds: 450));
                           },

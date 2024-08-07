@@ -1,14 +1,20 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:prashant_potfolio/shared/app_asset.dart';
 import 'package:prashant_potfolio/shared/color.dart';
+import 'package:prashant_potfolio/view/drawer/drawer_logic.dart';
+
+import 'AppStartingPoint.dart';
 
 class DrawerMenu extends StatelessWidget {
-  const DrawerMenu({super.key});
+  DrawerMenu({super.key});
+  final BottomAppBarPageIndex controlle = Get.put(BottomAppBarPageIndex());
+  final MyDrawerController drawerController = Get.put(MyDrawerController());
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +32,13 @@ class DrawerMenu extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           logoNameAndVersion(),
-                          DrawerButton(icon: Iconsax.tag_user, text: 'About Me'),
-                          DrawerButton(icon: Iconsax.building, text: 'Carrier'),
-                          DrawerButton(icon: Iconsax.medal_star, text: 'Projects'),
-                          DrawerButton(icon: Iconsax.magic_star, text: 'Certificate'),
-                          DrawerButton(icon: MdiIcons.github, text: 'Contribute'),
-                          DrawerButton(icon: Iconsax.star, text: 'Rate Us'),
+                          DrawerButton(icon: Iconsax.tag_user, text: 'About Me', context: context, fun: DrawerLogic.aboutMeButton,),
+                          DrawerButton(icon: Iconsax.building, text: 'Carrier', context: context, fun: DrawerLogic.carrierButton),
+                          DrawerButton(icon: Iconsax.medal_star, text: 'Projects', context: context, fun: DrawerLogic.projectButton),
+                          DrawerButton(icon: Iconsax.magic_star, text: 'Certificate', context: context, fun: DrawerLogic.certificateButton),
+                          DrawerButton(icon: MdiIcons.github, text: 'Contribute', context: context, fun: DrawerLogic.contributeButton),
+                          DrawerButton(icon: Iconsax.star, text: 'Rate Us', context: context, fun: DrawerLogic.rateUsButton),
+                          SizedBox(height: 30,)
                         ],
                       ),
                     ),
@@ -94,12 +101,12 @@ class DrawerMenu extends StatelessWidget {
     );
   }
 
-  Widget DrawerButton({required IconData icon, required String text}) {
+  Widget DrawerButton({required IconData icon, required String text, required BuildContext context, required Function fun}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: ElevatedButton(
         onPressed: () {
-          // Handle button press
+          fun();
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: ColorOfApp.background.withBlue(20),

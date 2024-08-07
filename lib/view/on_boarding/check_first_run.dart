@@ -3,6 +3,7 @@ import 'package:prashant_potfolio/shared/color.dart';
 import 'package:prashant_potfolio/shared/global_widgets.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/Global_bottom_nav.dart';
 import '../../shared/shared_pref.dart';
+import '../drawer/AppStartingPoint.dart';
 import 'page_view_config.dart';
 
 class OnboardingOrMainScreen extends StatelessWidget {
@@ -26,7 +27,7 @@ class OnboardingOrMainScreen extends StatelessWidget {
               if (isFirstRunVar) {
                 return const OnBoardingScreen();
               } else {
-                return const GlobalNavBar();
+                return MainApp(isRTL: false);
               }
             }
           }
