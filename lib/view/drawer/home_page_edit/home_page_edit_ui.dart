@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:prashant_potfolio/shared/global_widgets.dart';
-
 import '../../../shared/app_asset.dart';
 import '../../../shared/color.dart';
 import '../../../shared/globalVar&Fun.dart';
