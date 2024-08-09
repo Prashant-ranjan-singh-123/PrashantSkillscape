@@ -1,7 +1,6 @@
 <div align="center">
 <br>
 <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/android/app/src/main/ic_launcher-playstore.png" width="200" />
-
 </div>
 
 <h1 align="center">PrashantSkillscape</h1>
