@@ -162,7 +162,9 @@ class _HomeScreenState extends State<WorkScreen> {
                   imageLocation: WorkScreenData.experience[index][2],
                   shortDiscription: WorkScreenData.experience[index][1],
                   playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
-                  githubLink: WorkScreenData.experience[index][5]['Link'][1]),
+                  githubLink: WorkScreenData.experience[index][5]['Link'][1],
+                  appStoreLink: WorkScreenData.experience[index][5]['Link'][2]
+              ),
               isScrollControlled: false,
               backgroundColor: Colors.transparent,
               enterBottomSheetDuration: const Duration(milliseconds: 300),
@@ -209,6 +211,7 @@ class _HomeScreenState extends State<WorkScreen> {
                 shortDiscription: WorkScreenData.experience[index][1],
                 playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
                 githubLink: WorkScreenData.experience[index][5]['Link'][1],
+                appStoreLink: WorkScreenData.experience[index][5]['Link'][2]
               ),
               isScrollControlled: false,
               backgroundColor: Colors.transparent,

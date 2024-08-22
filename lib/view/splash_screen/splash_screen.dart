@@ -43,6 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
       }
     );
   }
+
   Widget myCustomColumn({required List<Widget> children}) {
     return Center(
       child: Column(

@@ -24,12 +24,12 @@ class MainApp extends GetView<MyDrawerController> {
         borderRadius: 24.0,
         showShadow: true,
         angle: -5,
-        isRtl: this.isRTL,
+        isRtl: false,
         mainScreenScale: 0.25,
         drawerShadowsBackgroundColor: ColorOfApp.background.withBlue(10).withRed(7),
         slideWidth: MediaQuery.of(context).size.width * 0.5,
         style: DrawerStyle.defaultStyle,
-        // disableDragGesture: true,
+        disableDragGesture: true,
       ),
     );
   }

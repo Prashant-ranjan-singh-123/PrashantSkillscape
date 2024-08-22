@@ -39,7 +39,10 @@ dependencies:
   shared_preferences: ^2.2.3
   flashy_tab_bar2: ^0.0.10
   material_design_icons_flutter: ^7.0.7296
-  carousel_slider: ^4.2.1
+  carousel_slider:
+    git:
+      url: https://github.com/sampaio96/flutter_carousel_slider.git
+      ref: master
   android_intent_plus: ^5.0.2
   url_launcher: ^6.3.0
   iconsax: ^0.0.8

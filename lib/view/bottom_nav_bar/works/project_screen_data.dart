@@ -30,6 +30,7 @@ class WorkScreenData {
       {
         'Link': [
           'https://play.google.com/store/apps/details?id=com.doctor.home',
+          '',
           ''
         ]
       }
@@ -43,7 +44,8 @@ class WorkScreenData {
       {
         'Link': [
           'https://play.google.com/store/apps/details?id=com.prashant.mathmatica.mind.mathmatics_mind',
-          'https://github.com/Prashant-ranjan-singh-123/Mathmatica-Mind'
+          'https://github.com/Prashant-ranjan-singh-123/Mathmatica-Mind',
+          ''
         ]
       }
     ],
@@ -57,6 +59,7 @@ class WorkScreenData {
         'Link': [
           'https://play.google.com/store/apps/details?id=com.prashant.project.portfolio',
           'https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape',
+          'https://apps.apple.com/in/app/truecaller-caller-id-block/id448142450'
         ]
       }
     ],
@@ -70,6 +73,7 @@ class WorkScreenData {
         'Link': [
           'https://play.google.com/store/apps/details?id=com.prashant.game.tictactoe.tic_tac_toe_final',
           'https://github.com/Prashant-ranjan-singh-123/Modern-Tic-Tac-Tangle',
+          ''
         ]
       }
     ],
@@ -83,6 +87,7 @@ class WorkScreenData {
         'Link': [
           'https://play.google.com/store/apps/details?id=com.prashant.foodmania.project',
           'https://github.com/Prashant-ranjan-singh-123/Food-Mania',
+          ''
         ]
       }
     ],
@@ -96,6 +101,7 @@ class WorkScreenData {
         'Link': [
           '',
           'https://github.com/Prashant-ranjan-singh-123/shoe_haven',
+          ''
         ]
       }
     ],
@@ -109,6 +115,7 @@ class WorkScreenData {
         'Link': [
           '',
           'https://github.com/Prashant-ranjan-singh-123/Priority-list-task',
+          ''
         ]
       }
     ],
@@ -122,6 +129,7 @@ class WorkScreenData {
         'Link': [
           '',
           'https://github.com/Prashant-ranjan-singh-123/flutter-Unwrapped',
+          ''
         ]
       }
     ],
@@ -134,6 +142,7 @@ class WorkScreenData {
       {
         'Link': [
           // 'https://www.linkedin.com/feed/update/urn:li:activity:7211610859310125056/',
+          '',
           '',
           ''
         ]
@@ -209,7 +218,8 @@ class WorkScreenData {
                                     imageLocation: experience[2],
                                     shortDiscription: experience[1],
                                     playstoreLink: experience[5]['Link'][0],
-                                    githubLink: experience[5]['Link'][1]),
+                                    githubLink: experience[5]['Link'][1],
+                                    appStoreLink: experience[5]['Link'][2]),
                                 isScrollControlled: false,
                                 backgroundColor: Colors.black,
                                 enterBottomSheetDuration:
@@ -258,6 +268,12 @@ class BottomSheetLogic {
   static void open_playstore_project({required String link}) {
     BottomSheetLogic.openPlayStore(dt: link);
   }
+
+  static void open_appstore_project({required String link}) {
+    BottomSheetLogic.openAppStore(url: link);
+  }
+
+
 
   // -- To Open Github with Link Logic --
   static void openGithub({required String dt}) async {
@@ -310,6 +326,28 @@ class BottomSheetLogic {
         await launch(url.toString());
       } else {
         throw 'Could not launch Play Store link: $url';
+      }
+    }
+  }
+
+  static void openAppStore({required String url}) async {
+    Future<bool> isAppStoreInstalled() async {
+      Uri uri = Uri.parse(url);
+      // Check if the URL can be launched (this is a basic check)
+      return await canLaunch(uri.toString());
+    }
+
+    bool isInstalled = await isAppStoreInstalled();
+    if (isInstalled) {
+      // Launch the App Store link directly
+      await launch(url);
+    } else {
+      // Open the App Store link in a browser as a fallback
+      Uri fallbackUrl = Uri.parse(url);
+      if (await canLaunch(fallbackUrl.toString())) {
+        await launch(fallbackUrl.toString());
+      } else {
+        throw 'Could not launch App Store link: $fallbackUrl';
       }
     }
   }

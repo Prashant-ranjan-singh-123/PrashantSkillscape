@@ -292,61 +292,72 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget skillText() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 40),
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Column(
-          children: [
-            heading(heading: 'Skills', paddingTop: 0, paddingBottom: 40),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // number of items in each row
-                mainAxisSpacing: 0.0,
-                crossAxisSpacing: 0.0, // spacing between columns
-              ),
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    CircularPercentIndicator(
-                      animation: true,
-                      animationDuration: 6000,
-                      radius: Get.width / 6.2,
-                      lineWidth: 10,
-                      percent: HomeScreenData.skills[index]![1],
-                      progressColor: ColorOfApp.homeSkillActive,
-                      backgroundColor: ColorOfApp.homeSkillUnachieve,
-                      circularStrokeCap: CircularStrokeCap.square,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    AutoSizeText(HomeScreenData.skills[index]![0],
-                        maxLines: 1,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 15,
-                          fontFamily: 'OpenSans',
-                          color: ColorOfApp.textBold,
-                        ))
-                  ],
-                );
-              },
-              itemCount: HomeScreenData.skills.length,
-            )
-          ],
-        ),
-      ),
+    return StatefulBuilder(
+      builder: (context, setState) {
+        return Padding(
+          padding: const EdgeInsets.only(top: 40),
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              children: [
+                heading(heading: 'Skills', paddingTop: 0, paddingBottom: 40),
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3, // number of items in each row
+                    mainAxisSpacing: 0.0,
+                    crossAxisSpacing: 0.0, // spacing between columns
+                  ),
+                  itemCount: HomeScreenData.skills.length, // Number of items in the map
+                  itemBuilder: (context, index) {
+                    // Get the key for the current index
+                    final key = HomeScreenData.skills.keys.elementAt(index);
+
+                    // Access the skill data using the key
+                    final skillData = HomeScreenData.skills[key]!;
+
+                    return Column(
+                      children: [
+                        CircularPercentIndicator(
+                          animation: true,
+                          animationDuration: 6000,
+                          radius: MediaQuery.of(context).size.width / 6.2,
+                          lineWidth: 10,
+                          percent: skillData[1],
+                          progressColor: ColorOfApp.homeSkillActive,
+                          backgroundColor: ColorOfApp.homeSkillUnachieve,
+                          circularStrokeCap: CircularStrokeCap.square,
+                        ),
+                        const SizedBox(height: 10),
+                        AutoSizeText(
+                          skillData[0],
+                          maxLines: 1,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 15,
+                            fontFamily: 'OpenSans',
+                            color: ColorOfApp.textBold,
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      }
     );
   }
+
 
   Widget contactMe() {
     return Column(
       children: [
         heading(heading: 'Contact', fontSize: 40),
-        const Text(
+        Text(
           HomeScreenData.contactDescription,
           style: TextStyle(
             fontWeight: FontWeight.w900,

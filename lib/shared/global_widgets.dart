@@ -14,6 +14,7 @@ class BottonSheet {
     required shortDiscription,
     required playstoreLink,
     required githubLink,
+    required appStoreLink
   }) {
     return DraggableScrollableSheet(
       initialChildSize: 1,
@@ -49,7 +50,7 @@ class BottonSheet {
                 ),
                 _myPadding(
                     child: _externalLink(
-                        playstore: playstoreLink, github: githubLink))
+                        playstore: playstoreLink, github: githubLink, appStore: appStoreLink))
               ],
             ),
           ),
@@ -159,44 +160,161 @@ class BottonSheet {
     );
   }
 
-  Widget _externalLink({required String playstore, required String github}) {
+  // Widget _externalLink({required String playstore, required String github, required String appStore}) {
+  //   Widget _githubButton({required VoidCallback onPressed}) {
+  //     return OutlinedButton(
+  //       onPressed: onPressed,
+  //       style: OutlinedButton.styleFrom(
+  //         shape: RoundedRectangleBorder(
+  //           borderRadius: BorderRadius.circular(5),
+  //         ),
+  //         foregroundColor: ColorOfApp.background,
+  //       ),
+  //       child: Row(
+  //         mainAxisAlignment: MainAxisAlignment.center,
+  //         children: [
+  //           Icon(MdiIcons.github, color: Colors.white),
+  //           const SizedBox(width: 10),
+  //           const Flexible(
+  //             child: SingleChildScrollView(
+  //               scrollDirection: Axis.horizontal,
+  //               child: Text(
+  //                 'Github',
+  //                 style: TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+  //               ),
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     );
+  //   }
+  //
+  //   Widget _playstoreButton({required VoidCallback onPressed}) {
+  //     return ElevatedButton(
+  //       onPressed: onPressed,
+  //       style: ElevatedButton.styleFrom(
+  //         backgroundColor: ColorOfApp.cardShadow,
+  //         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+  //       ),
+  //       child: Padding(
+  //         padding: const EdgeInsets.symmetric(horizontal: 3),
+  //         child: Row(
+  //           mainAxisAlignment: MainAxisAlignment.center,
+  //           children: [
+  //             Icon(MdiIcons.googlePlay, color: Colors.white),
+  //             const SizedBox(width: 10),
+  //             const Flexible(
+  //               child: SingleChildScrollView(
+  //                 scrollDirection: Axis.horizontal,
+  //                 child: Text(
+  //                   'PlayStore',
+  //                   style: TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+  //                 ),
+  //               ),
+  //             ),
+  //           ],
+  //         ),
+  //       ),
+  //     );
+  //   }
+  //
+  //   Widget _playstorePlusGit({required String github, required String playstore}) {
+  //     return Padding(
+  //       padding: const EdgeInsets.symmetric(vertical: 25),
+  //       child: Row(
+  //         children: [
+  //           Expanded(
+  //             child: _githubButton(onPressed: () => BottomSheetLogic.open_github_project(link: github)),
+  //           ),
+  //           const SizedBox(width: 15),
+  //           Expanded(
+  //             child: _playstoreButton(onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore)),
+  //           ),
+  //         ],
+  //       ),
+  //     );
+  //   }
+  //
+  //   Widget _githubShow({required String github}) {
+  //     return Padding(
+  //       padding: const EdgeInsets.symmetric(vertical: 25),
+  //       child: Row(
+  //         children: [
+  //           Expanded(
+  //             child: _githubButton(onPressed: () => BottomSheetLogic.open_github_project(link: github)),
+  //           ),
+  //         ],
+  //       ),
+  //     );
+  //   }
+  //
+  //   Widget _playStoreShow({required String playstore}) {
+  //     return Padding(
+  //       padding: const EdgeInsets.symmetric(vertical: 25),
+  //       child: Row(
+  //         children: [
+  //           Expanded(
+  //             child: _playstoreButton(onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore)),
+  //           ),
+  //         ],
+  //       ),
+  //     );
+  //   }
+  //
+  //   if (github.isNotEmpty && playstore.isNotEmpty) {
+  //     return _playstorePlusGit(github: github, playstore: playstore);
+  //   } else if (github.isNotEmpty) {
+  //     return _githubShow(github: github);
+  //   } else if (playstore.isNotEmpty) {
+  //     return _playStoreShow(playstore: playstore);
+  //   } else {
+  //     return const SizedBox();
+  //   }
+  // }
+
+
+  Widget _externalLink({required String playstore, required String github, required String appStore}) {
+
     Widget _githubButton({required VoidCallback onPressed}) {
-      return OutlinedButton(
-        onPressed: onPressed,
-        style: OutlinedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 5),
+        child: OutlinedButton(
+          onPressed: onPressed,
+          style: OutlinedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+            foregroundColor: ColorOfApp.background,
           ),
-          foregroundColor: ColorOfApp.background,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(MdiIcons.github, color: Colors.white),
-            const SizedBox(width: 10),
-            const Flexible(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Text(
-                  'Github',
-                  style: TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(MdiIcons.github, color: Colors.white),
+              const SizedBox(width: 10),
+              const Flexible(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Text(
+                    'GitHub',
+                    style: TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
     }
 
     Widget _playstoreButton({required VoidCallback onPressed}) {
-      return ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: ColorOfApp.cardShadow,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 3),
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 5),
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: ColorOfApp.cardShadow,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -217,59 +335,158 @@ class BottonSheet {
       );
     }
 
-    Widget _playstorePlusGit({required String github, required String playstore}) {
+    Widget _appStoreButton({required VoidCallback onPressed}) {
       return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 25),
-        child: Row(
-          children: [
-            Expanded(
-              child: _githubButton(onPressed: () => BottomSheetLogic.open_github_project(link: github)),
-            ),
-            const SizedBox(width: 15),
-            Expanded(
-              child: _playstoreButton(onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore)),
-            ),
-          ],
+        padding: const EdgeInsets.symmetric(horizontal: 5),
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: ColorOfApp.cardShadow,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(MdiIcons.apple, color: Colors.white),
+              const SizedBox(width: 10),
+              const Flexible(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Text(
+                    'App Store',
+                    style: TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       );
     }
 
-    Widget _githubShow({required String github}) {
+    Widget _buttonsRow({required List<Widget> buttons}) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 25),
         child: Row(
-          children: [
-            Expanded(
-              child: _githubButton(onPressed: () => BottomSheetLogic.open_github_project(link: github)),
-            ),
-          ],
+          children: buttons
+              .map((button) => Expanded(child: button))
+              .toList(),
         ),
       );
     }
 
-    Widget _playStoreShow({required String playstore}) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 25),
-        child: Row(
-          children: [
-            Expanded(
-              child: _playstoreButton(onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore)),
-            ),
-          ],
-        ),
-      );
-    }
-
-    if (github.isNotEmpty && playstore.isNotEmpty) {
-      return _playstorePlusGit(github: github, playstore: playstore);
+    if (github.isNotEmpty && playstore.isNotEmpty && appStore.isNotEmpty) {
+      print('yehh');
+      return _buttonsRow(buttons: [
+        _githubButton(onPressed: () => BottomSheetLogic.open_github_project(link: github)),
+        // const SizedBox(width: 5),
+        _playstoreButton(onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore)),
+        // const SizedBox(width: 5),
+        _appStoreButton(onPressed: () => BottomSheetLogic.open_appstore_project(link: appStore)),
+      ]);
+    } else if (github.isNotEmpty && playstore.isNotEmpty) {
+      return _buttonsRow(buttons: [
+        _githubButton(onPressed: () => BottomSheetLogic.open_github_project(link: github)),
+        // const SizedBox(width: 15),
+        _playstoreButton(onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore)),
+      ]);
+    } else if (github.isNotEmpty && appStore.isNotEmpty) {
+      return _buttonsRow(buttons: [
+        _githubButton(onPressed: () => BottomSheetLogic.open_github_project(link: github)),
+        // const SizedBox(width: 15),
+        _appStoreButton(onPressed: () => BottomSheetLogic.open_appstore_project(link: appStore)),
+      ]);
+    } else if (playstore.isNotEmpty && appStore.isNotEmpty) {
+      return _buttonsRow(buttons: [
+        _playstoreButton(onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore)),
+        // const SizedBox(width: 15),
+        _appStoreButton(onPressed: () => BottomSheetLogic.open_appstore_project(link: appStore)),
+      ]);
     } else if (github.isNotEmpty) {
-      return _githubShow(github: github);
+      return _githubButton(onPressed: () => BottomSheetLogic.open_github_project(link: github));
     } else if (playstore.isNotEmpty) {
-      return _playStoreShow(playstore: playstore);
+      return _playstoreButton(onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore));
+    } else if (appStore.isNotEmpty) {
+      return _appStoreButton(onPressed: () => BottomSheetLogic.open_appstore_project(link: appStore));
     } else {
       return const SizedBox();
     }
   }
+
+  // Widget _externalLink({required String playstore, required String github, required String appStore}) {
+  //   Widget _button({
+  //     required String label,
+  //     required IconData icon,
+  //     required VoidCallback onPressed,
+  //   }) {
+  //     return ElevatedButton(
+  //       onPressed: onPressed,
+  //       style: ElevatedButton.styleFrom(
+  //         backgroundColor: ColorOfApp.cardShadow,
+  //         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+  //       ),
+  //       child: Row(
+  //         mainAxisAlignment: MainAxisAlignment.center,
+  //         children: [
+  //           Icon(icon, color: Colors.white),
+  //           const SizedBox(width: 10),
+  //           Flexible(
+  //             child: SingleChildScrollView(
+  //               scrollDirection: Axis.horizontal,
+  //               child: Text(
+  //                 label,
+  //                 style: const TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+  //               ),
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     );
+  //   }
+  //
+  //   List<Widget> _buildButtons() {
+  //     List<Widget> buttons = [];
+  //
+  //     if (github.isNotEmpty) {
+  //       buttons.add(_button(
+  //         label: 'GitHub',
+  //         icon: MdiIcons.github,
+  //         onPressed: () => BottomSheetLogic.open_github_project(link: github),
+  //       ));
+  //     }
+  //
+  //     if (playstore.isNotEmpty) {
+  //       buttons.add(_button(
+  //         label: 'PlayStore',
+  //         icon: MdiIcons.googlePlay,
+  //         onPressed: () => BottomSheetLogic.open_playstore_project(link: playstore),
+  //       ));
+  //     }
+  //
+  //     if (appStore.isNotEmpty) {
+  //       buttons.add(_button(
+  //         label: 'App Store',
+  //         icon: MdiIcons.apple,
+  //         onPressed: () => BottomSheetLogic.open_appstore_project(link: appStore),
+  //       ));
+  //     }
+  //
+  //     return buttons;
+  //   }
+  //
+  //   return Padding(
+  //     padding: const EdgeInsets.symmetric(vertical: 25),
+  //     child: GridView.count(
+  //       shrinkWrap: true,
+  //       crossAxisCount: 2,
+  //       crossAxisSpacing: 10,
+  //       mainAxisSpacing: 10,
+  //       children: _buildButtons(),
+  //     ),
+  //   );
+  // }
+
+
 
   Widget _myPadding({required child}) {
     return Padding(
