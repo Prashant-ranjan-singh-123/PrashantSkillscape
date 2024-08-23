@@ -60,28 +60,13 @@ class HomeScreenLogic {
   }
 
   // -- To Open Telegram Logic --
-  static void openTelegram() async {
-    Future<bool> isTelegramInstalled() async {
-      Uri url = Uri.parse('telegram://');
-      if (await canLaunchUrl(url)) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-
-    String dt = HomeScreenData.socialLink[3]![1];
-    bool isInstalled = await isTelegramInstalled();
-    if (isInstalled != false) {
-      AndroidIntent intent = AndroidIntent(action: 'action_view', data: dt);
-      await intent.launch();
+  static void openGooglePlay() async {
+    String dt = HomeScreenData.socialLink[5]![1];
+    Uri url = Uri.parse(dt);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
     } else {
-      Uri url = Uri.parse(dt);
-      if (await canLaunchUrl(url)) {
-        await launchUrl(url);
-      } else {
-        throw 'Could not launch $url';
-      }
+      throw 'Could not launch $url';
     }
   }
 

@@ -282,9 +282,9 @@ class _HomeScreenState extends State<HomeScreen> {
               Assetname: AppAssets.iconGithub,
               fun: HomeScreenLogic.openGithub,
             ),
-            AppButton(
-              Assetname: AppAssets.iconTelegram,
-              fun: HomeScreenLogic.openTelegram,
+            AppButtonIcon(
+              Iconname: MdiIcons.googlePlay,
+              fun: HomeScreenLogic.openGooglePlay,
             ),
             AppButtonIcon(
               Iconname: MdiIcons.gmail,
@@ -389,12 +389,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget socialProfileSelf() {
-    return MyMotionWidget(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          heading(heading: 'Social Profile', fontSize: 30),
-          Container(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        heading(heading: 'Social Profile', fontSize: 30),
+        MyMotionWidget(
+          child: Container(
               height: Get.height * 0.35,
               padding: const EdgeInsets.all(38),
               child: AnimatedStackWidget(
@@ -412,7 +412,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         HomeScreenLogic.openLinkedin();
                         break;
                       case 3:
-                        HomeScreenLogic.openTelegram();
+                        HomeScreenLogic.openGooglePlay();
                         break;
                       case 4:
                         HomeScreenLogic.openGmail();
@@ -424,11 +424,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               )),
-          const SizedBox(
-            height: 40,
-          )
-        ],
-      ),
+        ),
+        const SizedBox(
+          height: 40,
+        )
+      ],
     );
   }
 }

@@ -14,7 +14,8 @@ class HomeScreenData {
     1: [AppAssets.threeisToFourGithubImage, 'https://github.com/Prashant-ranjan-singh-123'],
     2: [AppAssets.threeisToFourLinkedinImage, 'https://www.linkedin.com/in/prashant-ranjan-singh-b9b6b9217/'],
     3: [AppAssets.threeisToFourTelegramImage, 'https://t.me/Prashantsingh255'],
-    4: [AppAssets.threeisToFourGmailImage, 'prashant.singh.12312345@gmail.com']
+    4: [AppAssets.threeisToFourGmailImage, 'prashant.singh.12312345@gmail.com'],
+    5: [AppAssets.threeisToFourGmailImage, 'https://play.google.com/store/apps/developer?id=Prashant+Ranjan+Singh']
   };
 
   static Map<int, List> skills = {

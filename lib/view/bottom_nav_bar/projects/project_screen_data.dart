@@ -59,7 +59,7 @@ class WorkScreenData {
         'Link': [
           'https://play.google.com/store/apps/details?id=com.prashant.project.portfolio',
           'https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape',
-          'https://apps.apple.com/in/app/truecaller-caller-id-block/id448142450'
+          ''
         ]
       }
     ],

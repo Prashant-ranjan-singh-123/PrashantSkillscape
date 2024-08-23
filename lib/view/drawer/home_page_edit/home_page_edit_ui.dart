@@ -469,7 +469,7 @@ class _HomePageEditUiState extends State<HomePageEditUi> {
             ),
             AppButton(
               Assetname: AppAssets.iconTelegram,
-              fun: HomeScreenLogic.openTelegram,
+              fun: HomeScreenLogic.openGooglePlay,
             ),
             AppButtonIcon(
               Iconname: MdiIcons.gmail,
@@ -1030,7 +1030,7 @@ class _HomePageEditUiState extends State<HomePageEditUi> {
                       HomeScreenLogic.openLinkedin();
                       break;
                     case 3:
-                      HomeScreenLogic.openTelegram();
+                      HomeScreenLogic.openGooglePlay();
                       break;
                     case 4:
                       HomeScreenLogic.openGmail();
