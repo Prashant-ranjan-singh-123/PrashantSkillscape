@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:prashant_potfolio/shared/color.dart';
-import '../view/bottom_nav_bar/works/project_screen_data.dart';
+import 'package:prashant_potfolio/shared/motion.dart';
+import '../view/bottom_nav_bar/projects/project_screen_data.dart';
 
 class BottonSheet {
   DraggableScrollableSheet bottomSheet({
@@ -50,7 +51,8 @@ class BottonSheet {
                 ),
                 _myPadding(
                     child: _externalLink(
-                        playstore: playstoreLink, github: githubLink, appStore: appStoreLink))
+                        playstore: playstoreLink, github: githubLink, appStore: appStoreLink)),
+                SizedBox(height: 15,)
               ],
             ),
           ),
@@ -121,15 +123,17 @@ class BottonSheet {
           const EdgeInsets.only(top: 20.0, bottom: 40, right: 15, left: 15),
       child: SizedBox(
         width: Get.width * 0.8,
-        child: Card(
-          color: ColorOfApp.card,
-          elevation: 20,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          shadowColor: ColorOfApp.cardShadow,
-          child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(imageLocation)),
+        child: MyMotionWidget(
+          child: Card(
+            color: ColorOfApp.card,
+            elevation: 20,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            shadowColor: ColorOfApp.cardShadow,
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(imageLocation)),
+          ),
         ),
       ),
     );
@@ -154,9 +158,12 @@ class BottonSheet {
   }
 
   Widget _discription({required shortDiscription}) {
-    return Text(
-      shortDiscription,
-      style: const TextStyle(fontFamily: 'Oswald', color: ColorOfApp.textLight),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15),
+      child: Text(
+        shortDiscription,
+        style: const TextStyle(fontFamily: 'Oswald', color: ColorOfApp.textLight),
+      ),
     );
   }
 

@@ -7,8 +7,8 @@ import 'package:prashant_potfolio/shared/global_widgets.dart';
 import '../../../shared/app_asset.dart';
 import '../../../shared/color.dart';
 import '../../../shared/globalVar&Fun.dart';
-import '../../bottom_nav_bar/home_page/about_me_screen_data.dart';
-import '../../bottom_nav_bar/home_page/about_me_screen_logic.dart';
+import '../../bottom_nav_bar/about_me/about_me_screen_data.dart';
+import '../../bottom_nav_bar/about_me/about_me_screen_logic.dart';
 
 
 class HomePageEditUi extends StatefulWidget {

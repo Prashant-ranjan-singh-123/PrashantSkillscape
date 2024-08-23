@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:motion/motion.dart';
 import 'package:prashant_potfolio/view/drawer/AppStartingPoint.dart';
 import 'package:prashant_potfolio/view/splash_screen/splash_screen.dart';
 import 'package:prashant_potfolio/view/splash_screen/splash_screen_one.dart';
 
-void main() {
+Future<void> main() async {
   Get.put(MyDrawerController());
   Get.put(BottomAppBarPageIndex());
+  await Motion.instance.initialize();
+  Motion.instance.setUpdateInterval(60.fps);
   runApp(const MyApp());
 }
 

@@ -5,6 +5,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:prashant_potfolio/shared/motion.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/carrier/carrier_screen_data.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import '../../../shared/color.dart';
@@ -105,31 +106,33 @@ class CarrierScreen extends StatelessWidget {
           onTap: () async {
             fun();
           },
-          child: Card(
-            color: ColorOfApp.card,
-            shadowColor: ColorOfApp.cardShadow,
-            elevation: 15,
-            child: Container(
-              margin: const EdgeInsets.all(15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    heading,
-                    style: const TextStyle(
-                        fontFamily: 'Oswald',
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        color: ColorOfApp.textBold),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    body,
-                    style: const TextStyle(color: ColorOfApp.textLight),
-                  ),
-                ],
+          child: MyMotionWidget(
+            child: Card(
+              color: ColorOfApp.card,
+              shadowColor: ColorOfApp.cardShadow,
+              elevation: 15,
+              child: Container(
+                margin: const EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      heading,
+                      style: const TextStyle(
+                          fontFamily: 'Oswald',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                          color: ColorOfApp.textBold),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      body,
+                      style: const TextStyle(color: ColorOfApp.textLight),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -151,29 +154,31 @@ class CarrierScreen extends StatelessWidget {
           onTap: () {
             fun();
           },
-          child: Card(
-            color: ColorOfApp.card,
-            shadowColor: ColorOfApp.cardShadow,
-            elevation: 15,
-            child: Container(
-              margin: const EdgeInsets.all(15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    heading,
-                    style: const TextStyle(
-                      fontFamily: 'Oswald',
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                      color: ColorOfApp.textBold
+          child: MyMotionWidget(
+            child: Card(
+              color: ColorOfApp.card,
+              shadowColor: ColorOfApp.cardShadow,
+              elevation: 15,
+              child: Container(
+                margin: const EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      heading,
+                      style: const TextStyle(
+                        fontFamily: 'Oswald',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                        color: ColorOfApp.textBold
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(body, style: const TextStyle(color: ColorOfApp.textLight),),
-                ],
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(body, style: const TextStyle(color: ColorOfApp.textLight),),
+                  ],
+                ),
               ),
             ),
           ),

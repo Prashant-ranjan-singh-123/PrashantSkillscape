@@ -7,6 +7,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:prashant_potfolio/shared/app_asset.dart';
 import 'package:prashant_potfolio/shared/color.dart';
+import 'package:prashant_potfolio/shared/motion.dart';
 import 'package:prashant_potfolio/view/drawer/drawer_logic.dart';
 
 import 'AppStartingPoint.dart';
@@ -71,13 +72,15 @@ class DrawerMenu extends StatelessWidget {
       padding: EdgeInsets.all(15),
       child: Column(
         children: [
-          Container(
-            width: Get.width * 0.3,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.black,
+          MyMotionWidget(
+            child: Container(
+              width: Get.width * 0.3,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.black,
+              ),
+              child: Image.asset(AppAssets.iconMineCircular),
             ),
-            child: Image.asset(AppAssets.iconMineCircular),
           ),
           SizedBox(height: 10),
           AutoSizeText(

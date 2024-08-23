@@ -7,7 +7,8 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:prashant_potfolio/view/bottom_nav_bar/works/project_screen_data.dart';
+import 'package:prashant_potfolio/shared/motion.dart';
+import 'package:prashant_potfolio/view/bottom_nav_bar/projects/project_screen_data.dart';
 import '../../../shared/color.dart';
 import '../../../shared/global_widgets.dart';
 import '../../drawer/AppStartingPoint.dart';
@@ -99,22 +100,24 @@ class _HomeScreenState extends State<WorkScreen> {
   Widget CustomCoursalSclider() {
     return Padding(
       padding: const EdgeInsets.only(top: 30),
-      child: CarouselSlider(
-        items: WorkScreenData.cursol_slider_item,
-        options: CarouselOptions(
-          aspectRatio: 16 / 7,
-          viewportFraction: 1,
-          initialPage: 0,
-          enableInfiniteScroll: true,
-          reverse: false,
-          autoPlay: true,
-          autoPlayInterval: const Duration(seconds: 3),
-          autoPlayAnimationDuration: const Duration(milliseconds: 800),
-          autoPlayCurve: Curves.fastOutSlowIn,
-          enlargeCenterPage: true,
-          enlargeFactor: 0.3,
-          onPageChanged: (page, _) {},
-          scrollDirection: Axis.horizontal,
+      child: MyMotionWidget(
+        child: CarouselSlider(
+          items: WorkScreenData.cursol_slider_item,
+          options: CarouselOptions(
+            aspectRatio: 16 / 7,
+            viewportFraction: 1,
+            initialPage: 0,
+            enableInfiniteScroll: true,
+            reverse: false,
+            autoPlay: true,
+            autoPlayInterval: const Duration(seconds: 3),
+            autoPlayAnimationDuration: const Duration(milliseconds: 800),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            enlargeCenterPage: true,
+            enlargeFactor: 0.3,
+            onPageChanged: (page, _) {},
+            scrollDirection: Axis.horizontal,
+          ),
         ),
       ),
     );
@@ -175,16 +178,18 @@ class _HomeScreenState extends State<WorkScreen> {
         },
         child: Column(
           children: [
-            Card(
-              color: ColorOfApp.card,
-              elevation: 50,
-              shadowColor: ColorOfApp.cardShadow,
-              child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(
-                    WorkScreenData.experience[index][2],
-                    fit: BoxFit.contain,
-                  )),
+            MyMotionWidget(
+              child: Card(
+                color: ColorOfApp.card,
+                elevation: 50,
+                shadowColor: ColorOfApp.cardShadow,
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.asset(
+                      WorkScreenData.experience[index][2],
+                      fit: BoxFit.contain,
+                    )),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10),
@@ -223,15 +228,17 @@ class _HomeScreenState extends State<WorkScreen> {
         },
         child: Column(
           children: [
-            Card(
-              color: ColorOfApp.textBold,
-              elevation: 50,
-              shadowColor: ColorOfApp.cardShadow,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  WorkScreenData.experience[index][2],
-                  fit: BoxFit.contain,
+            MyMotionWidget(
+              child: Card(
+                color: ColorOfApp.textBold,
+                elevation: 50,
+                shadowColor: ColorOfApp.cardShadow,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    WorkScreenData.experience[index][2],
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),

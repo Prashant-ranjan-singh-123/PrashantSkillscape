@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:prashant_potfolio/shared/global_widgets.dart';
+import 'package:prashant_potfolio/shared/motion.dart';
 import 'package:prashant_potfolio/view/bottom_nav_bar/certificate/certificate_screen_data.dart';
 
 import '../../../shared/color.dart';
@@ -124,22 +125,24 @@ class _CertificateScreenState extends State<CertificateScreen> {
   Widget CustomCoursalSclider() {
     return Padding(
       padding: const EdgeInsets.only(top: 30),
-      child: CarouselSlider(
-        items: CertificateScreenData.carouselSliderItems,
-        options: CarouselOptions(
-          aspectRatio: 16 / 7,
-          viewportFraction: 0.7,
-          initialPage: 3,
-          enableInfiniteScroll: true,
-          reverse: false,
-          autoPlay: true,
-          autoPlayInterval: const Duration(seconds: 3),
-          autoPlayAnimationDuration: const Duration(milliseconds: 800),
-          autoPlayCurve: Curves.fastOutSlowIn,
-          enlargeCenterPage: true,
-          enlargeFactor: 0.4,
-          onPageChanged: (page, _) {},
-          scrollDirection: Axis.horizontal,
+      child: MyMotionWidget(
+        child: CarouselSlider(
+          items: CertificateScreenData.carouselSliderItems,
+          options: CarouselOptions(
+            aspectRatio: 16 / 7,
+            viewportFraction: 0.7,
+            initialPage: 3,
+            enableInfiniteScroll: true,
+            reverse: false,
+            autoPlay: true,
+            autoPlayInterval: const Duration(seconds: 3),
+            autoPlayAnimationDuration: const Duration(milliseconds: 800),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            enlargeCenterPage: true,
+            enlargeFactor: 0.4,
+            onPageChanged: (page, _) {},
+            scrollDirection: Axis.horizontal,
+          ),
         ),
       ),
     );
@@ -161,15 +164,17 @@ class _CertificateScreenState extends State<CertificateScreen> {
         },
         child: Column(
           children: [
-            Card(
-              color: ColorOfApp.textBold,
-              elevation: 50,
-              shadowColor: ColorOfApp.cardShadow,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  featureGraphic,
-                  fit: BoxFit.contain,
+            MyMotionWidget(
+              child: Card(
+                color: ColorOfApp.textBold,
+                elevation: 50,
+                shadowColor: ColorOfApp.cardShadow,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    featureGraphic,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),
@@ -254,11 +259,13 @@ class _CertificateScreenState extends State<CertificateScreen> {
               )
             ],
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            child: Image.asset(
-              image,
-              fit: BoxFit.cover,
+          child: MyMotionWidget(
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              child: Image.asset(
+                image,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),

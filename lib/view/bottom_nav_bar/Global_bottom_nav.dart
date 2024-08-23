@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:prashant_potfolio/view/bottom_nav_bar/projects/project_screen.dart';
 import '../../shared/color.dart';
 import '../../shared/global_widgets.dart';
 import '../drawer/AppStartingPoint.dart';
+import 'about_me/about_me_screen.dart';
 import 'carrier/carrier_screen.dart';
 import 'certificate/certificate_screen.dart';
-import 'home_page/about_me_screen.dart';
-import 'works/project_screen.dart';
 
 
 class GlobalNavBar extends StatefulWidget {

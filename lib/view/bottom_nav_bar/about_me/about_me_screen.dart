@@ -8,12 +8,13 @@ import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:prashant_potfolio/shared/app_asset.dart';
-import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/about_me_screen_data.dart';
-import 'package:prashant_potfolio/view/bottom_nav_bar/home_page/about_me_screen_logic.dart';
+import 'package:prashant_potfolio/shared/motion.dart';
 import '../../../shared/color.dart';
 import '../../../shared/globalVar&Fun.dart';
 import '../../../shared/global_widgets.dart';
 import '../../drawer/AppStartingPoint.dart';
+import 'about_me_screen_data.dart';
+import 'about_me_screen_logic.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -100,20 +101,22 @@ class _HomeScreenState extends State<HomeScreen> {
     return padding_between_element(
       child: Stack(
         children: [
-          isHeightBigger()
-              ? SizedBox(
-                  height: Get.height * 0.4,
-                  width: Get.width,
-                  child: Image.asset(AppAssets.iconMine,
-                      height: 250.0, width: 250.0),
-                )
-              : SizedBox(
-                  height: Get.width * 0.5,
-                  width: Get.width,
-                  child: Image.asset(AppAssets.iconMine,
-                      height: 250.0, width: 250.0),
-                ),
-          
+          MyMotionWidget(
+            child: isHeightBigger()
+                ? SizedBox(
+                    height: Get.height * 0.4,
+                    width: Get.width,
+                    child: Image.asset(AppAssets.iconMine,
+                        height: 250.0, width: 250.0),
+                  )
+                : SizedBox(
+                    height: Get.width * 0.5,
+                    width: Get.width,
+                    child: Image.asset(AppAssets.iconMine,
+                        height: 250.0, width: 250.0),
+                  ),
+          ),
+
           IconButton(onPressed: (){
             drawerController.toggleDrawer();
           }, icon: Icon(Iconsax.menu, size: 25,))
@@ -175,20 +178,22 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget aboutText() {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
-      child: Card(
-        color: ColorOfApp.card,
-        shadowColor: ColorOfApp.cardShadow,
-        elevation: 30,
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [
-              heading(heading: 'About', paddingTop: 0, paddingBottom: 20),
-              Text(
-                HomeScreenData.discription_short,
-                style: const TextStyle(color: ColorOfApp.textLight),
-              )
-            ],
+      child: MyMotionWidget(
+        child: Card(
+          color: ColorOfApp.background.withOpacity(0.2),
+          shadowColor: ColorOfApp.cardShadow.withOpacity(0.7),
+          elevation: 120,
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              children: [
+                heading(heading: 'About', paddingTop: 0, paddingBottom: 20),
+                Text(
+                  HomeScreenData.discription_short,
+                  style: const TextStyle(color: ColorOfApp.textLight),
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -354,64 +359,76 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   Widget contactMe() {
-    return Column(
-      children: [
-        heading(heading: 'Contact', fontSize: 40),
-        Text(
-          HomeScreenData.contactDescription,
-          style: TextStyle(
-            fontWeight: FontWeight.w900,
-            fontSize: 20,
-            fontFamily: 'OpenSans',
-            color: ColorOfApp.textLight,
+    return MyMotionWidget(
+      child: Card(
+        color: ColorOfApp.background.withOpacity(0.1),
+        elevation: 150,
+        shadowColor: ColorOfApp.cardShadow,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            children: [
+              heading(heading: 'Contact', fontSize: 40),
+              Text(
+                HomeScreenData.contactDescription,
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 20,
+                  fontFamily: 'OpenSans',
+                  color: ColorOfApp.textLight,
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+            ],
           ),
         ),
-        const SizedBox(
-          height: 30,
-        ),
-      ],
+      ),
     );
   }
 
   Widget socialProfileSelf() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        heading(heading: 'Social Profile', fontSize: 30),
-        Container(
-            height: Get.height * 0.35,
-            padding: const EdgeInsets.all(38),
-            child: AnimatedStackWidget(
-              itemCount: HomeScreenData.socialLink.length,
-              itemBuilder: (context, index) => GestureDetector(
-                onTap: () {
-                  switch (index) {
-                    case 0:
-                      HomeScreenLogic.openWebsite();
-                      break;
-                    case 1:
-                      HomeScreenLogic.openGithub();
-                      break;
-                    case 2:
-                      HomeScreenLogic.openLinkedin();
-                      break;
-                    case 3:
-                      HomeScreenLogic.openTelegram();
-                      break;
-                    case 4:
-                      HomeScreenLogic.openGmail();
-                      break;
-                  }
-                },
-                child: MagazineCoverImage(
-                  image: HomeScreenData.socialLink[index]![0],
+    return MyMotionWidget(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          heading(heading: 'Social Profile', fontSize: 30),
+          Container(
+              height: Get.height * 0.35,
+              padding: const EdgeInsets.all(38),
+              child: AnimatedStackWidget(
+                itemCount: HomeScreenData.socialLink.length,
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () {
+                    switch (index) {
+                      case 0:
+                        HomeScreenLogic.openWebsite();
+                        break;
+                      case 1:
+                        HomeScreenLogic.openGithub();
+                        break;
+                      case 2:
+                        HomeScreenLogic.openLinkedin();
+                        break;
+                      case 3:
+                        HomeScreenLogic.openTelegram();
+                        break;
+                      case 4:
+                        HomeScreenLogic.openGmail();
+                        break;
+                    }
+                  },
+                  child: MagazineCoverImage(
+                    image: HomeScreenData.socialLink[index]![0],
+                  ),
                 ),
-              ),
-            )),
-        const SizedBox(
-          height: 40,
-        )
-      ],
+              )),
+          const SizedBox(
+            height: 40,
+          )
+        ],
+      ),
     );
   }
 }
