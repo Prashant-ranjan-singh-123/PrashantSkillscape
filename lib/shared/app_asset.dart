@@ -25,6 +25,8 @@ class AppAssets{
   static String appScreenSkilledWorker = 'asset/image/project_image/screen/skilled_worker.png';
   static String appScreenPrashantSkillScape = 'asset/image/project_image/screen/prashant_skillscape.png';
   static String appScreenTicTacTangle = 'asset/image/project_image/screen/tic_tac_tangle.png';
+  static String appScreenBigDrum = 'asset/image/project_image/screen/big_drum.png';
+  static String appScreenDirection = 'asset/image/project_image/screen/direction.png';
 
   // --Feature Graphic--
   static String featureGraphicDoctorOnHome = 'asset/image/project_image/feature_graphic/doctor_on_home.png';
@@ -38,6 +40,8 @@ class AppAssets{
   static String featureGraphicTicTacTangle = 'asset/image/project_image/feature_graphic/tic_tac_tangle.png';
   static String featureGraphicGlassView = 'asset/image/project_image/feature_graphic/glassview.png';
   static String featureGraphicInsugoDigi = 'asset/image/project_image/feature_graphic/Insugo_digi.png';
+  static String featureGraphicBigDrum = 'asset/image/project_image/feature_graphic/big_drum.png';
+  static String featureGraphicDirection = 'asset/image/project_image/feature_graphic/direction.png';
 
   // --Certificate Images--
   static String certificate_cyber_cisco = 'asset/image/certificates_images/cyber_cisco.jpg';
