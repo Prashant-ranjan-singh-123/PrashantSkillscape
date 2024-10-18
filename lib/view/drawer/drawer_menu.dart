@@ -94,7 +94,7 @@ class DrawerMenu extends StatelessWidget {
             ),
           ),
           AutoSizeText(
-            'Version: 1.0.9',
+            'Version: 1.1.0',
             maxLines: 1,
             style: TextStyle(fontFamily: 'Oswald'),
           ),
