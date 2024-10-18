@@ -11,17 +11,96 @@ import '../../../shared/under_development_dialog.dart';
 
 class WorkScreenData {
   static List<Widget> cursol_slider_item = [
-    WorkScreenData.customCard(experience: experience[0]),
-    WorkScreenData.customCard(experience: experience[1]),
     WorkScreenData.customCard(experience: experience[2]),
     WorkScreenData.customCard(experience: experience[3]),
     WorkScreenData.customCard(experience: experience[4]),
     WorkScreenData.customCard(experience: experience[5]),
     WorkScreenData.customCard(experience: experience[6]),
+    WorkScreenData.customCard(experience: experience[7]),
+    WorkScreenData.customCard(experience: experience[8]),
   ];
+
+  static String shareText({required List<String> links, required String nameOfApp}) {
+    String playStoreLink = links[0];
+    String githubLink = links[1];
+    String appStoreLink = links[2];
+
+    String result = 'Check out the newly redesigned $nameOfApp';
+
+    if (playStoreLink.isNotEmpty && appStoreLink.isNotEmpty && githubLink.isNotEmpty) {
+      result += ' on Android, iOS, and GitHub! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• Play Store: $playStoreLink\n'
+          '• App Store: $appStoreLink\n'
+          '• GitHub: $githubLink\n\n';
+    } else if (playStoreLink.isNotEmpty && appStoreLink.isNotEmpty) {
+      result += ' on Android and iOS! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• Play Store: $playStoreLink\n'
+          '• App Store: $appStoreLink\n\n';
+    } else if (playStoreLink.isNotEmpty && githubLink.isNotEmpty) {
+      result += ' on Android and GitHub! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• Play Store: $playStoreLink\n'
+          '• GitHub: $githubLink\n\n';
+    } else if (appStoreLink.isNotEmpty && githubLink.isNotEmpty) {
+      result += ' on iOS and GitHub! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• App Store: $appStoreLink\n'
+          '• GitHub: $githubLink\n\n';
+    } else if (playStoreLink.isNotEmpty) {
+      result += ' on Android! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• Play Store: $playStoreLink\n\n';
+    } else if (appStoreLink.isNotEmpty) {
+      result += ' on iOS! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• App Store: $appStoreLink\n\n';
+    } else if (githubLink.isNotEmpty) {
+      result += ' on GitHub! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• GitHub: $githubLink\n\n';
+    }
+
+    result += '🌐 Connect:\n\n'
+        '• LinkedIn: https://linkedin.com/in/prashant-ranjan-singh-b9b6b9217\n\n'
+        'Thanks for your support!';
+
+    return result;
+  }
+
 
   static Map<int, dynamic> experience = {
     0: [
+      'GlassView QD',
+      'GlassView Labs has developed a proprietary, high-frequency trading platform, QuickDraw TM, to deliver ad placements on top-tier sites & articles covering trending topics before they hit critical mass; leading to prominent brand positioning & superior ROI across the board.',
+      AppAssets.featureGraphicGlassView,
+      AppAssets.featureGraphicGlassView,
+      'PlayStore',
+      {
+        'Link': [
+          'https://play.google.com/store/apps/details?id=com.glassview.qd',
+          '',
+          'https://apps.apple.com/in/app/glassview-qd/id6443454711'
+        ]
+      },
+    ],
+    1: [
+      'Insugo Digi',
+      'Insugo Digi is a Digital Wallet for storing policies and documents, No more running around. Manage all your policies/documents from one place. Get service and support for the entire lifetime of your policy. Complete guidance to claim policy. Notification on expiry of policies/document',
+      AppAssets.featureGraphicInsugoDigi,
+      AppAssets.featureGraphicInsugoDigi,
+      'PlayStore',
+      {
+        'Link': [
+          'https://play.google.com/store/apps/details?id=in.insugo.digi',
+          '',
+          'https://apps.apple.com/in/app/insugo-digi/id6455429167'
+        ]
+      },
+      'Have a look to this app and give feedback 5 star heres link\n1) Playstore: https://play.google.com/store/apps/details?id=in.insugo.digi\n2) App Store: https://apps.apple.com/in/app/insugo-digi/id6455429167\n\nConnect With Me :-\n1) LinkedIn: https://linkedin.com/in/prashant-ranjan-singh-b9b6b9217\n2) Gmail: mailto:prashant.singh.12312345@gmail.com.'
+    ],
+    2: [
       'Doctor On Home',
       'This app, built with care, connects you to top-notch doctors at your fingertips. Skip the waiting rooms and experience healthcare on-demand. Let Heal on Call be your pocket-sized clinic, available whenever you need it.',
       AppAssets.featureGraphicDoctorOnHome,
@@ -35,7 +114,7 @@ class WorkScreenData {
         ]
       }
     ],
-    1: [
+    3: [
       'Mathmaica Mind',
       'Mathmaica Mind learning arithmetic fun and challenging! Choose your difficulty and test your skills in a gamified experience, and start the game.',
       AppAssets.featureGraphicMathmaticaMind,
@@ -49,7 +128,7 @@ class WorkScreenData {
         ]
       }
     ],
-    2: [
+    4: [
       'Portfolio',
       'PrashantSkillscape: Your professional journey, beautifully presented. This Flutter-built portfolio app showcases your skills, experience, and achievements with style. Featuring Material Design 3, it displays your name, designation, social media links, and a concise summary. Easily customizable, it highlights your education, work history, projects, and certifications. Whether you\'re a Flutter expert or novice, adapting this app is simple. Make a lasting impression with PrashantSkillscape - where your career story comes to life in a tap.',
       AppAssets.featureGraphicPrashantSkillscape,
@@ -63,7 +142,7 @@ class WorkScreenData {
         ]
       }
     ],
-    3: [
+    5: [
       'Tic Tac Tangle',
       'You have the opportunity to engage in a game of Tic Tac Toe on your Android phone. There is no requirement to use paper in order to partake in this intriguing puzzle game! At present, you are able to enjoy the game of Tic Tac Toe on your Android device without any cost. Our latest rendition showcases a contemporary twist with an appealing glow design.',
       AppAssets.featureGraphicTicTacTangle,
@@ -77,7 +156,7 @@ class WorkScreenData {
         ]
       }
     ],
-    4: [
+    6: [
       'Food Mania',
       'Get ready to tantalize your taste buds and unleash your inner chef with Food Mania, a recipe app built with love using Flutter! Immerse yourself in a world of culinary delights as you browse through our ever-growing collection of delicious dishes.',
       AppAssets.featureGraphicFoodMania,
@@ -91,7 +170,7 @@ class WorkScreenData {
         ]
       }
     ],
-    5: [
+    7: [
       'ShoeHaven',
       'Welcome to our sleek and stylish shoe-buying app, built entirely with Flutter. Immerse yourself in a world of modern design and seamless animations as you browse through our collection of footwear.',
       AppAssets.featureGraphicShoeHaven,
@@ -105,7 +184,7 @@ class WorkScreenData {
         ]
       }
     ],
-    6: [
+    8: [
       'Priority list',
       'This comprehensive app empowers you to manage to-do\'s, manage time and notify about your daily rutine tasks. From streamlined installation to free UI, Priority List equips you for success.',
       AppAssets.featureGraphicPriorityList,
@@ -119,7 +198,7 @@ class WorkScreenData {
         ]
       }
     ],
-    7: [
+    9: [
       'Flutter Unwrapped',
       'Flutter Unwrapped unlocks the world of Flutter development on your mobile device. This comprehensive app empowers you to learn the fundamentals, build practical skills, and prepare for your Flutter developer journey. From streamlined installation to free UI kits, Flutter Unwrapped equips you for success.',
       AppAssets.featureGraphicFlutterUnwrapped,
@@ -133,7 +212,7 @@ class WorkScreenData {
         ]
       }
     ],
-    8: [
+    10: [
       'Skilled Worker',
       'It\'s a notification app that allows users to sign up with specific categories like Doctor, Photographer, Programmer etc. Upon signup, the chosen category is attached to the profile. With a premium plan, users can send notifications to specific groups or all members of the app. Notifications include a title, message, and an image that others can download.',
       AppAssets.featureGraphicSkilledWorker,
@@ -219,7 +298,8 @@ class WorkScreenData {
                                     shortDiscription: experience[1],
                                     playstoreLink: experience[5]['Link'][0],
                                     githubLink: experience[5]['Link'][1],
-                                    appStoreLink: experience[5]['Link'][2]),
+                                    appStoreLink: experience[5]['Link'][2],
+                                    shareText: shareText(links: experience[5]['Link'], nameOfApp: experience[0])),
                                 isScrollControlled: false,
                                 backgroundColor: Colors.black,
                                 enterBottomSheetDuration:

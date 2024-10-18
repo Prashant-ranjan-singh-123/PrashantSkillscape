@@ -166,7 +166,8 @@ class _HomeScreenState extends State<WorkScreen> {
                   shortDiscription: WorkScreenData.experience[index][1],
                   playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
                   githubLink: WorkScreenData.experience[index][5]['Link'][1],
-                  appStoreLink: WorkScreenData.experience[index][5]['Link'][2]
+                  appStoreLink: WorkScreenData.experience[index][5]['Link'][2],
+                  shareText: shareText(links: WorkScreenData.experience[index][5]['Link'], nameOfApp: WorkScreenData.experience[index][0])
               ),
               isScrollControlled: false,
               backgroundColor: Colors.transparent,
@@ -216,7 +217,8 @@ class _HomeScreenState extends State<WorkScreen> {
                 shortDiscription: WorkScreenData.experience[index][1],
                 playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
                 githubLink: WorkScreenData.experience[index][5]['Link'][1],
-                appStoreLink: WorkScreenData.experience[index][5]['Link'][2]
+                appStoreLink: WorkScreenData.experience[index][5]['Link'][2],
+                shareText: shareText(links: WorkScreenData.experience[index][5]['Link'], nameOfApp: WorkScreenData.experience[index][0])
               ),
               isScrollControlled: false,
               backgroundColor: Colors.transparent,
@@ -294,5 +296,54 @@ class _HomeScreenState extends State<WorkScreen> {
         // itemCount: 1, // Number of items you want to display
       ),
     );
+  }
+
+  String shareText({required List<String> links, required String nameOfApp}) {
+    String playStoreLink = links[0];
+    String githubLink = links[1];
+    String appStoreLink = links[2];
+
+    String result = 'Check out the newly redesigned $nameOfApp';
+
+    if (playStoreLink.isNotEmpty && appStoreLink.isNotEmpty && githubLink.isNotEmpty) {
+      result += ' on Android, iOS, and GitHub! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• Play Store: $playStoreLink\n'
+          '• App Store: $appStoreLink\n'
+          '• GitHub: $githubLink\n\n';
+    } else if (playStoreLink.isNotEmpty && appStoreLink.isNotEmpty) {
+      result += ' on Android and iOS! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• Play Store: $playStoreLink\n'
+          '• App Store: $appStoreLink\n\n';
+    } else if (playStoreLink.isNotEmpty && githubLink.isNotEmpty) {
+      result += ' on Android and GitHub! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• Play Store: $playStoreLink\n'
+          '• GitHub: $githubLink\n\n';
+    } else if (appStoreLink.isNotEmpty && githubLink.isNotEmpty) {
+      result += ' on iOS and GitHub! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• App Store: $appStoreLink\n'
+          '• GitHub: $githubLink\n\n';
+    } else if (playStoreLink.isNotEmpty) {
+      result += ' on Android! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• Play Store: $playStoreLink\n\n';
+    } else if (appStoreLink.isNotEmpty) {
+      result += ' on iOS! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• App Store: $appStoreLink\n\n';
+    } else if (githubLink.isNotEmpty) {
+      result += ' on GitHub! If you like it, please leave a 5-star review.\n\n'
+          '🔗 Download:\n\n'
+          '• GitHub: $githubLink\n\n';
+    }
+
+    result += '🌐 Connect:\n\n'
+        '• LinkedIn: https://linkedin.com/in/prashant-ranjan-singh-b9b6b9217\n\n'
+        'Thanks for your support!';
+
+    return result;
   }
 }

@@ -2,6 +2,7 @@ import 'package:android_intent_plus/android_intent.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'package:prashant_potfolio/view/drawer/home_page_edit/home_page_edit_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'AppStartingPoint.dart';
@@ -54,12 +55,18 @@ class DrawerLogic{
   }
 
   static Future<void> rateUsButton() async {
-    String dt = 'https://play.google.com/store/apps/details?id=com.prashant.project.portfolio';
+    final InAppReview inAppReview = InAppReview.instance;
+
+    if (await inAppReview.isAvailable()) {
+      inAppReview.requestReview();
+    } else{
+      String dt = 'https://play.google.com/store/apps/details?id=com.prashant.project.portfolio';
     Uri url = Uri.parse(dt);
     try {
       await launchUrl(url);
-    }catch (e){
+    } catch (e) {
       throw 'Could not launch $url';
     }
+  }
   }
 }

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:prashant_potfolio/shared/color.dart';
 import 'package:prashant_potfolio/shared/motion.dart';
+import 'package:share_plus/share_plus.dart';
 import '../view/bottom_nav_bar/projects/project_screen_data.dart';
 
 class BottonSheet {
@@ -15,7 +16,8 @@ class BottonSheet {
     required shortDiscription,
     required playstoreLink,
     required githubLink,
-    required appStoreLink
+    required appStoreLink,
+    required shareText
   }) {
     return DraggableScrollableSheet(
       initialChildSize: 1,
@@ -33,7 +35,7 @@ class BottonSheet {
             child: Column(
               children: [
                 _myPadding(child: _buildDragHandle()),
-                _myPadding(child: _myAppBar()),
+                _myPadding(child: _myAppBar(shareText: shareText)),
                 Flexible(
                   child: SingleChildScrollView(
                     child: Column(
@@ -75,7 +77,7 @@ class BottonSheet {
     );
   }
 
-  Widget _myAppBar() {
+  Widget _myAppBar({required String shareText}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15),
       child: Row(
@@ -105,8 +107,9 @@ class BottonSheet {
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: GestureDetector(
-              onTap: () {
-                BottomSheetLogic.send_button_logic();
+              onTap: () async {
+                // BottomSheetLogic.send_button_logic();
+                await Share.share(shareText);
               },
               child: const Icon(CupertinoIcons.share,
                   color: ColorOfApp.bottomSheetIcon, size: 30),
@@ -166,6 +169,8 @@ class BottonSheet {
       ),
     );
   }
+
+
 
   // Widget _externalLink({required String playstore, required String github, required String appStore}) {
   //   Widget _githubButton({required VoidCallback onPressed}) {
@@ -348,8 +353,10 @@ class BottonSheet {
         child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            backgroundColor: ColorOfApp.cardShadow,
+            backgroundColor: ColorOfApp.background,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+            elevation: 10,
+            shadowColor: ColorOfApp.cardShadow
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

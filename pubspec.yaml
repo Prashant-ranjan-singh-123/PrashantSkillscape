@@ -56,6 +56,8 @@ dependencies:
   animate_do: ^3.3.4
   flutter_zoom_drawer:
   motion: ^1.4.1
+  share_plus: ^10.0.2
+  in_app_review: ^2.0.9
 
 dev_dependencies:
   flutter_test:

@@ -36,6 +36,8 @@ class AppAssets{
   static String featureGraphicSkilledWorker = 'asset/image/project_image/feature_graphic/skilled_worker.png';
   static String featureGraphicPrashantSkillscape = 'asset/image/project_image/feature_graphic/prashant_skillscape.png';
   static String featureGraphicTicTacTangle = 'asset/image/project_image/feature_graphic/tic_tac_tangle.png';
+  static String featureGraphicGlassView = 'asset/image/project_image/feature_graphic/glassview.png';
+  static String featureGraphicInsugoDigi = 'asset/image/project_image/feature_graphic/Insugo_digi.png';
 
   // --Certificate Images--
   static String certificate_cyber_cisco = 'asset/image/certificates_images/cyber_cisco.jpg';
