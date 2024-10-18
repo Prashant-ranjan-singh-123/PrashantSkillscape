@@ -27,6 +27,7 @@ class AppAssets{
   static String appScreenTicTacTangle = 'asset/image/project_image/screen/tic_tac_tangle.png';
   static String appScreenBigDrum = 'asset/image/project_image/screen/big_drum.png';
   static String appScreenDirection = 'asset/image/project_image/screen/direction.png';
+  static String appScreenQuickdraw = 'asset/image/project_image/screen/quickdraw.png';
 
   // --Feature Graphic--
   static String featureGraphicDoctorOnHome = 'asset/image/project_image/feature_graphic/doctor_on_home.png';

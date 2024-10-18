@@ -11,13 +11,13 @@ import '../../../shared/under_development_dialog.dart';
 
 class WorkScreenData {
   static List<Widget> cursol_slider_item = [
+    WorkScreenData.customCard(experience: experience[0]),
     WorkScreenData.customCard(experience: experience[2]),
     WorkScreenData.customCard(experience: experience[3]),
     WorkScreenData.customCard(experience: experience[4]),
     WorkScreenData.customCard(experience: experience[5]),
-    WorkScreenData.customCard(experience: experience[6]),
-    WorkScreenData.customCard(experience: experience[7]),
     WorkScreenData.customCard(experience: experience[8]),
+    WorkScreenData.customCard(experience: experience[6]),
   ];
 
   static String shareText({required List<String> links, required String nameOfApp}) {
@@ -104,7 +104,7 @@ class WorkScreenData {
       'GlassView QD',
       'GlassView Labs has developed a proprietary, high-frequency trading platform, QuickDraw TM, to deliver ad placements on top-tier sites & articles covering trending topics before they hit critical mass; leading to prominent brand positioning & superior ROI across the board.',
       AppAssets.featureGraphicGlassView,
-      AppAssets.appScreen,
+      AppAssets.appScreenQuickdraw,
       'PlayStore | AppStore',
       {
         'Link': [
@@ -129,15 +129,15 @@ class WorkScreenData {
       },
     ],
     4: [
-      'Doctor On Home',
-      'This app, built with care, connects you to top-notch doctors at your fingertips. Skip the waiting rooms and experience healthcare on-demand. Let Heal on Call be your pocket-sized clinic, available whenever you need it.',
-      AppAssets.featureGraphicDoctorOnHome,
-      AppAssets.appScreenDoctorOnHome,
-      'PlayStore',
+      'Portfolio',
+      'PrashantSkillscape: Your professional journey, beautifully presented. This Flutter-built portfolio app showcases your skills, experience, and achievements with style. Featuring Material Design 3, it displays your name, designation, social media links, and a concise summary. Easily customizable, it highlights your education, work history, projects, and certifications. Whether you\'re a Flutter expert or novice, adapting this app is simple. Make a lasting impression with PrashantSkillscape - where your career story comes to life in a tap.',
+      AppAssets.featureGraphicPrashantSkillscape,
+      AppAssets.appScreenPrashantSkillScape,
+      'Playstore | Github',
       {
         'Link': [
-          'https://play.google.com/store/apps/details?id=com.doctor.home',
-          '',
+          'https://play.google.com/store/apps/details?id=com.prashant.project.portfolio',
+          'https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape',
           ''
         ]
       }
@@ -157,15 +157,15 @@ class WorkScreenData {
       }
     ],
     6: [
-      'Portfolio',
-      'PrashantSkillscape: Your professional journey, beautifully presented. This Flutter-built portfolio app showcases your skills, experience, and achievements with style. Featuring Material Design 3, it displays your name, designation, social media links, and a concise summary. Easily customizable, it highlights your education, work history, projects, and certifications. Whether you\'re a Flutter expert or novice, adapting this app is simple. Make a lasting impression with PrashantSkillscape - where your career story comes to life in a tap.',
-      AppAssets.featureGraphicPrashantSkillscape,
-      AppAssets.appScreenPrashantSkillScape,
-      'Playstore | Github',
+      'Doctor On Home',
+      'This app, built with care, connects you to top-notch doctors at your fingertips. Skip the waiting rooms and experience healthcare on-demand. Let Heal on Call be your pocket-sized clinic, available whenever you need it.',
+      AppAssets.featureGraphicDoctorOnHome,
+      AppAssets.appScreenDoctorOnHome,
+      'PlayStore',
       {
         'Link': [
-          'https://play.google.com/store/apps/details?id=com.prashant.project.portfolio',
-          'https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape',
+          'https://play.google.com/store/apps/details?id=com.doctor.home',
+          '',
           ''
         ]
       }
