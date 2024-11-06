@@ -212,8 +212,8 @@ SOFTWARE.
 
 ## 👨‍💻 Contributors
 
-<a href='https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape/graphs/contributors'>
-  <img src='https://contrib.rocks/image?repo=Prashant-ranjan-singh-123/PrashantSkillscape' />
+<a href='https://github.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc/graphs/contributors'>
+  <img src='https://contrib.rocks/image?repo=Prashant-ranjan-singh-123/flutter_portfolio_bloc' />
 </a>
 
 </div>

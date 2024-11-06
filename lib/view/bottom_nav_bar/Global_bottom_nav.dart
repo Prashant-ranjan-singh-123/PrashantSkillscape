@@ -10,7 +10,6 @@ import 'about_me/about_me_screen.dart';
 import 'carrier/carrier_screen.dart';
 import 'certificate/certificate_screen.dart';
 
-
 class GlobalNavBar extends StatefulWidget {
   final int initialPageIndex;
 
@@ -81,7 +80,8 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
   }
 
   // Helper method to build individual items of the Bottom Navigation Bar
-  BottomNavigationBarItem _buildBottomNavigationBarItem(IconData icon, String label) {
+  BottomNavigationBarItem _buildBottomNavigationBarItem(
+      IconData icon, String label) {
     return BottomNavigationBarItem(
       icon: Card(
         color: Colors.transparent,
@@ -105,9 +105,9 @@ class _GlobalNavBarState extends State<GlobalNavBar> {
 
   // List of pages to be displayed
   List<Widget> get _pages => [
-    HomeScreen(),
-    CarrierScreen(),
-    WorkScreen(),
-    CertificateScreen(),
-  ];
+        HomeScreen(),
+        CarrierScreen(),
+        WorkScreen(),
+        CertificateScreen(),
+      ];
 }

@@ -39,10 +39,26 @@ class _HomeScreenState extends State<WorkScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ZoomIn(delay: Duration(milliseconds: 200), duration: Duration(milliseconds: 400), curve: Curves.decelerate , child: heading_and_subtitle_top()),
-                  ZoomIn(delay: Duration(milliseconds: 500), duration: Duration(milliseconds: 400), curve: Curves.decelerate , child: CustomCoursalSclider()),
-                  ZoomIn(delay: Duration(milliseconds: 800), duration: Duration(milliseconds: 400), curve: Curves.decelerate , child: types()),
-                  ZoomIn(delay: Duration(milliseconds: 1100), duration: Duration(milliseconds: 400), curve: Curves.decelerate , child: grid_view_items())
+                  ZoomIn(
+                      delay: Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 400),
+                      curve: Curves.decelerate,
+                      child: heading_and_subtitle_top()),
+                  ZoomIn(
+                      delay: Duration(milliseconds: 500),
+                      duration: Duration(milliseconds: 400),
+                      curve: Curves.decelerate,
+                      child: CustomCoursalSclider()),
+                  ZoomIn(
+                      delay: Duration(milliseconds: 800),
+                      duration: Duration(milliseconds: 400),
+                      curve: Curves.decelerate,
+                      child: types()),
+                  ZoomIn(
+                      delay: Duration(milliseconds: 1100),
+                      duration: Duration(milliseconds: 400),
+                      curve: Curves.decelerate,
+                      child: grid_view_items())
                 ],
               ),
             ),
@@ -57,9 +73,14 @@ class _HomeScreenState extends State<WorkScreen> {
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 20),
-          child: IconButton(onPressed: (){
-            drawerController.toggleDrawer();
-          }, icon: Icon(Iconsax.menu, size: 25,)),
+          child: IconButton(
+              onPressed: () {
+                drawerController.toggleDrawer();
+              },
+              icon: Icon(
+                Iconsax.menu,
+                size: 25,
+              )),
         ),
         const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -167,8 +188,9 @@ class _HomeScreenState extends State<WorkScreen> {
                   playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
                   githubLink: WorkScreenData.experience[index][5]['Link'][1],
                   appStoreLink: WorkScreenData.experience[index][5]['Link'][2],
-                  shareText: shareText(links: WorkScreenData.experience[index][5]['Link'], nameOfApp: WorkScreenData.experience[index][0])
-              ),
+                  shareText: shareText(
+                      links: WorkScreenData.experience[index][5]['Link'],
+                      nameOfApp: WorkScreenData.experience[index][0])),
               isScrollControlled: false,
               backgroundColor: Colors.transparent,
               enterBottomSheetDuration: const Duration(milliseconds: 300),
@@ -212,14 +234,15 @@ class _HomeScreenState extends State<WorkScreen> {
         onTap: () {
           Get.bottomSheet(
               BottonSheet().bottomSheet(
-                heading: WorkScreenData.experience[index][0],
-                imageLocation: WorkScreenData.experience[index][2],
-                shortDiscription: WorkScreenData.experience[index][1],
-                playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
-                githubLink: WorkScreenData.experience[index][5]['Link'][1],
-                appStoreLink: WorkScreenData.experience[index][5]['Link'][2],
-                shareText: shareText(links: WorkScreenData.experience[index][5]['Link'], nameOfApp: WorkScreenData.experience[index][0])
-              ),
+                  heading: WorkScreenData.experience[index][0],
+                  imageLocation: WorkScreenData.experience[index][2],
+                  shortDiscription: WorkScreenData.experience[index][1],
+                  playstoreLink: WorkScreenData.experience[index][5]['Link'][0],
+                  githubLink: WorkScreenData.experience[index][5]['Link'][1],
+                  appStoreLink: WorkScreenData.experience[index][5]['Link'][2],
+                  shareText: shareText(
+                      links: WorkScreenData.experience[index][5]['Link'],
+                      nameOfApp: WorkScreenData.experience[index][0])),
               isScrollControlled: false,
               backgroundColor: Colors.transparent,
               enterBottomSheetDuration: const Duration(milliseconds: 300),
@@ -305,24 +328,30 @@ class _HomeScreenState extends State<WorkScreen> {
 
     String result = 'Check out the newly redesigned $nameOfApp';
 
-    if (playStoreLink.isNotEmpty && appStoreLink.isNotEmpty && githubLink.isNotEmpty) {
-      result += ' on Android, iOS, and GitHub! If you like it, please leave a 5-star review.\n\n'
+    if (playStoreLink.isNotEmpty &&
+        appStoreLink.isNotEmpty &&
+        githubLink.isNotEmpty) {
+      result +=
+          ' on Android, iOS, and GitHub! If you like it, please leave a 5-star review.\n\n'
           '🔗 Download:\n\n'
           '• Play Store: $playStoreLink\n'
           '• App Store: $appStoreLink\n'
           '• GitHub: $githubLink\n\n';
     } else if (playStoreLink.isNotEmpty && appStoreLink.isNotEmpty) {
-      result += ' on Android and iOS! If you like it, please leave a 5-star review.\n\n'
+      result +=
+          ' on Android and iOS! If you like it, please leave a 5-star review.\n\n'
           '🔗 Download:\n\n'
           '• Play Store: $playStoreLink\n'
           '• App Store: $appStoreLink\n\n';
     } else if (playStoreLink.isNotEmpty && githubLink.isNotEmpty) {
-      result += ' on Android and GitHub! If you like it, please leave a 5-star review.\n\n'
+      result +=
+          ' on Android and GitHub! If you like it, please leave a 5-star review.\n\n'
           '🔗 Download:\n\n'
           '• Play Store: $playStoreLink\n'
           '• GitHub: $githubLink\n\n';
     } else if (appStoreLink.isNotEmpty && githubLink.isNotEmpty) {
-      result += ' on iOS and GitHub! If you like it, please leave a 5-star review.\n\n'
+      result +=
+          ' on iOS and GitHub! If you like it, please leave a 5-star review.\n\n'
           '🔗 Download:\n\n'
           '• App Store: $appStoreLink\n'
           '• GitHub: $githubLink\n\n';

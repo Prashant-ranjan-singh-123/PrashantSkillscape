@@ -10,22 +10,21 @@ import 'AppStartingPoint.dart';
 final BottomAppBarPageIndex controlle = Get.put(BottomAppBarPageIndex());
 final MyDrawerController drawerController = Get.put(MyDrawerController());
 
-
-class DrawerLogic{
-  static void aboutMeButton(){
+class DrawerLogic {
+  static void aboutMeButton() {
     controlle.setPageIndex(0);
     // Get.to(HomePageEditUi());
   }
 
-  static void carrierButton(){
+  static void carrierButton() {
     controlle.setPageIndex(1);
   }
 
-  static void projectButton(){
+  static void projectButton() {
     controlle.setPageIndex(2);
   }
 
-  static void certificateButton(){
+  static void certificateButton() {
     controlle.setPageIndex(3);
   }
 
@@ -39,7 +38,8 @@ class DrawerLogic{
       }
     }
 
-    String dt = 'https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape';
+    String dt =
+        'https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape';
     bool isInstalled = await isGithubInInstalled();
     if (isInstalled != false) {
       AndroidIntent intent = AndroidIntent(action: 'action_view', data: dt);
@@ -47,11 +47,11 @@ class DrawerLogic{
     } else {
       Uri url = Uri.parse(dt);
       if (await canLaunchUrl(url)) {
-    await launchUrl(url);
-    } else {
-    throw 'Could not launch $url';
+        await launchUrl(url);
+      } else {
+        throw 'Could not launch $url';
+      }
     }
-  }
   }
 
   static Future<void> rateUsButton() async {
@@ -59,14 +59,15 @@ class DrawerLogic{
 
     if (await inAppReview.isAvailable()) {
       inAppReview.requestReview();
-    } else{
-      String dt = 'https://play.google.com/store/apps/details?id=com.prashant.project.portfolio';
-    Uri url = Uri.parse(dt);
-    try {
-      await launchUrl(url);
-    } catch (e) {
-      throw 'Could not launch $url';
+    } else {
+      String dt =
+          'https://play.google.com/store/apps/details?id=com.prashant.project.portfolio';
+      Uri url = Uri.parse(dt);
+      try {
+        await launchUrl(url);
+      } catch (e) {
+        throw 'Could not launch $url';
+      }
     }
-  }
   }
 }

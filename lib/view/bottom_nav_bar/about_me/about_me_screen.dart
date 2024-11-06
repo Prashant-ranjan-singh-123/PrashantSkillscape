@@ -357,7 +357,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-
   Widget contactMe() {
     return MyMotionWidget(
       child: Card(
